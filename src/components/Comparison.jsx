@@ -34,7 +34,7 @@ function Cell({ data, isNano }) {
 
 export default function Comparison() {
   return (
-    <section id="comparativa" className="relative py-32 overflow-hidden" style={{ background: '#EEF4F8' }}>
+    <section id="comparativa" className="relative py-20 sm:py-32 overflow-hidden" style={{ background: '#EEF4F8' }}>
 
       <div className="relative z-10 max-w-5xl mx-auto px-6">
         <div className="text-center mb-12 reveal opacity-0 translate-y-8 transition-all duration-700">
@@ -57,7 +57,8 @@ export default function Comparison() {
         </div>
 
         <div className="reveal opacity-0 translate-y-8 transition-all duration-700 glass-card rounded-2xl overflow-hidden">
-          <table className="w-full border-collapse">
+         <div className="overflow-x-auto no-scrollbar">
+          <table className="w-full border-collapse min-w-[560px]">
             <thead>
               <tr style={{ borderBottom: '1px solid rgba(32,52,120,0.12)' }}>
                 <th className="py-4 px-5 text-left text-xs font-semibold uppercase tracking-widest w-1/3" style={{ color: '#6b7a99' }}>
@@ -89,6 +90,7 @@ export default function Comparison() {
               ))}
             </tbody>
           </table>
+         </div>
         </div>
 
         <div className="mt-10 text-center reveal opacity-0 translate-y-8 transition-all duration-700">

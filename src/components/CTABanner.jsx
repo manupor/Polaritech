@@ -10,7 +10,7 @@ const badges = [
 
 export default function CTABanner() {
   return (
-    <section className="relative py-32 overflow-hidden grain-overlay" style={{ background: '#203478' }}>
+    <section className="relative py-20 sm:py-32 overflow-hidden grain-overlay" style={{ background: '#203478' }}>
       <div
         className="absolute top-0 left-0 right-0"
         style={{ height: '2px', background: 'linear-gradient(90deg, transparent, #3EB5CC 30%, #88C140 70%, transparent)' }}

@@ -31,7 +31,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="como-funciona" className="relative py-32 overflow-hidden" style={{ background: '#FFFFFF' }}>
+    <section id="como-funciona" className="relative py-20 sm:py-32 overflow-hidden" style={{ background: '#FFFFFF' }}>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Header */}

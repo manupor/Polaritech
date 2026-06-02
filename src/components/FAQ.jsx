@@ -44,7 +44,7 @@ export default function FAQ() {
   const [open, setOpen] = useState(null)
 
   return (
-    <section id="faq" className="relative py-32 overflow-hidden" style={{ background: '#EEF4F8' }}>
+    <section id="faq" className="relative py-20 sm:py-32 overflow-hidden" style={{ background: '#EEF4F8' }}>
 
       <div className="relative z-10 max-w-4xl mx-auto px-6">
         <div className="text-center mb-12 reveal opacity-0 translate-y-8 transition-all duration-700">

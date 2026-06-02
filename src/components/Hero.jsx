@@ -55,8 +55,8 @@ export default function Hero() {
 
       {/* ── MAIN CONTENT ─────────────────────────────────────────────── */}
       <div className="relative z-10 flex-1 flex items-center">
-        <div className="max-w-7xl mx-auto px-8 lg:px-12 pt-28 pb-10 w-full">
-          <div className="max-w-[54%]">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-28 pb-10 w-full">
+          <div className="max-w-full md:max-w-[54%]">
 
             {/* Headline */}
             <h1
@@ -92,15 +92,15 @@ export default function Hero() {
           </div>
 
           {/* CTAs + Icons — same row */}
-          <div className="flex items-center justify-between gap-8 w-full">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-8 w-full">
 
             {/* CTAs */}
-            <div className="flex flex-wrap items-center gap-4 flex-shrink-0">
-              <a href="#cotizar" className="btn-primary">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4 flex-shrink-0 w-full sm:w-auto">
+              <a href="#cotizar" className="btn-primary w-full sm:w-auto justify-center">
                 Solicitar asesoría
                 <ArrowRight size={15} />
               </a>
-              <a href="#soluciones" className="btn-secondary">
+              <a href="#soluciones" className="btn-secondary w-full sm:w-auto justify-center">
                 Ver soluciones
               </a>
             </div>

@@ -40,7 +40,7 @@ export default function BeforeAfter() {
   }, [onMouseUp])
 
   return (
-    <section id="proyectos" className="relative py-32 overflow-hidden" style={{ background: '#EEF4F8' }}>
+    <section id="proyectos" className="relative py-20 sm:py-32 overflow-hidden" style={{ background: '#EEF4F8' }}>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <div className="text-center mb-12 reveal opacity-0 translate-y-8 transition-all duration-700">

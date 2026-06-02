@@ -62,7 +62,7 @@ export default function Problems() {
 
           {/* RIGHT — light panel with bullets */}
           <div
-            className="flex items-center px-10 py-12 lg:px-14"
+            className="flex items-center px-6 py-12 sm:px-10 lg:px-14"
             style={{ background: '#EEF4F8' }}
           >
             <div className="w-full space-y-8">
