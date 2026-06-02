@@ -1,0 +1,351 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* ─── Polaritech Brand Variables (Libro de Marca) ─────────────────────── */
+  :root {
+    /* Exact brand colors */
+    --brand-navy:       #203478;   /* WEB: 203478 — primary brand navy  */
+    --brand-teal:       #3EB5CC;   /* brand sky-blue (logo / page 4 bg) */
+    --brand-green:      #88C140;   /* brand lime-green (page 5 — action) */
+
+    /* Derived dark scale for dark-mode web */
+    --bg-base:          #0D1E2A;   /* wireframe primary dark (teal-navy) */
+    --bg-surface:       #162830;   /* surface: derived from wireframe     */
+    --bg-raised:        #1A3A3E;   /* wireframe accent dark (teal-forest) */
+    --bg-border:        rgba(62, 181, 204, 0.12); /* teal border at 12%  */
+
+    /* Brand gradient — mirrors page 4 of brand book */
+    --brand-gradient:   linear-gradient(135deg, #3EB5CC 0%, #203478 100%);
+    --brand-gradient-v: linear-gradient(180deg, #3EB5CC 0%, #203478 100%);
+  }
+
+  body {
+    background-color: #EEF4F8;
+    color: #203478;
+    font-family: 'Merriweather', Georgia, serif;  /* Newry: editorial serif body */
+    font-size: 15px;
+    line-height: 1.80;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* Headings — Rubik (Newry-exact) */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Rubik', system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background-color: rgba(62, 181, 204, 0.35);
+    color: #fff;
+  }
+
+  /* Accessible, on-brand focus ring */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: 2px solid rgba(62, 181, 204, 0.65);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-track { background: #DCE7EF; }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #3EB5CC, #203478);
+    border-radius: 10px;
+    border: 2px solid #DCE7EF;
+  }
+  ::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #3EB5CC, #3EB5CC); }
+}
+
+@layer components {
+  /* ─── Card — premium: soft radius, layered shadow, hairline border ──────── */
+  .glass-card {
+    position: relative;
+    background: #FFFFFF;
+    border: 1px solid rgba(32, 52, 120, 0.07);
+    border-radius: 14px !important;
+    box-shadow:
+      0 1px 2px rgba(32, 52, 120, 0.04),
+      0 18px 40px -24px rgba(32, 52, 120, 0.22);
+  }
+
+  .glass-card-hover {
+    @apply glass-card;
+    transition: border-color 0.3s ease, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease;
+  }
+
+  .glass-card-hover:hover {
+    border-color: rgba(62, 181, 204, 0.40);
+    transform: translateY(-4px);
+    box-shadow:
+      0 2px 4px rgba(32, 52, 120, 0.05),
+      0 28px 56px -28px rgba(32, 52, 120, 0.30);
+  }
+
+  /* ─── Luxury icon medallion — gradient hairline ring + depth ────────────── */
+  .icon-lux {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    background: linear-gradient(155deg, #ffffff 0%, #e7eff6 100%);
+    color: #203478;
+    box-shadow:
+      0 2px 4px rgba(32, 52, 120, 0.06),
+      0 12px 28px -12px rgba(32, 52, 120, 0.22),
+      inset 0 1px 0 rgba(255, 255, 255, 0.95);
+    isolation: isolate;
+    flex-shrink: 0;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+  }
+  .icon-lux::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1.5px;
+    background: linear-gradient(155deg, rgba(62, 181, 204, 0.75), rgba(136, 193, 64, 0.45));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events: none;
+  }
+  .icon-lux::after {
+    content: '';
+    position: absolute;
+    inset: 1.5px;
+    border-radius: inherit;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), transparent 55%);
+    pointer-events: none;
+  }
+  .icon-lux > * { position: relative; z-index: 1; }
+
+  .icon-lux-sm { width: 48px; height: 48px; border-radius: 13px; }
+  .icon-lux-md { width: 60px; height: 60px; }
+  .icon-lux-lg { width: 88px; height: 88px; border-radius: 22px; }
+  .icon-lux-round { border-radius: 999px !important; }
+
+  .group:hover .icon-lux,
+  .icon-lux-hover:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 4px 8px rgba(32, 52, 120, 0.08),
+      0 20px 38px -16px rgba(32, 52, 120, 0.30),
+      inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  }
+
+  /* Dark-surface medallion */
+  .icon-lux-dark {
+    background: linear-gradient(155deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.03) 100%);
+    color: #ffffff;
+    box-shadow:
+      0 2px 6px rgba(0, 0, 0, 0.28),
+      inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  }
+  .icon-lux-dark::before {
+    background: linear-gradient(155deg, rgba(62, 181, 204, 0.9), rgba(136, 193, 64, 0.5));
+  }
+  .icon-lux-dark::after { display: none; }
+
+  /* ─── Signature gradient text: brand teal → brand green ─────────────────── */
+  .gradient-text {
+    background: linear-gradient(135deg, #3EB5CC 0%, #88C140 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ─── Newry buttons: rectangular, outline-to-fill, uppercase, tracked ───────── */
+  .btn-primary {
+    @apply inline-flex items-center gap-3 font-semibold transition-all duration-200;
+    font-family: 'Rubik', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 15px 38px;
+    border-radius: 4px;
+    background: #88C140;
+    color: #fff;
+    border: 2px solid #88C140;
+    box-shadow: 0 10px 24px -10px rgba(136, 193, 64, 0.75);
+  }
+
+  .btn-primary:hover {
+    background: #7ab238;
+    border-color: #7ab238;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 16px 30px -12px rgba(136, 193, 64, 0.85);
+  }
+
+  .btn-primary:active { transform: translateY(0); }
+
+  /* ─── Secondary: rectangle outline ─────────────────────────────────────── */
+  .btn-secondary {
+    @apply inline-flex items-center gap-3 font-semibold transition-all duration-200;
+    font-family: 'Rubik', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 15px 38px;
+    border-radius: 2px;
+    background: transparent;
+    color: rgba(238, 244, 248, 0.72);
+    border: 2px solid rgba(255, 255, 255, 0.22);
+  }
+
+  .btn-secondary:hover {
+    border-color: rgba(255, 255, 255, 0.55);
+    color: #EEF4F8;
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  /* ─── Secondary button variant for light backgrounds ────────────────────── */
+  .btn-secondary-light {
+    @apply inline-flex items-center gap-3 font-semibold transition-all duration-200;
+    font-family: 'Rubik', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 15px 38px;
+    border-radius: 2px;
+    background: transparent;
+    color: #203478;
+    border: 2px solid rgba(32, 52, 120, 0.30);
+  }
+
+  .btn-secondary-light:hover {
+    border-color: #3EB5CC;
+    color: #3EB5CC;
+  }
+
+  /* ─── Section label — Newry: plain Rubik uppercase, wide-tracked ─────────── */
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #3EB5CC;
+  }
+
+  /* ─── Status dot — static, no animation ────────────────────────────────── */
+  .glow-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #88C140;
+    flex-shrink: 0;
+  }
+
+  /* ─── Brand gradient background utility ──────────────────────────────────── */
+  .brand-gradient-bg {
+    background: var(--brand-gradient);
+  }
+
+  /* ─── Teal highlight bar (for section borders, underlines) ──────────────── */
+  .brand-underline {
+    position: relative;
+  }
+  .brand-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #3EB5CC, #88C140);
+    border-radius: 1px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* ─── Subtle film-grain texture for depth (premium print feel) ──────────── */
+  .grain-overlay { position: relative; }
+  .grain-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.5;
+    z-index: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  }
+
+  /* ─── Elegant centered hairline divider with brand mark ─────────────────── */
+  .rule-mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+  }
+  .rule-mark::before,
+  .rule-mark::after {
+    content: '';
+    height: 1px;
+    width: 64px;
+    background: linear-gradient(90deg, transparent, rgba(32, 52, 120, 0.22));
+  }
+  .rule-mark::after {
+    background: linear-gradient(90deg, rgba(32, 52, 120, 0.22), transparent);
+  }
+  .rule-mark > span {
+    width: 7px;
+    height: 7px;
+    transform: rotate(45deg);
+    background: linear-gradient(135deg, #3EB5CC, #88C140);
+    border-radius: 1px;
+    flex-shrink: 0;
+  }
+
+  /* ─── Centered accent underline under section titles ────────────────────── */
+  .title-accent {
+    display: block;
+    width: 46px;
+    height: 3px;
+    margin: 14px auto 0;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #3EB5CC, #88C140);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
