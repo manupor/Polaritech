@@ -46,7 +46,7 @@ export default function Navbar() {
           <img
             src="/logo-color.png"
             alt="Polaritech — Soluciones en Polarizado"
-            className="h-9 w-auto object-contain transition-opacity duration-300 group-hover:opacity-80"
+            className="h-12 w-auto object-contain transition-opacity duration-300 group-hover:opacity-80"
           />
         </a>
 
