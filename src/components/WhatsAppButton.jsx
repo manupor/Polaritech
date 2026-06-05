@@ -6,7 +6,7 @@ export default function WhatsAppButton() {
   return (
     <div className="fixed bottom-24 right-4 sm:bottom-6 sm:right-6 z-50 flex items-center gap-3">
       {hovered && (
-        <div className="bg-[#111827] border border-white/10 text-white text-sm font-medium px-4 py-2.5 rounded-2xl shadow-2xl whitespace-nowrap animate-fade-in">
+        <div className="bg-white border border-[rgba(32,52,120,0.12)] text-[#203478] text-sm font-medium px-4 py-2.5 rounded-2xl shadow-2xl whitespace-nowrap animate-fade-in">
           Chateá con nosotros 💬
         </div>
       )}

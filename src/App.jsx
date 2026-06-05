@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import Problems from './components/Problems'
 import Benefits from './components/Benefits'
-import Science from './components/Science'
+import SolarRadiation from './components/SolarRadiation'
 import Applications from './components/Applications'
 import Comparison from './components/Comparison'
 import ExperienciaReal from './components/ExperienciaReal'
@@ -44,12 +43,10 @@ function App() {
       <main>
         {/* 1. Hero — Más que polarizado. Ingeniería solar */}
         <Hero />
-        {/* 2. Problems — El problema no es la luz. Es el infrarrojo. */}
-        <Problems />
-        {/* 3. Benefits — ¿Por qué Polaritech? Lo que nos diferencia */}
+        {/* 2. Solar Radiation — ¿Sabías que el calor no siempre es visible? (única sección de ciencia) */}
+        <SolarRadiation />
+        {/* 3. Benefits — ¿Por qué Polaritech? */}
         <Benefits />
-        {/* 4. Science — La Ciencia Lo Explica (educación + confianza) */}
-        <Science />
         {/* 5. Applications — Nuestras Soluciones para cada espacio */}
         <Applications />
         {/* 6. Comparison — Nano cerámica vs. polarizado convencional */}

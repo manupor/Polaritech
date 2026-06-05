@@ -37,15 +37,14 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'backdrop-blur-xl border-b border-cyan-500/20 py-3 shadow-lg shadow-black/30'
+          ? 'bg-white/95 backdrop-blur-xl border-b border-[rgba(32,52,120,0.10)] py-3 shadow-lg shadow-[rgba(32,52,120,0.08)]'
           : 'bg-transparent py-5'
       }`}
-      style={scrolled ? { background: '#0B1A2A' } : undefined}
     >
       <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <a href="#inicio" className="flex items-center group">
           <img
-            src="/logo-white.png"
+            src="/logo-color.png"
             alt="Polaritech — Soluciones en Polarizado"
             className="h-9 w-auto object-contain transition-opacity duration-300 group-hover:opacity-80"
           />
@@ -56,7 +55,7 @@ export default function Navbar() {
             link.hasDropdown ? (
               <li key={link.label} className="relative group">
                 <button
-                  className="flex items-center gap-1 px-4 py-2 text-sm text-slate-300 hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/5"
+                  className="flex items-center gap-1 px-4 py-2 text-sm text-[#203478] hover:text-[#3EB5CC] transition-colors duration-200 rounded-lg hover:bg-[rgba(32,52,120,0.05)]"
                   onMouseEnter={() => setProductsOpen(true)}
                   onMouseLeave={() => setProductsOpen(false)}
                 >
@@ -70,12 +69,12 @@ export default function Navbar() {
                     productsOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'
                   }`}
                 >
-                  <div className="rounded-xl p-2 shadow-2xl" style={{ background: '#0D1E2A', border: '1px solid rgba(62,181,204,0.15)' }}>
+                  <div className="rounded-xl p-2 shadow-2xl" style={{ background: '#FFFFFF', border: '1px solid rgba(32,52,120,0.10)' }}>
                     {products.map((p) => (
                       <a
                         key={p}
                         href="#productos"
-                        className="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors duration-150"
+                        className="block px-4 py-2.5 text-sm text-[#5a6a82] hover:text-[#203478] hover:bg-[rgba(32,52,120,0.05)] rounded-lg transition-colors duration-150"
                       >
                         {p}
                       </a>
@@ -87,7 +86,7 @@ export default function Navbar() {
               <li key={link.label}>
                 <a
                   href={link.href}
-                  className="px-4 py-2 text-sm text-slate-300 hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/5 block"
+                  className="px-4 py-2 text-sm text-[#203478] hover:text-[#3EB5CC] transition-colors duration-200 rounded-lg hover:bg-[rgba(32,52,120,0.05)] block"
                 >
                   {link.label}
                 </a>
@@ -103,7 +102,7 @@ export default function Navbar() {
         </div>
 
         <button
-          className="lg:hidden p-2 text-slate-300 hover:text-white transition-colors"
+          className="lg:hidden p-2 text-[#203478] hover:text-[#3EB5CC] transition-colors"
           onClick={() => setMobileOpen(!mobileOpen)}
         >
           {mobileOpen ? <X size={22} /> : <Menu size={22} />}
@@ -115,12 +114,12 @@ export default function Navbar() {
           mobileOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="bg-[#080F22]/97 backdrop-blur-xl border-t border-cyan-500/10 px-6 py-4 space-y-1">
+        <div className="bg-white/97 backdrop-blur-xl border-t border-[rgba(32,52,120,0.10)] px-6 py-4 space-y-1 shadow-lg shadow-[rgba(32,52,120,0.08)]">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="block px-4 py-3 text-sm text-slate-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors duration-150"
+              className="block px-4 py-3 text-sm text-[#203478] hover:text-[#3EB5CC] hover:bg-[rgba(32,52,120,0.05)] rounded-xl transition-colors duration-150"
               onClick={() => setMobileOpen(false)}
             >
               {link.label}

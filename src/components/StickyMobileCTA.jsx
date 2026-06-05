@@ -16,7 +16,7 @@ export default function StickyMobileCTA() {
         visible ? 'translate-y-0' : 'translate-y-full'
       }`}
     >
-      <div className="bg-[#080F22]/98 backdrop-blur-xl border-t border-cyan-500/15 px-4 py-3 flex gap-3">
+      <div className="bg-white/98 backdrop-blur-xl border-t border-[rgba(32,52,120,0.10)] shadow-[0_-4px_20px_rgba(32,52,120,0.10)] px-4 py-3 flex gap-3">
         <a
           href="https://wa.me/50688888888?text=Hola%2C%20me%20interesa%20cotizar%20polarizado."
           target="_blank"

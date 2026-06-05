@@ -10,7 +10,7 @@ const badges = [
 
 export default function CTABanner() {
   return (
-    <section className="relative py-20 sm:py-32 overflow-hidden grain-overlay" style={{ background: '#203478' }}>
+    <section className="relative py-20 sm:py-32 overflow-hidden" style={{ background: 'linear-gradient(135deg, #FFFFFF 0%, #EEF4F8 100%)' }}>
       <div
         className="absolute top-0 left-0 right-0"
         style={{ height: '2px', background: 'linear-gradient(90deg, transparent, #3EB5CC 30%, #88C140 70%, transparent)' }}
@@ -36,14 +36,14 @@ export default function CTABanner() {
           </div>
 
           <h2
-            className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.0] mb-6"
-            style={{ fontWeight: 900 }}
+            className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.0] mb-6"
+            style={{ fontWeight: 900, color: '#203478' }}
           >
             La tecnología<br />
             <span className="gradient-text">detrás del confort.</span>
           </h2>
 
-          <p className="text-slate-400 text-xl font-light leading-relaxed max-w-2xl mx-auto mb-10">
+          <p className="text-xl font-light leading-relaxed max-w-2xl mx-auto mb-10" style={{ color: '#5a6a82' }}>
             Más que polarizado — ingeniería solar aplicada a tus espacios para que
             vivas y trabajes con confort, eficiencia y tranquilidad.
           </p>
@@ -55,9 +55,9 @@ export default function CTABanner() {
                 key={b.label}
                 className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold"
                 style={{
-                  background: 'rgba(255,255,255,0.05)',
-                  border: '1px solid rgba(255,255,255,0.10)',
-                  color: '#cbd5e1',
+                  background: '#FFFFFF',
+                  border: '1px solid rgba(32,52,120,0.12)',
+                  color: '#203478',
                 }}
               >
                 <span style={{ color: '#3EB5CC' }}>{b.icon}</span>
@@ -76,15 +76,15 @@ export default function CTABanner() {
               href="https://wa.me/50688888888?text=Hola,%20me%20interesa%20cotizar%20polarizado%20para%20mi%20espacio"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-secondary text-base px-8 py-4"
-              style={{ borderColor: 'rgba(37,211,102,0.30)', color: '#4ade80' }}
+              className="btn-secondary-light text-base px-8 py-4"
+              style={{ borderColor: 'rgba(18,140,126,0.45)', color: '#128c7e' }}
             >
               <MessageCircle size={18} />
               WhatsApp directo
             </a>
           </div>
 
-          <p className="text-slate-600 text-sm">
+          <p className="text-sm" style={{ color: '#6b7a99' }}>
             Conversemos sobre tu proyecto · Sin compromiso · Respuesta en 24h
           </p>
         </div>

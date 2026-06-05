@@ -39,13 +39,14 @@ export default function Problems() {
             />
             <div
               className="absolute inset-0"
-              style={{ background: 'rgba(8,18,28,0.58)' }}
+              style={{ background: 'rgba(255,255,255,0.80)' }}
             />
 
             <div className="relative z-10 h-full flex items-center justify-center text-center p-8 lg:p-10">
               <h2
-                className="text-white font-black"
+                className="font-black"
                 style={{
+                  color: '#203478',
                   fontFamily: 'Rubik, sans-serif',
                   fontSize: 'clamp(2.2rem, 4vw, 3.4rem)',
                   fontWeight: 900,
@@ -69,19 +70,10 @@ export default function Problems() {
               {bullets.map((b, i) => (
                 <div
                   key={i}
-                  className="reveal opacity-0 translate-y-8 transition-all duration-700 flex items-start gap-5"
+                  className="reveal opacity-0 translate-y-8 transition-all duration-700 flex items-start gap-5 group"
                   style={{ transitionDelay: `${i * 80}ms` }}
                 >
-                  <div
-                    className="flex items-center justify-center flex-shrink-0"
-                    style={{
-                      width: '46px',
-                      height: '46px',
-                      borderRadius: '50%',
-                      border: '1.5px solid rgba(32,52,120,0.25)',
-                      color: '#203478',
-                    }}
-                  >
+                  <div className="icon-lux icon-lux-sm icon-lux-round">
                     {b.icon}
                   </div>
                   <p

@@ -187,7 +187,7 @@ const cards = [
 
 export default function Science() {
   return (
-    <section id="ciencia" className="relative overflow-hidden" style={{ background: '#EEF4F8' }}>
+    <section id="ciencia-legacy" className="relative overflow-hidden" style={{ background: '#EEF4F8' }}>
       <div className="max-w-7xl mx-auto px-6 py-16">
 
         {/* Header */}
