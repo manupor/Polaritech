@@ -1,5 +1,5 @@
-import React from 'react'
-import { ArrowRight, Shield, Sun, Thermometer, Cpu, CheckCircle2 } from 'lucide-react'
+import React, { useState } from 'react'
+import { ArrowRight, Shield, Sun, Thermometer, Cpu, CheckCircle2, Phone, Mail, User, Building, MessageSquare } from 'lucide-react'
 
 const heroFeatures = [
   { icon: <Thermometer size={18} strokeWidth={1.6} />, label: 'Reducción térmica' },
@@ -10,11 +10,27 @@ const heroFeatures = [
 ]
 
 export default function Hero() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    company: '',
+    message: ''
+  })
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    // Form submission logic would go here
+    alert('Gracias por su solicitud. Nos pondremos en contacto pronto.')
+  }
+
   return (
     <>
+    {/* Main Hero Section */}
     <section
       id="inicio"
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center overflow-hidden"
+      style={{ paddingTop: '70px' }}
     >
       {/* Full-width background photo */}
       <div
@@ -31,177 +47,270 @@ export default function Hero() {
       <div
         className="absolute inset-0"
         style={{
-          background: 'linear-gradient(135deg, rgba(32,52,120,0.85) 0%, rgba(32,52,120,0.70) 50%, rgba(91,161,48,0.60) 100%)',
+          background: 'linear-gradient(90deg, rgba(32,52,120,0.90) 0%, rgba(32,52,120,0.80) 50%, rgba(32,52,120,0.60) 100%)',
         }}
       />
 
-      {/* Top accent bar */}
-      <div
-        className="absolute top-0 left-0 right-0 z-10"
-        style={{
-          height: '3px',
-          background: 'linear-gradient(90deg, #3EB5CC 0%, #88C140 50%, #5BA130 100%)',
-        }}
-      />
-
-      {/* Main content — centered */}
-      <div className="relative z-10 max-w-4xl mx-auto px-6 sm:px-8 text-center py-20">
-        
-        {/* Tagline badge */}
-        <div 
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8"
-          style={{ 
-            background: 'rgba(255,255,255,0.15)', 
-            border: '1px solid rgba(255,255,255,0.25)',
-            backdropFilter: 'blur(8px)'
-          }}
-        >
-          <span style={{ color: '#88C140', fontSize: '8px' }}>●</span>
-          <span style={{ 
-            fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
-            color: '#FFFFFF',
-            fontSize: '0.85rem',
-            letterSpacing: '0.1em',
-            textTransform: 'uppercase'
-          }}>
-            Control Solar Avanzado
-          </span>
-        </div>
-
-        {/* Headline */}
-        <h1
-          className="mb-6"
-          style={{
-            color: '#FFFFFF',
-            fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
-            fontSize: 'clamp(2.8rem, 5.5vw, 4.5rem)',
-            fontWeight: 500,
-            lineHeight: 1.1,
-            letterSpacing: '-0.02em',
-            textShadow: '0 2px 20px rgba(0,0,0,0.3)',
-          }}
-        >
-          Tecnología que reduce calor y{' '}
-          <span style={{ color: '#88C140' }}>protege</span>{' '}
-          sus espacios.
-        </h1>
-
-        {/* Sub-headline */}
-        <p
-          className="mb-8 mx-auto"
-          style={{
-            color: 'rgba(255,255,255,0.85)',
-            fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif',
-            fontWeight: 400,
-            fontSize: 'clamp(1rem, 2vw, 1.25rem)',
-            lineHeight: 1.6,
-            maxWidth: '600px',
-            textShadow: '0 1px 10px rgba(0,0,0,0.2)',
-          }}
-        >
-          Más que polarizar ventanas, ayudamos a mejorar el confort, la privacidad y la protección de
-          hogares, oficinas y proyectos arquitectónicos.
-        </p>
-
-        {/* Accent line */}
-        <div
-          className="mx-auto mb-8"
-          style={{ width: '60px', height: '3px', borderRadius: '2px', background: '#88C140' }}
-        />
-
-        {/* CTAs — ConstructZilla style */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-          <a 
-            href="#cotizar" 
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 text-white font-semibold transition-all duration-300 hover:opacity-90 w-full sm:w-auto"
-            style={{ 
-              background: '#5BA130', 
-              fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
-              fontSize: '14px',
-              fontWeight: 600,
-              borderRadius: '0',
-              textTransform: 'uppercase',
-              letterSpacing: '0.05em'
-            }}
-          >
-            Solicitar asesoría
-            <ArrowRight size={16} />
-          </a>
-          <a 
-            href="#soluciones" 
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 font-semibold transition-all duration-300 hover:bg-white/10 border w-full sm:w-auto"
-            style={{ 
-              borderColor: 'rgba(255,255,255,0.5)', 
-              color: '#FFFFFF', 
-              fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
-              fontSize: '14px',
-              fontWeight: 600,
-              borderRadius: '0',
-              textTransform: 'uppercase',
-              letterSpacing: '0.05em',
-              background: 'transparent'
-            }}
-          >
-            Ver soluciones
-          </a>
-        </div>
-
-        {/* Feature icons — ConstructZilla style */}
-        <div className="flex flex-wrap items-center justify-center gap-4">
-          {heroFeatures.map((f) => (
-            <div
-              key={f.label}
-              className="flex flex-col items-center gap-2 text-center px-4 py-3 rounded-xl transition-all duration-300 hover:bg-white/10"
+      {/* Main content with two columns */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-16 w-full">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          
+          {/* LEFT - Content */}
+          <div className="text-white">
+            {/* Tagline badge */}
+            <div 
+              className="inline-flex items-center gap-2 px-4 py-2 mb-6"
+              style={{ 
+                background: 'rgba(91,161,48,0.2)', 
+                border: '1px solid rgba(91,161,48,0.4)',
+              }}
             >
-              <div 
-                className="w-11 h-11 rounded-full flex items-center justify-center"
-                style={{ background: 'rgba(136,193,64,0.2)', color: '#88C140', border: '1px solid rgba(136,193,64,0.3)' }}
-              >
-                {f.icon}
-              </div>
-              <span
-                style={{
-                  fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif',
-                  fontSize: '10px',
-                  fontWeight: 500,
-                  letterSpacing: '0.02em',
-                  color: 'rgba(255,255,255,0.8)',
-                  maxWidth: '85px',
-                  lineHeight: 1.3,
-                }}
-              >
-                {f.label}
+              <span style={{ 
+                fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
+                color: '#5BA130',
+                fontSize: '0.8rem',
+                letterSpacing: '0.1em',
+                textTransform: 'uppercase'
+              }}>
+                Control Solar Avanzado
               </span>
             </div>
-          ))}
+
+            {/* Headline */}
+            <h1
+              className="mb-6"
+              style={{
+                color: '#FFFFFF',
+                fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
+                fontSize: 'clamp(2.5rem, 4.5vw, 3.8rem)',
+                fontWeight: 500,
+                lineHeight: 1.15,
+                letterSpacing: '-0.02em',
+              }}
+            >
+              Tecnología que reduce calor y{' '}
+              <span style={{ color: '#5BA130' }}>protege</span>{' '}
+              sus espacios.
+            </h1>
+
+            {/* Sub-headline */}
+            <p
+              className="mb-8"
+              style={{
+                color: 'rgba(255,255,255,0.85)',
+                fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif',
+                fontWeight: 400,
+                fontSize: '1.1rem',
+                lineHeight: 1.7,
+                maxWidth: '500px',
+              }}
+            >
+              Más que polarizar ventanas, ayudamos a mejorar el confort, la privacidad y la protección de
+              hogares, oficinas y proyectos arquitectónicos.
+            </p>
+
+            {/* Accent line */}
+            <div
+              className="mb-8"
+              style={{ width: '60px', height: '3px', background: '#5BA130' }}
+            />
+
+            {/* CTAs - ConstructZilla skew button style */}
+            <div className="flex flex-col sm:flex-row items-start gap-4">
+              <a 
+                href="#cotizar" 
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-white font-semibold transition-all duration-300 hover:opacity-90"
+                style={{ 
+                  background: '#5BA130', 
+                  fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
+                  fontSize: '13px',
+                  fontWeight: 600,
+                  borderRadius: '0',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.05em'
+                }}
+              >
+                Solicitar asesoría
+                <ArrowRight size={16} />
+              </a>
+              <a 
+                href="#soluciones" 
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 font-semibold transition-all duration-300 hover:bg-white hover:text-[#203478] border"
+                style={{ 
+                  borderColor: 'rgba(255,255,255,0.5)', 
+                  color: '#FFFFFF', 
+                  fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
+                  fontSize: '13px',
+                  fontWeight: 600,
+                  borderRadius: '0',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.05em',
+                  background: 'transparent'
+                }}
+              >
+                Ver soluciones
+              </a>
+            </div>
+
+            {/* Feature icons */}
+            <div className="flex flex-wrap items-center gap-6 mt-12">
+              {heroFeatures.map((f) => (
+                <div
+                  key={f.label}
+                  className="flex flex-col items-center gap-2 text-center"
+                >
+                  <div 
+                    className="w-12 h-12 flex items-center justify-center"
+                    style={{ background: 'rgba(91,161,48,0.2)', color: '#5BA130' }}
+                  >
+                    {f.icon}
+                  </div>
+                  <span
+                    style={{
+                      fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif',
+                      fontSize: '10px',
+                      fontWeight: 500,
+                      color: 'rgba(255,255,255,0.7)',
+                      maxWidth: '80px',
+                      lineHeight: 1.3,
+                    }}
+                  >
+                    {f.label}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* RIGHT - Quote Form */}
+          <div className="hidden lg:block">
+            <div 
+              className="p-8"
+              style={{ 
+                background: 'rgba(255,255,255,0.95)', 
+                backdropFilter: 'blur(10px)',
+                border: '1px solid rgba(255,255,255,0.3)'
+              }}
+            >
+              <h3 
+                className="text-center mb-6"
+                style={{ 
+                  fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
+                  color: '#203478',
+                  fontSize: '1.4rem',
+                  fontWeight: 500,
+                }}
+              >
+                Solicitar Cotización
+              </h3>
+              
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="relative">
+                    <User size={16} className="absolute left-3 top-3.5 text-gray-400" />
+                    <input
+                      type="text"
+                      placeholder="Nombre"
+                      className="w-full pl-10 pr-4 py-3 text-sm border focus:outline-none focus:border-[#5BA130]"
+                      style={{ borderColor: 'rgba(32,52,120,0.15)' }}
+                      value={formData.name}
+                      onChange={(e) => setFormData({...formData, name: e.target.value})}
+                    />
+                  </div>
+                  <div className="relative">
+                    <Mail size={16} className="absolute left-3 top-3.5 text-gray-400" />
+                    <input
+                      type="email"
+                      placeholder="Email"
+                      className="w-full pl-10 pr-4 py-3 text-sm border focus:outline-none focus:border-[#5BA130]"
+                      style={{ borderColor: 'rgba(32,52,120,0.15)' }}
+                      value={formData.email}
+                      onChange={(e) => setFormData({...formData, email: e.target.value})}
+                    />
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="relative">
+                    <Phone size={16} className="absolute left-3 top-3.5 text-gray-400" />
+                    <input
+                      type="tel"
+                      placeholder="Teléfono"
+                      className="w-full pl-10 pr-4 py-3 text-sm border focus:outline-none focus:border-[#5BA130]"
+                      style={{ borderColor: 'rgba(32,52,120,0.15)' }}
+                      value={formData.phone}
+                      onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                    />
+                  </div>
+                  <div className="relative">
+                    <Building size={16} className="absolute left-3 top-3.5 text-gray-400" />
+                    <input
+                      type="text"
+                      placeholder="Empresa (opcional)"
+                      className="w-full pl-10 pr-4 py-3 text-sm border focus:outline-none focus:border-[#5BA130]"
+                      style={{ borderColor: 'rgba(32,52,120,0.15)' }}
+                      value={formData.company}
+                      onChange={(e) => setFormData({...formData, company: e.target.value})}
+                    />
+                  </div>
+                </div>
+                
+                <div className="relative">
+                  <MessageSquare size={16} className="absolute left-3 top-3.5 text-gray-400" />
+                  <textarea
+                    placeholder="Mensaje"
+                    rows="3"
+                    className="w-full pl-10 pr-4 py-3 text-sm border focus:outline-none focus:border-[#5BA130] resize-none"
+                    style={{ borderColor: 'rgba(32,52,120,0.15)' }}
+                    value={formData.message}
+                    onChange={(e) => setFormData({...formData, message: e.target.value})}
+                  />
+                </div>
+                
+                <button
+                  type="submit"
+                  className="w-full py-4 text-white font-semibold transition-all duration-300 hover:opacity-90 flex items-center justify-center gap-2"
+                  style={{ 
+                    background: '#5BA130',
+                    fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
+                    fontSize: '13px',
+                    fontWeight: 600,
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.05em'
+                  }}
+                >
+                  Enviar solicitud
+                  <ArrowRight size={16} />
+                </button>
+              </form>
+            </div>
+          </div>
+
         </div>
       </div>
-
-      {/* Bottom divider */}
-      <div className="relative z-10 h-px" style={{ background: 'rgba(255,255,255,0.15)' }} />
     </section>
 
-    {/* Meet & Ask section — ConstructZilla style */}
-    <section className="relative z-20 bg-white border-b border-[rgba(32,52,120,0.08)]" style={{ marginTop: '-1px' }}>
+    {/* Meet & Ask section - ConstructZilla style */}
+    <section className="relative z-20 bg-white border-b border-[rgba(32,52,120,0.08)]">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col lg:flex-row items-center justify-between py-6 gap-4">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(91,161,48,0.1)', color: '#5BA130' }}>
-              <Shield size={24} />
+        <div className="flex flex-col lg:flex-row items-center justify-between py-8 gap-6">
+          <div className="flex items-center gap-5">
+            <div className="w-16 h-16 flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(91,161,48,0.1)', color: '#5BA130' }}>
+              <Shield size={28} />
             </div>
             <div>
-              <h3 style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', color: '#203478', fontSize: '1.1rem', fontWeight: 500, marginBottom: '4px' }}>
-                Solicitar asesoría
+              <h3 style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', color: '#203478', fontSize: '1.2rem', fontWeight: 500, marginBottom: '4px' }}>
+                ¿Necesita asesoría personalizada?
               </h3>
-              <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', color: '#5a6a82', fontSize: '0.9rem' }}>
-                Le ayudamos a encontrar la mejor solución para su espacio.
+              <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', color: '#5a6a82', fontSize: '0.95rem' }}>
+                Le ayudamos a encontrar la mejor solución para su espacio. Cotización sin compromiso.
               </p>
             </div>
           </div>
           <div className="flex items-center gap-3">
             <a 
               href="#cotizar" 
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 text-white font-semibold transition-all duration-300 hover:opacity-90"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 text-white font-semibold transition-all duration-300 hover:opacity-90"
               style={{ 
                 background: '#5BA130', 
                 fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
@@ -213,11 +322,11 @@ export default function Hero() {
               }}
             >
               <span>Contactar</span>
-              <ArrowRight size={14} />
+              <ArrowRight size={16} />
             </a>
             <a 
               href="#soluciones" 
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 font-semibold transition-all duration-300 hover:bg-[#203478] hover:text-white border"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 font-semibold transition-all duration-300 hover:bg-[#203478] hover:text-white border"
               style={{ 
                 borderColor: '#203478',
                 color: '#203478',
@@ -231,7 +340,7 @@ export default function Hero() {
               }}
             >
               <span>Ver más</span>
-              <ArrowRight size={14} />
+              <ArrowRight size={16} />
             </a>
           </div>
         </div>
