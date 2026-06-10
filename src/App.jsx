@@ -1,18 +1,13 @@
 import React, { useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import Benefits from './components/Benefits'
+import History from './components/History'
+import Philosophy from './components/Philosophy'
 import SolarRadiation from './components/SolarRadiation'
+import Solution from './components/Solution'
+import OurSolutions from './components/OurSolutions'
 import Applications from './components/Applications'
-import Comparison from './components/Comparison'
-import ExperienciaReal from './components/ExperienciaReal'
-import BeforeAfter from './components/BeforeAfter'
-import HowItWorks from './components/HowItWorks'
-import Testimonials from './components/Testimonials'
-import EducationalBlog from './components/EducationalBlog'
-import CTABanner from './components/CTABanner'
-import FAQ from './components/FAQ'
-import Quote from './components/Quote'
+import Contact from './components/Contact'
 import Footer from './components/Footer'
 import WhatsAppButton from './components/WhatsAppButton'
 import StickyMobileCTA from './components/StickyMobileCTA'
@@ -41,32 +36,22 @@ function App() {
     <div className="min-h-screen bg-[#EEF4F8] text-[#203478] font-sans">
       <Navbar />
       <main>
-        {/* 1. Hero — Más que polarizado. Ingeniería solar */}
+        {/* HERO */}
         <Hero />
-        {/* 2. Solar Radiation — ¿Sabías que el calor no siempre es visible? (única sección de ciencia) */}
+        {/* NUESTRA HISTORIA */}
+        <History />
+        {/* NUESTRA FILOSOFÍA */}
+        <Philosophy />
+        {/* EL PROBLEMA */}
         <SolarRadiation />
-        {/* 3. Benefits — ¿Por qué Polaritech? */}
-        <Benefits />
-        {/* 5. Applications — Nuestras Soluciones para cada espacio */}
+        {/* LA SOLUCIÓN */}
+        <Solution />
+        {/* NUESTRAS SOLUCIONES */}
+        <OurSolutions />
+        {/* APLICACIONES */}
         <Applications />
-        {/* 6. Comparison — Nano cerámica vs. polarizado convencional */}
-        <Comparison />
-        {/* 7. Experiencia Real — Antes/Después, Mediciones, Instalaciones, Testimonios */}
-        <ExperienciaReal />
-        {/* 8. Before/After — Comparador visual interactivo */}
-        <BeforeAfter />
-        {/* 8. Process — Proceso Polaritech (5 pasos) */}
-        <HowItWorks />
-        {/* 9. Testimonials — Clientes reales */}
-        <Testimonials />
-        {/* 10. Centro Educativo — Blog / artículos educativos */}
-        <EducationalBlog />
-        {/* 11. CTA Final — La tecnología detrás del confort */}
-        <CTABanner />
-        {/* 12. FAQ — Preguntas frecuentes */}
-        <FAQ />
-        {/* 13. Quote Form — Captura de leads */}
-        <Quote />
+        {/* CONTACTO */}
+        <Contact />
       </main>
       <Footer />
       <WhatsAppButton />

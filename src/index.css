@@ -1,3 +1,4 @@
+@import url('https://fonts.cdnfonts.com/css/myriad-pro');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -34,7 +35,7 @@
   body {
     background-color: #EEF4F8;
     color: #203478;
-    font-family: 'Merriweather', Georgia, serif;  /* Newry: editorial serif body */
+    font-family: 'Myriad Pro Regular', Myriad Pro, sans-serif;  /* MYRIAD REGULAR for texts and paragraphs */
     font-size: 15px;
     line-height: 1.80;
     font-weight: 400;
@@ -43,9 +44,9 @@
     overflow-x: hidden;
   }
 
-  /* Headings — Rubik (Newry-exact) */
+  /* Headings — MYRIAD PRO Bold */
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Rubik', system-ui, sans-serif;
+    font-family: 'Myriad Pro Bold', Myriad Pro, sans-serif;
     font-weight: 700;
     letter-spacing: -0.01em;
     line-height: 1.15;
@@ -181,9 +182,9 @@
   /* ─── Newry buttons: rectangular, outline-to-fill, uppercase, tracked ───────── */
   .btn-primary {
     @apply inline-flex items-center gap-3 font-semibold transition-all duration-200;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Myriad Pro Bold', Myriad Pro, sans-serif;
     font-size: 11px;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     padding: 15px 38px;
@@ -207,9 +208,9 @@
   /* ─── Secondary: rectangle outline ─────────────────────────────────────── */
   .btn-secondary {
     @apply inline-flex items-center gap-3 font-semibold transition-all duration-200;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Myriad Pro Bold', Myriad Pro, sans-serif;
     font-size: 11px;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     padding: 15px 38px;
@@ -228,9 +229,9 @@
   /* ─── Secondary button variant for light backgrounds ────────────────────── */
   .btn-secondary-light {
     @apply inline-flex items-center gap-3 font-semibold transition-all duration-200;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Myriad Pro Bold', Myriad Pro, sans-serif;
     font-size: 11px;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     padding: 15px 38px;
@@ -245,12 +246,12 @@
     color: #3EB5CC;
   }
 
-  /* ─── Section label — Newry: plain Rubik uppercase, wide-tracked ─────────── */
+  /* ─── Section label — MYRIAD PRO Bold uppercase, wide-tracked ─────────── */
   .section-label {
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Myriad Pro Bold', Myriad Pro, sans-serif;
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.28em;

@@ -1,34 +1,44 @@
 import React from 'react'
 import { Home, Building2, Building, PanelsTopLeft } from 'lucide-react'
+import { useParallax, useScrollAnimation, useParallaxScale } from '../hooks/useParallax'
 
 const spaces = [
   {
     icon: <Home size={22} />,
     title: 'Hogares',
-    desc: 'Confort térmico, protección UV y estética para su hogar.',
+    desc: 'Confort térmico y protección para toda la familia.',
     img: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=600&q=80',
   },
   {
     icon: <Building2 size={22} />,
     title: 'Oficinas',
-    desc: 'Reducción de resplandor y confort visual para mayor productividad.',
+    desc: 'Mayor productividad con confort visual y térmico.',
     img: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=600&q=80',
   },
   {
     icon: <Building size={22} />,
     title: 'Condominios',
-    desc: 'Transparencia sin alterar fachadas ni reglas de construcción.',
+    desc: 'Soluciones que respetan reglas de construcción.',
     img: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=600&q=80',
   },
   {
     icon: <PanelsTopLeft size={22} />,
-    title: 'Grandes ventanales',
-    desc: 'Control solar de alto rendimiento para ventanales amplios.',
+    title: 'Comercios',
+    desc: 'Protección de productos y comodidad para clientes.',
     img: 'https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=600&q=80',
+  },
+  {
+    icon: <Home size={22} />,
+    title: 'Grandes ventanales',
+    desc: 'Control solar de alto rendimiento para amplios espacios.',
+    img: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=600&q=80',
   },
 ]
 
 export default function Applications() {
+  const headerRef = useScrollAnimation(0.15)
+  const cardsRef = useScrollAnimation(0.2)
+  const scaleRef = useParallaxScale(0.9, 1.1, 0.002)
   return (
     <section id="soluciones" className="relative py-20 sm:py-32 overflow-hidden" style={{ background: '#FFFFFF' }}>
 
@@ -38,23 +48,23 @@ export default function Applications() {
           <h2
             className="font-black"
             style={{
-              fontFamily: 'Rubik, sans-serif',
+              fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
               fontSize: 'clamp(1.1rem, 2vw, 1.4rem)',
-              fontWeight: 900,
+              fontWeight: 700,
               color: '#203478',
               letterSpacing: '0.01em',
             }}
           >
-            NUESTRAS SOLUCIONES
+            APLICACIONES
           </h2>
-          <p style={{ fontFamily: 'Rubik, sans-serif', fontSize: '0.85rem', color: '#6b7a99' }}>
-            Soluciones para cada tipo de espacio.
+          <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', fontSize: '0.85rem', color: '#6b7a99' }}>
+            Lugares donde optimizamos tu confort y privacidad.
           </p>
           <span className="title-accent" />
         </div>
 
-        {/* 4-col grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* 5-col grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
           {spaces.map((s, i) => (
             <div
               key={s.title}
@@ -72,11 +82,11 @@ export default function Applications() {
 
               <div className="flex items-center gap-2.5 mb-2" style={{ color: '#203478' }}>
                 {s.icon}
-                <h3 className="font-bold text-lg" style={{ fontFamily: 'Rubik, sans-serif', color: '#203478' }}>
+                <h3 className="font-bold text-lg" style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', color: '#203478' }}>
                   {s.title}
                 </h3>
               </div>
-              <p className="text-sm leading-relaxed font-light" style={{ color: '#6b7a99' }}>
+              <p className="text-sm leading-relaxed font-light" style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', color: '#6b7a99' }}>
                 {s.desc}
               </p>
             </div>

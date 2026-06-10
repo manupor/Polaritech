@@ -1,45 +1,58 @@
 import React from 'react'
+import { useParallax, useScrollAnimation, useParallaxRotate } from '../hooks/useParallax'
 
 const rows = [
   {
-    title: 'Luz visible',
+    title: 'Luz Visible',
     accent: '#7c3aed',
     titleColor: '#203478',
-    desc: 'Permite la entrada de iluminación natural.',
+    desc: 'Permite la entrada de iluminación natural y contribuye a la sensación de amplitud en los espacios.',
   },
   {
     title: 'Infrarrojo (IR)',
     accent: '#f97316',
     titleColor: '#e85d2a',
-    desc: 'Es la principal responsable del calor que entra al interior.',
+    desc: 'Es uno de los principales responsables de la sensación térmica que experimentamos al estar cerca de una ventana expuesta al sol.',
   },
   {
     title: 'Ultravioleta (UV)',
     accent: '#88C140',
     titleColor: '#5BA130',
-    desc: 'Puede deteriorar muebles, pisos, cortinas, obras de arte y la piel.',
+    desc: 'Puede contribuir al desgaste y decoloración de muebles, pisos, cortinas, textiles y otros acabados interiores.',
   },
 ]
 
 export default function SolarRadiation() {
+  const contentRef = useScrollAnimation(0.15)
+  const imageRef = useParallax(0.3, 'up')
+  const tableRef = useScrollAnimation(0.2)
+  const rotateRef = useParallaxRotate(0.02)
   return (
-    <section id="ciencia" className="relative py-20 sm:py-32 overflow-hidden" style={{ background: '#FFFFFF' }}>
+    <section id="problema" className="relative py-20 sm:py-32 overflow-hidden" style={{ background: '#FFFFFF' }}>
       <div className="max-w-7xl mx-auto px-6">
 
         {/* ── Top band: text + photo ─────────────────────────────────── */}
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-20 lg:mb-28">
-          <div className="reveal opacity-0 translate-y-8 transition-all duration-700">
+          <div 
+            ref={contentRef.ref}
+            className="reveal opacity-0 translate-y-8 transition-all duration-700"
+            style={{
+              transform: `translateY(${contentRef.isVisible ? '0px' : '40px'})`,
+              opacity: contentRef.isVisible ? 1 : 0,
+              transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1)',
+            }}
+          >
             <h2
               style={{
                 color: '#203478',
-                fontFamily: 'Rubik, sans-serif',
+                fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
                 fontSize: 'clamp(2.2rem, 4vw, 3.4rem)',
-                fontWeight: 900,
+                fontWeight: 700,
                 lineHeight: 1.1,
                 letterSpacing: '-0.02em',
               }}
             >
-              ¿Sabías que el <span style={{ color: '#5BA130' }}>calor</span> no siempre es visible?
+              EL <span style={{ color: '#5BA130' }}>PROBLEMA</span>
             </h2>
 
             <div
@@ -47,9 +60,21 @@ export default function SolarRadiation() {
               style={{ width: '56px', height: '3px', borderRadius: '2px', background: '#5BA130' }}
             />
 
-            <p style={{ color: '#5a6a82', fontSize: '1.05rem', lineHeight: 1.7, maxWidth: '46ch' }}>
-              La mayor parte de la energía que sentimos al entrar a un espacio no proviene
-              de la luz, sino de la radiación infrarroja que atraviesa los vidrios.
+            <h3
+              style={{
+                color: '#203478',
+                fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
+                fontSize: 'clamp(1.6rem, 3vw, 2.2rem)',
+                fontWeight: 700,
+                lineHeight: 1.2,
+                marginBottom: '16px',
+              }}
+            >
+              El calor no siempre es visible
+            </h3>
+
+            <p style={{ color: '#5a6a82', fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', fontSize: '1.05rem', lineHeight: 1.7, maxWidth: '46ch' }}>
+              La energía solar está compuesta por diferentes tipos de radiación que afectan tus espacios de distintas maneras.
             </p>
           </div>
 
@@ -70,16 +95,16 @@ export default function SolarRadiation() {
           <h3
             style={{
               color: '#203478',
-              fontFamily: 'Rubik, sans-serif',
+              fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
               fontSize: 'clamp(1.6rem, 3vw, 2.4rem)',
-              fontWeight: 800,
+              fontWeight: 700,
               lineHeight: 1.2,
               letterSpacing: '-0.01em',
             }}
           >
             Así interactúa <span style={{ color: '#5BA130' }}>el sol</span> con tus espacios
           </h3>
-          <p className="mt-4" style={{ color: '#5a6a82', fontSize: '1rem', lineHeight: 1.7 }}>
+          <p className="mt-4" style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', color: '#5a6a82', fontSize: '1rem', lineHeight: 1.7 }}>
             La energía solar está compuesta por diferentes tipos de radiación. Algunas iluminan,
             otras generan calor y otras pueden deteriorar interiores con el tiempo.
           </p>
@@ -97,7 +122,7 @@ export default function SolarRadiation() {
                 <span style={{ width: '4px', height: '30px', borderRadius: '2px', background: r.accent }} />
                 <span
                   style={{
-                    fontFamily: 'Rubik, sans-serif',
+                    fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
                     fontWeight: 700,
                     fontSize: '1.2rem',
                     color: r.titleColor,
@@ -109,6 +134,7 @@ export default function SolarRadiation() {
               <div
                 className="flex items-center px-6 sm:px-8 py-5 sm:py-7 border-t sm:border-t-0 sm:border-l border-[rgba(32,52,120,0.08)]"
                 style={{
+                  fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif',
                   color: '#5a6a82',
                   fontSize: '0.98rem',
                   lineHeight: 1.6,

@@ -27,7 +27,36 @@ export default function Hero() {
           backgroundPosition: 'center right',
           backgroundRepeat: 'no-repeat',
         }}
-      />
+      >
+        {/* Feature icons at bottom right of image on desktop */}
+        <div className="hidden lg:flex absolute bottom-8 right-8">
+          <div className="flex flex-wrap items-center justify-end gap-x-6 gap-y-4 bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
+            {heroFeatures.map((f) => (
+              <div
+                key={f.label}
+                className="flex flex-col items-center gap-2 text-center group"
+              >
+                <div className="icon-lux icon-lux-sm icon-lux-round">
+                  {f.icon}
+                </div>
+                <span
+                  style={{
+                    fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif',
+                    fontSize: '10px',
+                    fontWeight: 500,
+                    letterSpacing: '0.04em',
+                    color: '#203478',
+                    maxWidth: '80px',
+                    lineHeight: 1.4,
+                  }}
+                >
+                  {f.label}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* Mobile-only white veil for text readability */}
       <div
@@ -82,16 +111,16 @@ export default function Hero() {
               className="mb-6"
               style={{
                 color: '#203478',
-                fontFamily: 'Rubik, sans-serif',
+                fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
                 fontSize: 'clamp(2.6rem, 4.6vw, 4.2rem)',
-                fontWeight: 900,
+                fontWeight: 700,
                 lineHeight: 1.08,
                 letterSpacing: '-0.02em',
               }}
             >
-              Ingeniería solar que{' '}
-              <span style={{ color: '#5BA130' }}>transforma</span>{' '}
-              tus espacios.
+              Tecnología que reduce calor y{' '}
+              <span style={{ color: '#5BA130' }}>protege</span>{' '}
+              sus espacios.
             </h1>
 
             {/* Accent line */}
@@ -103,15 +132,9 @@ export default function Hero() {
             {/* Lead */}
             <p
               className="mb-1"
-              style={{ color: '#5BA130', fontFamily: 'Rubik, sans-serif', fontWeight: 700, fontSize: '1.05rem' }}
+              style={{ color: '#5BA130', fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', fontWeight: 700, fontSize: '1.05rem' }}
             >
-              Más que polarizado.
-            </p>
-            <p
-              className="mb-6"
-              style={{ color: '#203478', fontWeight: 500, fontSize: '1.05rem', lineHeight: 1.5, maxWidth: '34ch' }}
-            >
-              Confort, protección y eficiencia para lo que más importa.
+              Más confort. Menos calor. Más protección.
             </p>
 
             {/* Sub-headline */}
@@ -119,14 +142,15 @@ export default function Hero() {
               className="mb-8"
               style={{
                 color: '#5a6a82',
+                fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif',
                 fontWeight: 400,
                 fontSize: '0.95rem',
                 lineHeight: 1.72,
                 maxWidth: '40ch',
               }}
             >
-              Especialistas en soluciones avanzadas de control solar, reducción térmica
-              y protección UV para hogares y comercios.
+              Más que polarizar ventanas, ayudamos a mejorar el confort, la privacidad y la protección de
+              hogares, oficinas y proyectos arquitectónicos mediante soluciones avanzadas de control solar.
             </p>
 
           </div>
@@ -145,33 +169,7 @@ export default function Hero() {
               </a>
             </div>
 
-            {/* Feature icons — wrap below CTAs within left panel */}
-            <div className="hidden md:flex flex-wrap items-start gap-x-7 gap-y-5 lg:gap-x-8">
-              {heroFeatures.map((f) => (
-                <div
-                  key={f.label}
-                  className="flex flex-col items-center gap-2.5 text-center group"
-                >
-                  <div className="icon-lux icon-lux-sm icon-lux-round">
-                    {f.icon}
-                  </div>
-                  <span
-                    style={{
-                      fontFamily: 'Rubik, sans-serif',
-                      fontSize: '9px',
-                      fontWeight: 500,
-                      letterSpacing: '0.04em',
-                      color: '#5a6a82',
-                      maxWidth: '72px',
-                      lineHeight: 1.45,
-                    }}
-                  >
-                    {f.label}
-                  </span>
-                </div>
-              ))}
-            </div>
-
+            
           </div>
         </div>
       </div>

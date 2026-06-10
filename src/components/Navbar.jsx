@@ -1,21 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { Menu, X, ChevronDown } from 'lucide-react'
-
-const products = [
-  'Lámina Polarizado Básica',
-  'Polarizado de Seguridad',
-  'Polarizado Anti-UV Transparente',
-  'Polarizado Nano Cerámica',
-  'Control Solar con Privacidad',
-  'Polarizado Silver Espejo',
-  'Sand Blasting Decorativo',
-  'Black Out / White Out',
-]
+import { Menu, X } from 'lucide-react'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
-  const [productsOpen, setProductsOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -25,12 +13,13 @@ export default function Navbar() {
 
   const navLinks = [
     { label: 'Inicio', href: '#inicio' },
-    { label: 'Nosotros', href: '#nosotros' },
-    { label: 'Beneficios', href: '#beneficios' },
-    { label: 'Productos', href: '#productos', hasDropdown: true },
-    { label: 'Cómo Funciona', href: '#como-funciona' },
-    { label: 'Aplicaciones', href: '#aplicaciones' },
-    { label: 'FAQ', href: '#faq' },
+    { label: 'Historia', href: '#historia' },
+    { label: 'Filosofía', href: '#filosofia' },
+    { label: 'El Problema', href: '#problema' },
+    { label: 'La Solución', href: '#solucion' },
+    { label: 'Soluciones', href: '#nuestras-soluciones' },
+    { label: 'Aplicaciones', href: '#soluciones' },
+    { label: 'Contacto', href: '#contacto' },
   ]
 
   return (
@@ -51,52 +40,20 @@ export default function Navbar() {
         </a>
 
         <ul className="hidden lg:flex items-center gap-1">
-          {navLinks.map((link) =>
-            link.hasDropdown ? (
-              <li key={link.label} className="relative group">
-                <button
-                  className="flex items-center gap-1 px-4 py-2 text-sm text-[#203478] hover:text-[#3EB5CC] transition-colors duration-200 rounded-lg hover:bg-[rgba(32,52,120,0.05)]"
-                  onMouseEnter={() => setProductsOpen(true)}
-                  onMouseLeave={() => setProductsOpen(false)}
-                >
-                  {link.label}
-                  <ChevronDown size={14} className="transition-transform duration-200 group-hover:rotate-180" />
-                </button>
-                <div
-                  onMouseEnter={() => setProductsOpen(true)}
-                  onMouseLeave={() => setProductsOpen(false)}
-                  className={`absolute top-full left-1/2 -translate-x-1/2 mt-1 w-64 transition-all duration-200 ${
-                    productsOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'
-                  }`}
-                >
-                  <div className="rounded-xl p-2 shadow-2xl" style={{ background: '#FFFFFF', border: '1px solid rgba(32,52,120,0.10)' }}>
-                    {products.map((p) => (
-                      <a
-                        key={p}
-                        href="#productos"
-                        className="block px-4 py-2.5 text-sm text-[#5a6a82] hover:text-[#203478] hover:bg-[rgba(32,52,120,0.05)] rounded-lg transition-colors duration-150"
-                      >
-                        {p}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              </li>
-            ) : (
-              <li key={link.label}>
-                <a
-                  href={link.href}
-                  className="px-4 py-2 text-sm text-[#203478] hover:text-[#3EB5CC] transition-colors duration-200 rounded-lg hover:bg-[rgba(32,52,120,0.05)] block"
-                >
-                  {link.label}
-                </a>
-              </li>
-            )
-          )}
+          {navLinks.map((link) => (
+            <li key={link.label}>
+              <a
+                href={link.href}
+                className="px-4 py-2 text-sm text-[#203478] hover:text-[#3EB5CC] transition-colors duration-200 rounded-lg hover:bg-[rgba(32,52,120,0.05)] block" style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
         </ul>
 
         <div className="hidden lg:flex items-center gap-3">
-          <a href="#cotizar" className="btn-primary text-sm py-2.5 px-6">
+          <a href="#cotizar" className="btn-primary text-sm py-2.5 px-6" style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif' }}>
             Cotizar ahora
           </a>
         </div>
