@@ -25,27 +25,28 @@ export default function Navbar() {
         <a href="#inicio" className="flex items-center relative group" style={{ height: '90px' }}>
           {/* Skewed background */}
           <div 
-            className="absolute left-0 top-0 h-full flex items-center px-8"
+            className="absolute left-0 top-0 h-full flex items-center justify-center"
             style={{ 
               background: '#203478',
               transform: 'skewX(-20deg)',
               transformOrigin: 'top left',
-              width: '280px',
+              width: '320px',
               left: '-40px'
             }}
           >
             {/* Inner container to un-skew the logo */}
-            <div style={{ transform: 'skewX(20deg)' }}>
+            <div style={{ transform: 'skewX(20deg)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <img
                 src="/logo-white.png"
                 alt="Polaritech"
-                className="h-10 w-auto object-contain"
+                className="h-14 w-auto object-contain"
+                style={{ maxWidth: '220px' }}
                 onError={(e) => { e.target.src = '/logo-color.png'; e.target.style.filter = 'brightness(0) invert(1)'; }}
               />
             </div>
           </div>
           {/* Spacer for the skewed container */}
-          <div style={{ width: '240px' }}></div>
+          <div style={{ width: '260px' }}></div>
         </a>
 
         <ul className="hidden lg:flex items-center">
