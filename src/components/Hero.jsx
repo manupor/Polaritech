@@ -57,25 +57,6 @@ export default function Hero() {
           
           {/* LEFT - Content */}
           <div className="text-white">
-            {/* Tagline badge */}
-            <div 
-              className="inline-flex items-center gap-2 px-4 py-2 mb-6"
-              style={{ 
-                background: 'rgba(91,161,48,0.2)', 
-                border: '1px solid rgba(91,161,48,0.4)',
-              }}
-            >
-              <span style={{ 
-                fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
-                color: '#5BA130',
-                fontSize: '0.8rem',
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase'
-              }}>
-                Control Solar Avanzado
-              </span>
-            </div>
-
             {/* Headline */}
             <h1
               className="mb-6"
