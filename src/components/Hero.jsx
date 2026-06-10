@@ -112,10 +112,10 @@ export default function Hero() {
               style={{
                 color: '#203478',
                 fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
-                fontSize: 'clamp(2.6rem, 4.6vw, 4.2rem)',
+                fontSize: 'clamp(3.2rem, 5.2vw, 4.8rem)',
                 fontWeight: 700,
-                lineHeight: 1.08,
-                letterSpacing: '-0.02em',
+                lineHeight: 1.05,
+                letterSpacing: '-0.03em',
               }}
             >
               Tecnología que reduce calor y{' '}
@@ -132,7 +132,7 @@ export default function Hero() {
             {/* Lead */}
             <p
               className="mb-1"
-              style={{ color: '#5BA130', fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', fontWeight: 700, fontSize: '1.05rem' }}
+              style={{ color: '#5BA130', fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', fontWeight: 700, fontSize: '1.1rem' }}
             >
               Más confort. Menos calor. Más protección.
             </p>

@@ -7,7 +7,7 @@ export default function MissionVision() {
   const visionRef = useScrollAnimation(0.2)
   const valuesRef = useScrollAnimation(0.25)
   return (
-    <section id="mision-vision" className="relative py-20 sm:py-32 overflow-hidden" style={{ background: '#F7FAFC' }}>
+    <section id="mision-vision" className="relative py-16 sm:py-24 overflow-hidden" style={{ background: '#F7FAFC' }}>
       <div className="max-w-7xl mx-auto px-6">
         
         {/* MISIÓN */}
@@ -30,7 +30,7 @@ export default function MissionVision() {
             </h2>
           </div>
           <div 
-            className="max-w-4xl p-8 rounded-2xl"
+            className="max-w-7xl p-8 rounded-2xl"
             style={{ background: '#FFFFFF', border: '1px solid rgba(32,52,120,0.08)' }}
           >
             <p style={{ color: '#5a6a82', fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', fontSize: '1.05rem', lineHeight: 1.7 }}>
@@ -61,7 +61,7 @@ export default function MissionVision() {
             </h2>
           </div>
           <div 
-            className="max-w-4xl p-8 rounded-2xl"
+            className="max-w-7xl p-8 rounded-2xl"
             style={{ background: '#FFFFFF', border: '1px solid rgba(32,52,120,0.08)' }}
           >
             <p style={{ color: '#5a6a82', fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', fontSize: '1.05rem', lineHeight: 1.7 }}>

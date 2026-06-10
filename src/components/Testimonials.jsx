@@ -52,7 +52,7 @@ function Stars({ count }) {
 
 export default function Testimonials() {
   return (
-    <section className="relative py-20 sm:py-32 overflow-hidden" style={{ background: '#EEF4F8' }}>
+    <section className="relative py-16 sm:py-24 overflow-hidden" style={{ background: '#EEF4F8' }}>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <div className="text-center mb-12 reveal opacity-0 translate-y-8 transition-all duration-700">

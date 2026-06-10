@@ -28,7 +28,7 @@ export default function SolarRadiation() {
   const tableRef = useScrollAnimation(0.2)
   const rotateRef = useParallaxRotate(0.02)
   return (
-    <section id="problema" className="relative py-20 sm:py-32 overflow-hidden" style={{ background: '#FFFFFF' }}>
+    <section id="problema" className="relative py-16 sm:py-24 overflow-hidden" style={{ background: '#FFFFFF' }}>
       <div className="max-w-7xl mx-auto px-6">
 
         {/* ── Top band: text + photo ─────────────────────────────────── */}
@@ -46,7 +46,7 @@ export default function SolarRadiation() {
               style={{
                 color: '#203478',
                 fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
-                fontSize: 'clamp(2.2rem, 4vw, 3.4rem)',
+                fontSize: 'clamp(2.8rem, 4.2vw, 3.6rem)',
                 fontWeight: 700,
                 lineHeight: 1.1,
                 letterSpacing: '-0.02em',
@@ -111,7 +111,7 @@ export default function SolarRadiation() {
         </div>
 
         {/* ── Radiation table ────────────────────────────────────────── */}
-        <div className="glass-card rounded-2xl overflow-hidden max-w-4xl mx-auto reveal opacity-0 translate-y-8 transition-all duration-700">
+        <div className="glass-card rounded-2xl overflow-hidden max-w-7xl mx-auto reveal opacity-0 translate-y-8 transition-all duration-700">
           {rows.map((r, i) => (
             <div
               key={r.title}

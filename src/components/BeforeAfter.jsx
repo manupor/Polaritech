@@ -40,7 +40,7 @@ export default function BeforeAfter() {
   }, [onMouseUp])
 
   return (
-    <section id="proyectos" className="relative py-20 sm:py-32 overflow-hidden" style={{ background: '#EEF4F8' }}>
+    <section id="proyectos" className="relative py-16 sm:py-24 overflow-hidden" style={{ background: '#EEF4F8' }}>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <div className="text-center mb-12 reveal opacity-0 translate-y-8 transition-all duration-700">
@@ -62,7 +62,7 @@ export default function BeforeAfter() {
           <span className="title-accent" />
         </div>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div
             ref={containerRef}
             className="relative h-72 sm:h-96 lg:h-[480px] rounded-3xl overflow-hidden cursor-ew-resize select-none shadow-2xl shadow-black/60"

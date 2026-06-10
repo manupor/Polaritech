@@ -50,9 +50,9 @@ const visitas = [
 
 export default function HowItWorks() {
   return (
-    <section id="como-funciona" className="relative py-20 sm:py-32 overflow-hidden" style={{ background: '#FFFFFF' }}>
+    <section id="como-funciona" className="relative py-16 sm:py-24 overflow-hidden" style={{ background: '#FFFFFF' }}>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-14 reveal opacity-0 translate-y-8 transition-all duration-700">
           <h2

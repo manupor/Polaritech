@@ -69,7 +69,7 @@ export default function OurSolutions() {
   const scaleRef = useParallaxScale(0.9, 1.1, 0.002)
 
   return (
-    <section id="nuestras-soluciones" className="relative py-20 sm:py-32 overflow-hidden" style={{ background: '#F7FAFC' }}>
+    <section id="nuestras-soluciones" className="relative py-16 sm:py-24 overflow-hidden" style={{ background: '#F7FAFC' }}>
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Header */}
@@ -78,7 +78,7 @@ export default function OurSolutions() {
             style={{
               color: '#203478',
               fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
-              fontSize: 'clamp(2.2rem, 4vw, 3.4rem)',
+              fontSize: 'clamp(2.8rem, 4.2vw, 3.6rem)',
               fontWeight: 700,
               lineHeight: 1.1,
               letterSpacing: '-0.02em',

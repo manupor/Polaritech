@@ -29,7 +29,7 @@ export default function Benefits() {
           <h2
             style={{
               fontFamily: 'Rubik, sans-serif',
-              fontSize: 'clamp(2.2rem, 4vw, 3.4rem)',
+              fontSize: 'clamp(2.8rem, 4.2vw, 3.6rem)',
               fontWeight: 900,
               color: '#203478',
               lineHeight: 1.08,

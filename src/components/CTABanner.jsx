@@ -10,7 +10,7 @@ const badges = [
 
 export default function CTABanner() {
   return (
-    <section className="relative py-20 sm:py-32 overflow-hidden" style={{ background: 'linear-gradient(135deg, #FFFFFF 0%, #EEF4F8 100%)' }}>
+    <section className="relative py-16 sm:py-24 overflow-hidden" style={{ background: 'linear-gradient(135deg, #FFFFFF 0%, #EEF4F8 100%)' }}>
       <div
         className="absolute top-0 left-0 right-0"
         style={{ height: '2px', background: 'linear-gradient(90deg, transparent, #3EB5CC 30%, #88C140 70%, transparent)' }}
@@ -26,7 +26,7 @@ export default function CTABanner() {
         />
       </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
         <div className="reveal opacity-0 translate-y-8 transition-all duration-700">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-10 text-xs font-semibold tracking-widest uppercase"
             style={{ background: 'rgba(62,181,204,0.10)', border: '1px solid rgba(62,181,204,0.22)', color: '#3EB5CC' }}

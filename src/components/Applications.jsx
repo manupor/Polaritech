@@ -40,7 +40,7 @@ export default function Applications() {
   const cardsRef = useScrollAnimation(0.2)
   const scaleRef = useParallaxScale(0.9, 1.1, 0.002)
   return (
-    <section id="soluciones" className="relative py-20 sm:py-32 overflow-hidden" style={{ background: '#FFFFFF' }}>
+    <section id="soluciones" className="relative py-16 sm:py-24 overflow-hidden" style={{ background: '#FFFFFF' }}>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Header */}

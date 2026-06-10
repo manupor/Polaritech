@@ -7,11 +7,11 @@ export default function Philosophy() {
   const cardsRef = useScrollAnimation(0.2)
   const floatingRef = useParallaxRotate(0.05)
   return (
-    <section id="filosofia" className="relative py-20 sm:py-32 overflow-hidden" style={{ background: '#FFFFFF' }}>
+    <section id="filosofia" className="relative py-16 sm:py-24 overflow-hidden" style={{ background: '#FFFFFF' }}>
       <div className="max-w-7xl mx-auto px-6">
         <div 
           ref={contentRef.ref}
-          className="max-w-4xl mx-auto text-center reveal opacity-0 translate-y-8 transition-all duration-700"
+          className="max-w-7xl mx-auto text-center reveal opacity-0 translate-y-8 transition-all duration-700"
           style={{
             transform: `translateY(${contentRef.isVisible ? '0px' : '40px'})`,
             opacity: contentRef.isVisible ? 1 : 0,
@@ -22,7 +22,7 @@ export default function Philosophy() {
             style={{
               color: '#203478',
               fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
-              fontSize: 'clamp(2.2rem, 4vw, 3.4rem)',
+              fontSize: 'clamp(2.8rem, 4.2vw, 3.6rem)',
               fontWeight: 700,
               lineHeight: 1.1,
               letterSpacing: '-0.02em',
