@@ -15,7 +15,7 @@ export default function Solution() {
   const benefitsRef = useScrollAnimation(0.2)
   const scaleRef = useParallaxScale(0.9, 1.1, 0.002)
   return (
-    <section id="solucion" className="relative py-16 sm:py-24 overflow-hidden" style={{ background: '#FFFFFF' }}>
+    <section id="solucion" className="relative py-16 sm:py-24 overflow-hidden" style={{ background: '#F7FAFC' }}>
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Header */}
@@ -60,64 +60,74 @@ export default function Solution() {
           </h3>
         </div>
 
-        {/* Main content */}
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        {/* Main content — ConstructZilla style card layout */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="reveal opacity-0 translate-y-8 transition-all duration-700">
-            <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', color: '#5a6a82', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '24px' }}>
-              Cuando instalamos una película de control solar ayudamos a gestionar la energía que atraviesa el vidrio.
-            </p>
-            
-            <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', color: '#5a6a82', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '24px' }}>
-              Dependiendo de la tecnología seleccionada, nuestras soluciones ofrecen una retención de radiación infrarroja (IRR) desde un 65% hasta un 98%.
-            </p>
-            
-            <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', color: '#5a6a82', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '32px' }}>
-              Esta reducción contribuye significativamente a disminuir la sensación térmica y mejorar el confort de los espacios.
-            </p>
+            <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-10" style={{ border: '1px solid rgba(32,52,120,0.06)' }}>
+              <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', color: '#5a6a82', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '24px' }}>
+                Cuando instalamos una película de control solar ayudamos a gestionar la energía que atraviesa el vidrio.
+              </p>
+              
+              <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', color: '#5a6a82', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '24px' }}>
+                Dependiendo de la tecnología seleccionada, nuestras soluciones ofrecen una retención de radiación infrarroja (IRR) desde un 65% hasta un 98%.
+              </p>
+              
+              <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', color: '#5a6a82', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '32px' }}>
+                Esta reducción contribuye significativamente a disminuir la sensación térmica y mejorar el confort de los espacios.
+              </p>
 
-            <div className="mb-8">
-              <h4 
-                style={{
+              <div className="mb-8 p-6 rounded-xl" style={{ background: '#F7FAFC', border: '1px solid rgba(91,161,48,0.15)' }}>
+                <h4 
+                  style={{
+                    fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
+                    fontSize: '1.1rem',
+                    fontWeight: 500,
+                    color: '#203478',
+                    marginBottom: '16px'
+                  }}
+                >
+                  Beneficios:
+                </h4>
+                <div className="space-y-3">
+                  {benefits.map((benefit, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <div style={{ 
+                        width: '22px', 
+                        height: '22px', 
+                        borderRadius: '50%', 
+                        background: '#5BA130',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        flexShrink: 0
+                      }}>
+                        <CheckCircle2 size={13} style={{ color: '#FFFFFF' }} />
+                      </div>
+                      <span style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', color: '#5a6a82', fontSize: '1rem', lineHeight: 1.6 }}>
+                        {benefit}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <a 
+                href="#cotizar" 
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-white font-medium transition-all duration-300 hover:shadow-xl hover:scale-105"
+                style={{ 
+                  background: '#5BA130', 
                   fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
-                  fontSize: '1.1rem',
-                  fontWeight: 500,
-                  color: '#203478',
-                  marginBottom: '16px'
+                  boxShadow: '0 10px 30px rgba(91,161,48,0.3)'
                 }}
               >
-                Beneficios:
-              </h4>
-              <div className="space-y-3">
-                {benefits.map((benefit, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <div style={{ 
-                      width: '20px', 
-                      height: '20px', 
-                      borderRadius: '50%', 
-                      background: '#5BA130',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      flexShrink: 0
-                    }}>
-                      <CheckCircle2 size={12} style={{ color: '#FFFFFF' }} />
-                    </div>
-                    <span style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', color: '#5a6a82', fontSize: '1rem', lineHeight: 1.6 }}>
-                      {benefit}
-                    </span>
-                  </div>
-                ))}
-              </div>
+                Solicitar asesoría
+                <ArrowRight size={18} />
+              </a>
             </div>
-
-            <a href="#cotizar" className="btn-primary">
-              Solicitar asesoría
-              <ArrowRight size={15} />
-            </a>
           </div>
 
           <div className="reveal opacity-0 translate-y-8 transition-all duration-700 relative">
-            <div className="relative rounded-2xl overflow-hidden shadow-xl" style={{ minHeight: '400px' }}>
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl" style={{ minHeight: '400px' }}>
               <img
                 src="/450.jpg"
                 alt="Solución Polaritech"
@@ -126,36 +136,36 @@ export default function Solution() {
               <div 
                 className="absolute inset-0"
                 style={{
-                  background: 'linear-gradient(135deg, rgba(32,52,120,0.1) 0%, rgba(91,161,48,0.1) 100%)'
+                  background: 'linear-gradient(135deg, rgba(32,52,120,0.15) 0%, rgba(91,161,48,0.15) 100%)'
                 }}
               />
               
               {/* Technology icons at bottom of image in 2x2 grid */}
-              <div className="hidden lg:flex absolute bottom-2 left-8 right-8 justify-center">
-                <div className="grid grid-cols-2 gap-8 bg-black/30 backdrop-blur-sm rounded-2xl p-6">
-                  <div className="flex flex-col items-center text-center">
-                    <div className="icon-lux icon-lux-sm icon-lux-round mb-3" style={{ color: '#FFFFFF', background: 'rgba(91,161,48,0.8)' }}>
+              <div className="hidden lg:flex absolute bottom-4 left-6 right-6 justify-center">
+                <div className="grid grid-cols-2 gap-4 bg-white/95 backdrop-blur-sm rounded-2xl p-5 shadow-lg" style={{ border: '1px solid rgba(255,255,255,0.3)' }}>
+                  <div className="flex flex-col items-center text-center p-3 rounded-xl transition-all duration-300 hover:bg-green-50">
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center mb-2" style={{ background: 'rgba(91,161,48,0.1)', color: '#5BA130' }}>
                       <Shield size={20} />
                     </div>
-                    <span style={{ color: '#FFFFFF', fontSize: '0.9rem', fontWeight: 600, fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>Protección UV</span>
+                    <span style={{ color: '#203478', fontSize: '0.85rem', fontWeight: 500, fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>Protección UV</span>
                   </div>
-                  <div className="flex flex-col items-center text-center">
-                    <div className="icon-lux icon-lux-sm icon-lux-round mb-3" style={{ color: '#FFFFFF', background: 'rgba(91,161,48,0.8)' }}>
+                  <div className="flex flex-col items-center text-center p-3 rounded-xl transition-all duration-300 hover:bg-green-50">
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center mb-2" style={{ background: 'rgba(91,161,48,0.1)', color: '#5BA130' }}>
                       <Sun size={20} />
                     </div>
-                    <span style={{ color: '#FFFFFF', fontSize: '0.9rem', fontWeight: 600, fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>Control Térmico</span>
+                    <span style={{ color: '#203478', fontSize: '0.85rem', fontWeight: 500, fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>Control Térmico</span>
                   </div>
-                  <div className="flex flex-col items-center text-center">
-                    <div className="icon-lux icon-lux-sm icon-lux-round mb-3" style={{ color: '#FFFFFF', background: 'rgba(91,161,48,0.8)' }}>
+                  <div className="flex flex-col items-center text-center p-3 rounded-xl transition-all duration-300 hover:bg-green-50">
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center mb-2" style={{ background: 'rgba(91,161,48,0.1)', color: '#5BA130' }}>
                       <Eye size={20} />
                     </div>
-                    <span style={{ color: '#FFFFFF', fontSize: '0.9rem', fontWeight: 600, fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>Transparencia</span>
+                    <span style={{ color: '#203478', fontSize: '0.85rem', fontWeight: 500, fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>Transparencia</span>
                   </div>
-                  <div className="flex flex-col items-center text-center">
-                    <div className="icon-lux icon-lux-sm icon-lux-round mb-3" style={{ color: '#FFFFFF', background: 'rgba(91,161,48,0.8)' }}>
+                  <div className="flex flex-col items-center text-center p-3 rounded-xl transition-all duration-300 hover:bg-green-50">
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center mb-2" style={{ background: 'rgba(91,161,48,0.1)', color: '#5BA130' }}>
                       <CheckCircle2 size={20} />
                     </div>
-                    <span style={{ color: '#FFFFFF', fontSize: '0.9rem', fontWeight: 600, fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>Garantía</span>
+                    <span style={{ color: '#203478', fontSize: '0.85rem', fontWeight: 500, fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>Garantía</span>
                   </div>
                 </div>
               </div>
