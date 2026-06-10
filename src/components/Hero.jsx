@@ -1,13 +1,5 @@
 import React, { useState } from 'react'
-import { ArrowRight, Shield, Sun, Thermometer, Cpu, CheckCircle2, Phone, Mail, User, Building, MessageSquare } from 'lucide-react'
-
-const heroFeatures = [
-  { icon: <Thermometer size={18} strokeWidth={1.6} />, label: 'Reducción térmica' },
-  { icon: <Shield size={18} strokeWidth={1.6} />, label: 'Protección UV 99.5%' },
-  { icon: <Sun size={18} strokeWidth={1.6} />, label: 'Transparencia sin tono' },
-  { icon: <Cpu size={18} strokeWidth={1.6} />, label: 'Tecnología Nano Cerámica' },
-  { icon: <CheckCircle2 size={18} strokeWidth={1.6} />, label: 'Instalación profesional' },
-]
+import { ArrowRight, Phone, Mail, User, Building, MessageSquare } from 'lucide-react'
 
 export default function Hero() {
   const [formData, setFormData] = useState({
@@ -239,43 +231,6 @@ export default function Hero() {
             </div>
           </div>
 
-        </div>
-      </div>
-    </section>
-
-    {/* Feature Cards - Overlapping section between Hero and next */}
-    <section className="relative z-20" style={{ marginTop: '-60px' }}>
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-          {heroFeatures.map((f, i) => (
-            <div
-              key={f.label}
-              className="bg-white shadow-lg hover:shadow-xl transition-all duration-300 p-6 flex flex-col items-center text-center group"
-              style={{ 
-                border: '1px solid rgba(32,52,120,0.08)',
-                transform: 'translateY(0)',
-              }}
-            >
-              <div 
-                className="w-14 h-14 flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110"
-                style={{ background: 'rgba(91,161,48,0.1)', color: '#5BA130' }}
-              >
-                {f.icon}
-              </div>
-              <span
-                style={{
-                  fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
-                  fontSize: '13px',
-                  fontWeight: 500,
-                  color: '#203478',
-                  lineHeight: 1.4,
-                  textAlign: 'center',
-                }}
-              >
-                {f.label}
-              </span>
-            </div>
-          ))}
         </div>
       </div>
     </section>

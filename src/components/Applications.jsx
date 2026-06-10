@@ -1,6 +1,14 @@
 import React from 'react'
-import { Home, Building2, Building, PanelsTopLeft } from 'lucide-react'
+import { Home, Building2, Building, PanelsTopLeft, Thermometer, Shield, Sun, Cpu, CheckCircle2 } from 'lucide-react'
 import { useParallax, useScrollAnimation, useParallaxScale } from '../hooks/useParallax'
+
+const featureCards = [
+  { icon: <Thermometer size={24} strokeWidth={1.6} />, label: 'Reducción térmica' },
+  { icon: <Shield size={24} strokeWidth={1.6} />, label: 'Protección UV 99.5%' },
+  { icon: <Sun size={24} strokeWidth={1.6} />, label: 'Transparencia sin tono' },
+  { icon: <Cpu size={24} strokeWidth={1.6} />, label: 'Tecnología Nano Cerámica' },
+  { icon: <CheckCircle2 size={24} strokeWidth={1.6} />, label: 'Instalación profesional' },
+]
 
 const spaces = [
   {
@@ -40,7 +48,44 @@ export default function Applications() {
   const cardsRef = useScrollAnimation(0.2)
   const scaleRef = useParallaxScale(0.9, 1.1, 0.002)
   return (
-    <section id="soluciones" className="relative py-16 sm:py-24 overflow-hidden" style={{ background: '#FFFFFF' }}>
+    <section id="soluciones" className="relative pb-16 sm:pb-24 pt-24 sm:pt-32 overflow-hidden" style={{ background: '#FFFFFF' }}>
+
+      {/* Feature Cards - Overlapping section */}
+      <div className="relative z-20" style={{ marginTop: '-100px', marginBottom: '60px' }}>
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+            {featureCards.map((f, i) => (
+              <div
+                key={f.label}
+                className="bg-white shadow-lg hover:shadow-xl transition-all duration-300 p-6 flex flex-col items-center text-center group"
+                style={{ 
+                  border: '1px solid rgba(32,52,120,0.08)',
+                  transform: 'translateY(0)',
+                }}
+              >
+                <div 
+                  className="w-14 h-14 flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110"
+                  style={{ background: 'rgba(91,161,48,0.1)', color: '#5BA130' }}
+                >
+                  {f.icon}
+                </div>
+                <span
+                  style={{
+                    fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
+                    fontSize: '13px',
+                    fontWeight: 500,
+                    color: '#203478',
+                    lineHeight: 1.4,
+                    textAlign: 'center',
+                  }}
+                >
+                  {f.label}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Header */}
