@@ -23,11 +23,11 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto flex items-center justify-between" style={{ height: '90px' }}>
         {/* Logo with curved/skewed container - ConstructZilla style */}
         <a href="#inicio" className="flex items-center relative group" style={{ height: '90px' }}>
-          {/* Skewed background */}
+          {/* Skewed background - gray */}
           <div 
             className="absolute left-0 top-0 h-full flex items-center justify-center"
             style={{ 
-              background: '#203478',
+              background: '#2d3239',
               transform: 'skewX(-20deg)',
               transformOrigin: 'top left',
               width: '320px',
@@ -37,11 +37,10 @@ export default function Navbar() {
             {/* Inner container to un-skew the logo */}
             <div style={{ transform: 'skewX(20deg)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <img
-                src="/logo-white.png"
+                src="/logo-color.png"
                 alt="Polaritech"
                 className="h-14 w-auto object-contain"
                 style={{ maxWidth: '220px' }}
-                onError={(e) => { e.target.src = '/logo-color.png'; e.target.style.filter = 'brightness(0) invert(1)'; }}
               />
             </div>
           </div>
