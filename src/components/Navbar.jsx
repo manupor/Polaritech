@@ -17,15 +17,15 @@ export default function Navbar() {
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-[rgba(32,52,120,0.08)]"
-      style={{ boxShadow: '0 2px 10px rgba(0,0,0,0.05)' }}
+      className="fixed top-0 left-0 right-0 z-50 bg-white"
+      style={{ borderBottom: '1px solid rgba(0,0,0,0.08)' }}
     >
-      <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between" style={{ height: '70px' }}>
+      <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between" style={{ height: '80px' }}>
         <a href="#inicio" className="flex items-center group">
           <img
             src="/logo-color.png"
-            alt="Polaritech — Soluciones en Polarizado"
-            className="h-10 w-auto object-contain transition-opacity duration-300 group-hover:opacity-80"
+            alt="Polaritech"
+            className="h-11 w-auto object-contain transition-opacity duration-300 group-hover:opacity-80"
           />
         </a>
 
@@ -34,10 +34,16 @@ export default function Navbar() {
             <li key={link.label}>
               <a
                 href={link.href}
-                className="px-4 py-6 text-sm text-[#555555] hover:text-[#5BA130] transition-colors duration-200 block"
-                style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', fontSize: '15px', fontWeight: 500 }}
+                className="px-4 py-7 text-sm transition-colors duration-200 block relative group"
+                style={{ 
+                  fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', 
+                  fontSize: '15px', 
+                  fontWeight: 500,
+                  color: '#555'
+                }}
               >
-                {link.label}
+                <span className="group-hover:text-[#5BA130] transition-colors">{link.label}</span>
+                <span className="absolute bottom-5 left-4 right-4 h-0.5 bg-[#5BA130] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
               </a>
             </li>
           ))}
@@ -50,12 +56,11 @@ export default function Navbar() {
             style={{ 
               fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
               background: '#5BA130',
-              padding: '10px 24px',
+              padding: '12px 28px',
               fontSize: '14px',
               fontWeight: 600,
-              borderRadius: '0',
               textTransform: 'uppercase',
-              letterSpacing: '0.02em'
+              letterSpacing: '0.5px'
             }}
           >
             Cotizar ahora
@@ -66,28 +71,41 @@ export default function Navbar() {
           className="lg:hidden p-2 text-[#203478] hover:text-[#5BA130] transition-colors"
           onClick={() => setMobileOpen(!mobileOpen)}
         >
-          {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </nav>
 
+      {/* Mobile Menu */}
       <div
-        className={`lg:hidden transition-all duration-300 overflow-hidden ${
+        className={`lg:hidden transition-all duration-300 overflow-hidden bg-white border-t border-[rgba(32,52,120,0.10)] ${
           mobileOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="bg-white/97 backdrop-blur-xl border-t border-[rgba(32,52,120,0.10)] px-6 py-4 space-y-1 shadow-lg shadow-[rgba(32,52,120,0.08)]">
+        <div className="px-6 py-4 space-y-1">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="block px-4 py-3 text-sm text-[#203478] hover:text-[#3EB5CC] hover:bg-[rgba(32,52,120,0.05)] rounded-xl transition-colors duration-150"
+              className="block px-4 py-3 text-sm text-[#555] hover:text-[#5BA130] hover:bg-[rgba(91,161,48,0.05)] rounded-lg transition-colors duration-150"
+              style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}
               onClick={() => setMobileOpen(false)}
             >
               {link.label}
             </a>
           ))}
-          <div className="pt-3">
-            <a href="#cotizar" className="btn-primary w-full justify-center" onClick={() => setMobileOpen(false)}>
+          <div className="pt-4">
+            <a 
+              href="#cotizar" 
+              className="block w-full text-center text-white font-semibold py-3"
+              style={{ 
+                fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
+                background: '#5BA130',
+                fontSize: '14px',
+                fontWeight: 600,
+                textTransform: 'uppercase'
+              }}
+              onClick={() => setMobileOpen(false)}
+            >
               Cotizar ahora
             </a>
           </div>

@@ -207,7 +207,7 @@ export default function Hero() {
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="relative">
-                    <User size={16} className="absolute left-3 top-3.5 text-gray-400" />
+                    <User size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
                     <input
                       type="text"
                       placeholder="Nombre"
@@ -218,7 +218,7 @@ export default function Hero() {
                     />
                   </div>
                   <div className="relative">
-                    <Mail size={16} className="absolute left-3 top-3.5 text-gray-400" />
+                    <Mail size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
                     <input
                       type="email"
                       placeholder="Email"
@@ -232,7 +232,7 @@ export default function Hero() {
                 
                 <div className="grid grid-cols-2 gap-4">
                   <div className="relative">
-                    <Phone size={16} className="absolute left-3 top-3.5 text-gray-400" />
+                    <Phone size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
                     <input
                       type="tel"
                       placeholder="Teléfono"
@@ -243,7 +243,7 @@ export default function Hero() {
                     />
                   </div>
                   <div className="relative">
-                    <Building size={16} className="absolute left-3 top-3.5 text-gray-400" />
+                    <Building size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
                     <input
                       type="text"
                       placeholder="Empresa (opcional)"
@@ -256,7 +256,7 @@ export default function Hero() {
                 </div>
                 
                 <div className="relative">
-                  <MessageSquare size={16} className="absolute left-3 top-3.5 text-gray-400" />
+                  <MessageSquare size={16} className="absolute left-3 top-4 text-gray-400" />
                   <textarea
                     placeholder="Mensaje"
                     rows="3"
