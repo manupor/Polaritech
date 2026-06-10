@@ -21,31 +21,13 @@ export default function Navbar() {
       style={{ borderBottom: '1px solid rgba(0,0,0,0.08)' }}
     >
       <nav className="max-w-7xl mx-auto flex items-center justify-between" style={{ height: '90px' }}>
-        {/* Logo with curved/skewed container - ConstructZilla style */}
-        <a href="#inicio" className="flex items-center relative group" style={{ height: '90px' }}>
-          {/* Skewed background - gray */}
-          <div 
-            className="absolute left-0 top-0 h-full flex items-center justify-center"
-            style={{ 
-              background: '#2d3239',
-              transform: 'skewX(-20deg)',
-              transformOrigin: 'top left',
-              width: '320px',
-              left: '-40px'
-            }}
-          >
-            {/* Inner container to un-skew the logo */}
-            <div style={{ transform: 'skewX(20deg)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <img
-                src="/logo-color.png"
-                alt="Polaritech"
-                className="h-14 w-auto object-contain"
-                style={{ maxWidth: '220px' }}
-              />
-            </div>
-          </div>
-          {/* Spacer for the skewed container */}
-          <div style={{ width: '260px' }}></div>
+        {/* Logo */}
+        <a href="#inicio" className="flex items-center px-6">
+          <img
+            src="/logo-color.png"
+            alt="Polaritech"
+            className="h-12 w-auto object-contain"
+          />
         </a>
 
         <ul className="hidden lg:flex items-center">
