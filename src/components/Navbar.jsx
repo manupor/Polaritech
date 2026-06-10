@@ -1,15 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40)
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
 
   const navLinks = [
     { label: 'Inicio', href: '#inicio' },
@@ -24,11 +17,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? 'bg-white/95 backdrop-blur-xl border-b border-[rgba(32,52,120,0.10)] py-3 shadow-lg shadow-[rgba(32,52,120,0.08)]'
-          : 'bg-transparent py-5'
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-b border-[rgba(32,52,120,0.10)] py-3 shadow-lg shadow-[rgba(32,52,120,0.08)]"
     >
       <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <a href="#inicio" className="flex items-center group">
