@@ -28,26 +28,29 @@ export default function Hero() {
           backgroundRepeat: 'no-repeat',
         }}
       >
-        {/* Feature icons at bottom right of image on desktop */}
+        {/* Feature icons at bottom right of image on desktop — ConstructZilla style */}
         <div className="hidden lg:flex absolute bottom-8 right-8">
-          <div className="flex flex-wrap items-center justify-end gap-x-6 gap-y-4 bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
+          <div className="flex flex-wrap items-center justify-end gap-x-4 gap-y-4 bg-white/95 backdrop-blur-sm rounded-2xl p-5 shadow-2xl border border-gray-100">
             {heroFeatures.map((f) => (
               <div
                 key={f.label}
-                className="flex flex-col items-center gap-2 text-center group"
+                className="flex flex-col items-center gap-2 text-center group px-3 py-2 rounded-xl transition-all duration-300 hover:bg-green-50"
               >
-                <div className="icon-lux icon-lux-sm icon-lux-round">
+                <div 
+                  className="w-12 h-12 rounded-full flex items-center justify-center"
+                  style={{ background: 'rgba(91,161,48,0.1)', color: '#5BA130' }}
+                >
                   {f.icon}
                 </div>
                 <span
                   style={{
                     fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif',
-                    fontSize: '10px',
+                    fontSize: '11px',
                     fontWeight: 500,
-                    letterSpacing: '0.04em',
+                    letterSpacing: '0.02em',
                     color: '#203478',
-                    maxWidth: '80px',
-                    lineHeight: 1.4,
+                    maxWidth: '90px',
+                    lineHeight: 1.3,
                   }}
                 >
                   {f.label}
@@ -160,11 +163,27 @@ export default function Hero() {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row sm:items-center gap-4 flex-shrink-0 w-full sm:w-auto">
-              <a href="#cotizar" className="btn-primary w-full sm:w-auto justify-center">
+              <a 
+                href="#cotizar" 
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-white font-medium transition-all duration-300 hover:shadow-xl hover:scale-105 w-full sm:w-auto"
+                style={{ 
+                  background: '#5BA130', 
+                  fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
+                  boxShadow: '0 10px 30px rgba(91,161,48,0.3)'
+                }}
+              >
                 Solicitar asesoría
-                <ArrowRight size={15} />
+                <ArrowRight size={18} />
               </a>
-              <a href="#soluciones" className="btn-secondary-light w-full sm:w-auto justify-center">
+              <a 
+                href="#soluciones" 
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-medium transition-all duration-300 hover:shadow-md border-2 w-full sm:w-auto"
+                style={{ 
+                  borderColor: '#203478', 
+                  color: '#203478', 
+                  fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif'
+                }}
+              >
                 Ver soluciones
               </a>
             </div>
