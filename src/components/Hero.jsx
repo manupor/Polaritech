@@ -30,7 +30,7 @@ export default function Hero() {
     <section
       id="inicio"
       className="relative min-h-screen flex items-center overflow-hidden"
-      style={{ paddingTop: '80px' }}
+      style={{ paddingTop: '90px' }}
     >
       {/* Full-width background photo */}
       <div

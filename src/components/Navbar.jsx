@@ -20,13 +20,32 @@ export default function Navbar() {
       className="fixed top-0 left-0 right-0 z-50 bg-white"
       style={{ borderBottom: '1px solid rgba(0,0,0,0.08)' }}
     >
-      <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between" style={{ height: '80px' }}>
-        <a href="#inicio" className="flex items-center group">
-          <img
-            src="/logo-color.png"
-            alt="Polaritech"
-            className="h-11 w-auto object-contain transition-opacity duration-300 group-hover:opacity-80"
-          />
+      <nav className="max-w-7xl mx-auto flex items-center justify-between" style={{ height: '90px' }}>
+        {/* Logo with curved/skewed container - ConstructZilla style */}
+        <a href="#inicio" className="flex items-center relative group" style={{ height: '90px' }}>
+          {/* Skewed background */}
+          <div 
+            className="absolute left-0 top-0 h-full flex items-center px-8"
+            style={{ 
+              background: '#203478',
+              transform: 'skewX(-20deg)',
+              transformOrigin: 'top left',
+              width: '280px',
+              left: '-40px'
+            }}
+          >
+            {/* Inner container to un-skew the logo */}
+            <div style={{ transform: 'skewX(20deg)' }}>
+              <img
+                src="/logo-white.png"
+                alt="Polaritech"
+                className="h-10 w-auto object-contain"
+                onError={(e) => { e.target.src = '/logo-color.png'; e.target.style.filter = 'brightness(0) invert(1)'; }}
+              />
+            </div>
+          </div>
+          {/* Spacer for the skewed container */}
+          <div style={{ width: '240px' }}></div>
         </a>
 
         <ul className="hidden lg:flex items-center">
@@ -34,7 +53,7 @@ export default function Navbar() {
             <li key={link.label}>
               <a
                 href={link.href}
-                className="px-4 py-7 text-sm transition-colors duration-200 block relative group"
+                className="px-4 py-8 text-sm transition-colors duration-200 block relative group"
                 style={{ 
                   fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', 
                   fontSize: '15px', 
@@ -43,7 +62,7 @@ export default function Navbar() {
                 }}
               >
                 <span className="group-hover:text-[#5BA130] transition-colors">{link.label}</span>
-                <span className="absolute bottom-5 left-4 right-4 h-0.5 bg-[#5BA130] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                <span className="absolute bottom-6 left-4 right-4 h-0.5 bg-[#5BA130] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
               </a>
             </li>
           ))}
