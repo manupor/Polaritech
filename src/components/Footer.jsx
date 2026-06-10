@@ -32,34 +32,37 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden" style={{ background: '#EEF4F8', borderTop: '1px solid rgba(32,52,120,0.08)' }}>
-
+    <footer className="relative overflow-hidden" style={{ background: '#1a1a2e' }}>
+      {/* Top accent line */}
+      <div style={{ height: '3px', background: '#5BA130' }} />
+      
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-16 pb-8">
         <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-10 mb-14">
           <div className="sm:col-span-2">
             <a href="#inicio" className="flex items-center mb-6 group w-fit">
               <img
-                src="/logo-color.png"
-                alt="Polaritech — Soluciones en Polarizado"
-                className="h-10 w-auto object-contain transition-opacity duration-300 group-hover:opacity-70"
+                src="/logo-white.png"
+                alt="Polaritech"
+                className="h-10 w-auto object-contain"
+                onError={(e) => { e.target.src = '/logo-color.png'; e.target.style.filter = 'brightness(0) invert(1)'; }}
               />
             </a>
-            <p className="text-sm leading-relaxed mb-4 max-w-xs font-light" style={{ color: '#5a6a82' }}>
+            <p className="text-sm leading-relaxed mb-4 max-w-xs" style={{ color: 'rgba(255,255,255,0.7)', fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>
               Distribuidor autorizado en Costa Rica desde 2016. Polarizado arquitectónico
               premium para hogares, oficinas y edificios en todo el país.
             </p>
             <div className="space-y-2 mb-6">
-              <div className="flex items-center gap-2 text-xs" style={{ color: '#5a6a82' }}>
-                <MapPin size={12} className="text-[#3EB5CC] shrink-0" />
-                <span>Costa Rica — Servicio a domicilio nacional</span>
+              <div className="flex items-center gap-2 text-xs" style={{ color: 'rgba(255,255,255,0.7)' }}>
+                <MapPin size={14} style={{ color: '#5BA130' }} className="shrink-0" />
+                <span style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>Costa Rica — Servicio a domicilio nacional</span>
               </div>
-              <div className="flex items-center gap-2 text-xs" style={{ color: '#5a6a82' }}>
-                <Phone size={12} className="text-[#3EB5CC] shrink-0" />
-                <a href="tel:+50688888888" className="hover:text-[#203478] transition-colors">+506 8888-8888</a>
+              <div className="flex items-center gap-2 text-xs" style={{ color: 'rgba(255,255,255,0.7)' }}>
+                <Phone size={14} style={{ color: '#5BA130' }} className="shrink-0" />
+                <a href="tel:+50688888888" className="hover:text-white transition-colors" style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>+506 8888-8888</a>
               </div>
-              <div className="flex items-center gap-2 text-xs" style={{ color: '#5a6a82' }}>
-                <Mail size={12} className="text-[#3EB5CC] shrink-0" />
-                <a href="mailto:info@polaritech.net" className="hover:text-[#203478] transition-colors">info@polaritech.net</a>
+              <div className="flex items-center gap-2 text-xs" style={{ color: 'rgba(255,255,255,0.7)' }}>
+                <Mail size={14} style={{ color: '#5BA130' }} className="shrink-0" />
+                <a href="mailto:info@polaritech.net" className="hover:text-white transition-colors" style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>info@polaritech.net</a>
               </div>
             </div>
 
@@ -69,8 +72,8 @@ export default function Footer() {
                   key={s.label}
                   href={s.href}
                   aria-label={s.label}
-                  className="icon-lux icon-lux-round icon-lux-hover"
-                  style={{ width: '42px', height: '42px' }}
+                  className="flex items-center justify-center transition-all duration-300 hover:bg-[#5BA130]"
+                  style={{ width: '40px', height: '40px', background: 'rgba(255,255,255,0.1)', color: 'white' }}
                 >
                   {s.icon}
                 </a>
@@ -79,7 +82,8 @@ export default function Footer() {
 
             <a
               href="#cotizar"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[#3EB5CC] hover:text-[#203478] transition-colors duration-200 group"
+              className="inline-flex items-center gap-2 text-sm font-semibold transition-colors duration-200 group"
+              style={{ color: '#5BA130', fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif' }}
             >
               Solicitar cotización
               <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
@@ -88,14 +92,14 @@ export default function Footer() {
 
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title}>
-              <h4 className="text-[#203478] font-semibold text-sm mb-4 tracking-wide">{title}</h4>
+              <h4 className="font-semibold text-sm mb-4 tracking-wide" style={{ color: 'white', fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif' }}>{title}</h4>
               <ul className="space-y-2.5">
                 {links.map((link) => (
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="text-sm hover:text-[#203478] transition-colors duration-150 font-light"
-                      style={{ color: '#5a6a82' }}
+                      className="text-sm hover:text-white transition-colors duration-150"
+                      style={{ color: 'rgba(255,255,255,0.6)', fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}
                     >
                       {link.label}
                     </a>
@@ -106,15 +110,15 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4" style={{ borderTop: '1px solid rgba(32,52,120,0.12)' }}>
-          <p className="text-xs" style={{ color: '#6b7a99' }}>
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4" style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+          <p className="text-xs" style={{ color: 'rgba(255,255,255,0.5)', fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>
             © {new Date().getFullYear()} Polaritech. Todos los derechos reservados.
           </p>
           <div className="flex items-center gap-5">
-            <a href="#" className="text-xs hover:text-[#203478] transition-colors duration-150" style={{ color: '#6b7a99' }}>
+            <a href="#" className="text-xs hover:text-white transition-colors duration-150" style={{ color: 'rgba(255,255,255,0.5)', fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>
               Política de privacidad
             </a>
-            <a href="#" className="text-xs hover:text-[#203478] transition-colors duration-150" style={{ color: '#6b7a99' }}>
+            <a href="#" className="text-xs hover:text-white transition-colors duration-150" style={{ color: 'rgba(255,255,255,0.5)', fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>
               Términos de uso
             </a>
           </div>
