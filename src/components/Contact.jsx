@@ -18,7 +18,7 @@ export default function Contact() {
               color: '#203478',
               fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
               fontSize: 'clamp(2.8rem, 4.2vw, 3.6rem)',
-              fontWeight: 700,
+              fontWeight: 500,
               lineHeight: 1.1,
               letterSpacing: '-0.02em',
             }}
@@ -36,7 +36,7 @@ export default function Contact() {
               color: '#203478',
               fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
               fontSize: 'clamp(1.6rem, 3vw, 2.2rem)',
-              fontWeight: 700,
+              fontWeight: 500,
               lineHeight: 1.2,
               marginBottom: '16px',
             }}
@@ -56,7 +56,7 @@ export default function Contact() {
             <div className="icon-lux icon-lux-sm icon-lux-round mx-auto mb-4" style={{ color: '#5BA130' }}>
               <MessageCircle size={20} />
             </div>
-            <h4 style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', fontSize: '1.1rem', fontWeight: 700, color: '#203478', marginBottom: '8px' }}>
+            <h4 style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', fontSize: '1.1rem', fontWeight: 500, color: '#203478', marginBottom: '8px' }}>
               WhatsApp
             </h4>
             <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', fontSize: '0.9rem', color: '#6b7a99', marginBottom: '16px' }}>
@@ -78,7 +78,7 @@ export default function Contact() {
             <div className="icon-lux icon-lux-sm icon-lux-round mx-auto mb-4" style={{ color: '#5BA130' }}>
               <Phone size={20} />
             </div>
-            <h4 style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', fontSize: '1.1rem', fontWeight: 700, color: '#203478', marginBottom: '8px' }}>
+            <h4 style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', fontSize: '1.1rem', fontWeight: 500, color: '#203478', marginBottom: '8px' }}>
               Llamada
             </h4>
             <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', fontSize: '0.9rem', color: '#6b7a99', marginBottom: '16px' }}>
@@ -98,7 +98,7 @@ export default function Contact() {
             <div className="icon-lux icon-lux-sm icon-lux-round mx-auto mb-4" style={{ color: '#5BA130' }}>
               <Mail size={20} />
             </div>
-            <h4 style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', fontSize: '1.1rem', fontWeight: 700, color: '#203478', marginBottom: '8px' }}>
+            <h4 style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', fontSize: '1.1rem', fontWeight: 500, color: '#203478', marginBottom: '8px' }}>
               Email
             </h4>
             <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', fontSize: '0.9rem', color: '#6b7a99', marginBottom: '16px' }}>
@@ -121,7 +121,7 @@ export default function Contact() {
             style={{
               fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
               fontSize: 'clamp(1.8rem, 3.2vw, 2.6rem)',
-              fontWeight: 700,
+              fontWeight: 500,
               color: '#FFFFFF',
               lineHeight: 1.1,
               marginBottom: '16px'

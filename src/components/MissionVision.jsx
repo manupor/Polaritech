@@ -21,7 +21,7 @@ export default function MissionVision() {
                 color: '#203478',
                 fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
                 fontSize: 'clamp(2rem, 3.6vw, 2.8rem)',
-                fontWeight: 700,
+                fontWeight: 500,
                 lineHeight: 1.1,
                 letterSpacing: '-0.02em',
               }}
@@ -52,7 +52,7 @@ export default function MissionVision() {
                 color: '#203478',
                 fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
                 fontSize: 'clamp(2rem, 3.6vw, 2.8rem)',
-                fontWeight: 700,
+                fontWeight: 500,
                 lineHeight: 1.1,
                 letterSpacing: '-0.02em',
               }}
@@ -83,7 +83,7 @@ export default function MissionVision() {
                 color: '#203478',
                 fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
                 fontSize: 'clamp(2rem, 3.6vw, 2.8rem)',
-                fontWeight: 700,
+                fontWeight: 500,
                 lineHeight: 1.1,
                 letterSpacing: '-0.02em',
               }}
@@ -99,7 +99,7 @@ export default function MissionVision() {
               color: '#203478', 
               fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', 
               fontSize: '1.2rem', 
-              fontWeight: 700,
+              fontWeight: 500,
               letterSpacing: '0.1em',
               textAlign: 'center'
             }}>

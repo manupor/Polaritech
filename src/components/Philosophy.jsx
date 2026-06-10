@@ -23,7 +23,7 @@ export default function Philosophy() {
               color: '#203478',
               fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
               fontSize: 'clamp(2.8rem, 4.2vw, 3.6rem)',
-              fontWeight: 700,
+              fontWeight: 500,
               lineHeight: 1.1,
               letterSpacing: '-0.02em',
             }}
@@ -52,7 +52,7 @@ export default function Philosophy() {
               <div className="icon-lux icon-lux-sm icon-lux-round mb-4" style={{ color: '#5BA130' }}>
                 <Lightbulb size={20} />
               </div>
-              <h3 style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', fontSize: '1.1rem', fontWeight: 700, color: '#203478', marginBottom: '12px' }}>
+              <h3 style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', fontSize: '1.1rem', fontWeight: 500, color: '#203478', marginBottom: '12px' }}>
                 Resultados Reales
               </h3>
               <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', fontSize: '0.9rem', color: '#6b7a99', lineHeight: 1.6 }}>
@@ -63,7 +63,7 @@ export default function Philosophy() {
               <div className="icon-lux icon-lux-sm icon-lux-round mb-4" style={{ color: '#5BA130' }}>
                 <TrendingUp size={20} />
               </div>
-              <h3 style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', fontSize: '1.1rem', fontWeight: 700, color: '#203478', marginBottom: '12px' }}>
+              <h3 style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', fontSize: '1.1rem', fontWeight: 500, color: '#203478', marginBottom: '12px' }}>
                 Evolución Constante
               </h3>
               <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', fontSize: '0.9rem', color: '#6b7a99', lineHeight: 1.6 }}>
@@ -74,7 +74,7 @@ export default function Philosophy() {
               <div className="icon-lux icon-lux-sm icon-lux-round mb-4" style={{ color: '#5BA130' }}>
                 <Search size={20} />
               </div>
-              <h3 style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', fontSize: '1.1rem', fontWeight: 700, color: '#203478', marginBottom: '12px' }}>
+              <h3 style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', fontSize: '1.1rem', fontWeight: 500, color: '#203478', marginBottom: '12px' }}>
                 Búsqueda Permanente
               </h3>
               <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', fontSize: '0.9rem', color: '#6b7a99', lineHeight: 1.6 }}>

@@ -33,7 +33,7 @@ export default function Solution() {
               color: '#203478',
               fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
               fontSize: 'clamp(2.8rem, 4.2vw, 3.6rem)',
-              fontWeight: 700,
+              fontWeight: 500,
               lineHeight: 1.1,
               letterSpacing: '-0.02em',
             }}
@@ -51,7 +51,7 @@ export default function Solution() {
               color: '#203478',
               fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
               fontSize: 'clamp(1.6rem, 3vw, 2.2rem)',
-              fontWeight: 700,
+              fontWeight: 500,
               lineHeight: 1.2,
               marginBottom: '16px',
             }}
@@ -80,7 +80,7 @@ export default function Solution() {
                 style={{
                   fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
                   fontSize: '1.1rem',
-                  fontWeight: 700,
+                  fontWeight: 500,
                   color: '#203478',
                   marginBottom: '16px'
                 }}

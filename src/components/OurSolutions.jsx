@@ -79,7 +79,7 @@ export default function OurSolutions() {
               color: '#203478',
               fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
               fontSize: 'clamp(2.8rem, 4.2vw, 3.6rem)',
-              fontWeight: 700,
+              fontWeight: 500,
               lineHeight: 1.1,
               letterSpacing: '-0.02em',
             }}
@@ -97,7 +97,7 @@ export default function OurSolutions() {
               color: '#203478',
               fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
               fontSize: 'clamp(1.6rem, 3vw, 2.2rem)',
-              fontWeight: 700,
+              fontWeight: 500,
               lineHeight: 1.2,
               marginBottom: '16px',
             }}
@@ -166,14 +166,14 @@ export default function OurSolutions() {
 
               {s.available && (
                 <div className="mb-6 p-4 rounded-lg" style={{ background: '#F7FAFC', border: '1px solid rgba(91,161,48,0.2)' }}>
-                  <p style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', fontSize: '0.9rem', fontWeight: 700, color: '#5BA130' }}>
+                  <p style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', fontSize: '0.9rem', fontWeight: 500, color: '#5BA130' }}>
                     {s.available}
                   </p>
                 </div>
               )}
 
               <div className="mb-8">
-                <h4 style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', fontSize: '1rem', fontWeight: 700, color: '#203478', marginBottom: '12px' }}>
+                <h4 style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', fontSize: '1rem', fontWeight: 500, color: '#203478', marginBottom: '12px' }}>
                   Beneficios principales:
                 </h4>
                 <div className="space-y-2">
@@ -188,7 +188,7 @@ export default function OurSolutions() {
 
               {s.applications && (
                 <div className="mb-8">
-                  <h4 style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', fontSize: '1rem', fontWeight: 700, color: '#203478', marginBottom: '12px' }}>
+                  <h4 style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', fontSize: '1rem', fontWeight: 500, color: '#203478', marginBottom: '12px' }}>
                     Aplicaciones recomendadas:
                   </h4>
                   <div className="flex flex-wrap gap-2">

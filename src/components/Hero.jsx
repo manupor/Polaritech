@@ -113,7 +113,7 @@ export default function Hero() {
                 color: '#203478',
                 fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
                 fontSize: 'clamp(3.2rem, 5.2vw, 4.8rem)',
-                fontWeight: 700,
+                fontWeight: 500,
                 lineHeight: 1.05,
                 letterSpacing: '-0.03em',
               }}
@@ -132,7 +132,7 @@ export default function Hero() {
             {/* Lead */}
             <p
               className="mb-1"
-              style={{ color: '#5BA130', fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', fontWeight: 700, fontSize: '1.1rem' }}
+              style={{ color: '#5BA130', fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', fontWeight: 500, fontSize: '1.1rem' }}
             >
               Más confort. Menos calor. Más protección.
             </p>

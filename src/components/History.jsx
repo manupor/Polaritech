@@ -31,7 +31,7 @@ export default function History() {
                 color: '#203478',
                 fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
                 fontSize: 'clamp(2.8rem, 4.2vw, 3.6rem)',
-                fontWeight: 700,
+                fontWeight: 500,
                 lineHeight: 1.1,
                 letterSpacing: '-0.02em',
               }}
