@@ -11,6 +11,7 @@ const heroFeatures = [
 
 export default function Hero() {
   return (
+    <>
     <section
       id="inicio"
       className="relative min-h-screen flex flex-col justify-center overflow-hidden"
@@ -108,29 +109,37 @@ export default function Hero() {
           style={{ width: '60px', height: '3px', borderRadius: '2px', background: '#88C140' }}
         />
 
-        {/* CTAs — centered */}
+        {/* CTAs — ConstructZilla style */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
           <a 
             href="#cotizar" 
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-white font-medium transition-all duration-300 hover:shadow-2xl hover:scale-105 w-full sm:w-auto"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 text-white font-semibold transition-all duration-300 hover:opacity-90 w-full sm:w-auto"
             style={{ 
               background: '#5BA130', 
               fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
-              boxShadow: '0 10px 40px rgba(91,161,48,0.4)'
+              fontSize: '14px',
+              fontWeight: 600,
+              borderRadius: '0',
+              textTransform: 'uppercase',
+              letterSpacing: '0.05em'
             }}
           >
             Solicitar asesoría
-            <ArrowRight size={18} />
+            <ArrowRight size={16} />
           </a>
           <a 
             href="#soluciones" 
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-medium transition-all duration-300 hover:shadow-lg border-2 w-full sm:w-auto"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 font-semibold transition-all duration-300 hover:bg-white/10 border w-full sm:w-auto"
             style={{ 
-              borderColor: 'rgba(255,255,255,0.4)', 
+              borderColor: 'rgba(255,255,255,0.5)', 
               color: '#FFFFFF', 
               fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
-              backdropFilter: 'blur(8px)',
-              background: 'rgba(255,255,255,0.1)'
+              fontSize: '14px',
+              fontWeight: 600,
+              borderRadius: '0',
+              textTransform: 'uppercase',
+              letterSpacing: '0.05em',
+              background: 'transparent'
             }}
           >
             Ver soluciones
@@ -171,5 +180,63 @@ export default function Hero() {
       {/* Bottom divider */}
       <div className="relative z-10 h-px" style={{ background: 'rgba(255,255,255,0.15)' }} />
     </section>
+
+    {/* Meet & Ask section — ConstructZilla style */}
+    <section className="relative z-20 bg-white border-b border-[rgba(32,52,120,0.08)]" style={{ marginTop: '-1px' }}>
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="flex flex-col lg:flex-row items-center justify-between py-6 gap-4">
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(91,161,48,0.1)', color: '#5BA130' }}>
+              <Shield size={24} />
+            </div>
+            <div>
+              <h3 style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', color: '#203478', fontSize: '1.1rem', fontWeight: 500, marginBottom: '4px' }}>
+                Solicitar asesoría
+              </h3>
+              <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', color: '#5a6a82', fontSize: '0.9rem' }}>
+                Le ayudamos a encontrar la mejor solución para su espacio.
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center gap-3">
+            <a 
+              href="#cotizar" 
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 text-white font-semibold transition-all duration-300 hover:opacity-90"
+              style={{ 
+                background: '#5BA130', 
+                fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
+                fontSize: '13px',
+                fontWeight: 600,
+                borderRadius: '0',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em'
+              }}
+            >
+              <span>Contactar</span>
+              <ArrowRight size={14} />
+            </a>
+            <a 
+              href="#soluciones" 
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 font-semibold transition-all duration-300 hover:bg-[#203478] hover:text-white border"
+              style={{ 
+                borderColor: '#203478',
+                color: '#203478',
+                fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
+                fontSize: '13px',
+                fontWeight: 600,
+                borderRadius: '0',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em',
+                background: 'transparent'
+              }}
+            >
+              <span>Ver más</span>
+              <ArrowRight size={14} />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    </>
   )
 }
