@@ -35,11 +35,11 @@ export default function Hero() {
         }}
       />
 
-      {/* Dark overlay for text readability */}
+      {/* Dark overlay for text readability - gradient from dark blue to light blue */}
       <div
         className="absolute inset-0"
         style={{
-          background: 'linear-gradient(90deg, rgba(32,52,120,0.90) 0%, rgba(32,52,120,0.80) 50%, rgba(32,52,120,0.60) 100%)',
+          background: 'linear-gradient(135deg, rgba(32,52,120,0.95) 0%, rgba(32,52,120,0.85) 40%, rgba(62,181,204,0.75) 100%)',
         }}
       />
 
