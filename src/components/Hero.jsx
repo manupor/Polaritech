@@ -152,34 +152,6 @@ export default function Hero() {
               </a>
             </div>
 
-            {/* Feature icons */}
-            <div className="flex flex-wrap items-center gap-6 mt-12">
-              {heroFeatures.map((f) => (
-                <div
-                  key={f.label}
-                  className="flex flex-col items-center gap-2 text-center"
-                >
-                  <div 
-                    className="w-12 h-12 flex items-center justify-center"
-                    style={{ background: 'rgba(91,161,48,0.2)', color: '#5BA130' }}
-                  >
-                    {f.icon}
-                  </div>
-                  <span
-                    style={{
-                      fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif',
-                      fontSize: '10px',
-                      fontWeight: 500,
-                      color: 'rgba(255,255,255,0.7)',
-                      maxWidth: '80px',
-                      lineHeight: 1.3,
-                    }}
-                  >
-                    {f.label}
-                  </span>
-                </div>
-              ))}
-            </div>
           </div>
 
           {/* RIGHT - Quote Form */}
@@ -286,6 +258,43 @@ export default function Hero() {
             </div>
           </div>
 
+        </div>
+      </div>
+    </section>
+
+    {/* Feature Cards - Overlapping section between Hero and next */}
+    <section className="relative z-20" style={{ marginTop: '-60px' }}>
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+          {heroFeatures.map((f, i) => (
+            <div
+              key={f.label}
+              className="bg-white shadow-lg hover:shadow-xl transition-all duration-300 p-6 flex flex-col items-center text-center group"
+              style={{ 
+                border: '1px solid rgba(32,52,120,0.08)',
+                transform: 'translateY(0)',
+              }}
+            >
+              <div 
+                className="w-14 h-14 flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110"
+                style={{ background: 'rgba(91,161,48,0.1)', color: '#5BA130' }}
+              >
+                {f.icon}
+              </div>
+              <span
+                style={{
+                  fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
+                  fontSize: '13px',
+                  fontWeight: 500,
+                  color: '#203478',
+                  lineHeight: 1.4,
+                  textAlign: 'center',
+                }}
+              >
+                {f.label}
+              </span>
+            </div>
+          ))}
         </div>
       </div>
     </section>
