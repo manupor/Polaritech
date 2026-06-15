@@ -33,7 +33,7 @@ const spaces = [
     icon: <PanelsTopLeft size={22} />,
     title: 'Comercios',
     desc: 'Protección de productos y comodidad para clientes.',
-    img: 'https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=600&q=80',
+    img: '/comercios.jpg',
   },
   {
     icon: <Home size={22} />,
