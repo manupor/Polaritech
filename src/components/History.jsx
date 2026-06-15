@@ -108,8 +108,7 @@ export default function History() {
             <img
               src="/mockup-2.png"
               alt={t('history.imageAlt')}
-              className="w-full h-auto object-contain"
-              style={{ maxHeight: '400px' }}
+              className="w-full h-auto object-contain max-h-[280px] sm:max-h-[400px]"
             />
           </div>
         </div>

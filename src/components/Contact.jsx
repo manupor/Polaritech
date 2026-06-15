@@ -53,12 +53,12 @@ export default function Contact() {
 
         {/* Contact Methods */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          <div className="text-center p-8 rounded-2xl reveal opacity-0 translate-y-8 transition-all duration-700" style={{ background: '#F7FAFC', border: '1px solid rgba(32,52,120,0.08)' }}>
+          <div className="text-center p-6 sm:p-8 rounded-2xl reveal opacity-0 translate-y-8 transition-all duration-700" style={{ background: '#F7FAFC', border: '1px solid rgba(32,52,120,0.08)' }}>
             <div className="icon-lux icon-lux-sm icon-lux-round mx-auto mb-4" style={{ color: '#5BA130' }}>
               <MessageCircle size={20} />
             </div>
             <h4 style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', fontSize: '1.1rem', fontWeight: 500, color: '#203478', marginBottom: '8px' }}>
-              WhatsApp
+              {t('contact.whatsapp')}
             </h4>
             <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', fontSize: '0.9rem', color: '#6b7a99', marginBottom: '16px' }}>
               {t('contact.whatsappDesc')}
@@ -75,7 +75,7 @@ export default function Contact() {
             </a>
           </div>
 
-          <div className="text-center p-8 rounded-2xl reveal opacity-0 translate-y-8 transition-all duration-700" style={{ background: '#F7FAFC', border: '1px solid rgba(32,52,120,0.08)', transitionDelay: '100ms' }}>
+          <div className="text-center p-6 sm:p-8 rounded-2xl reveal opacity-0 translate-y-8 transition-all duration-700" style={{ background: '#F7FAFC', border: '1px solid rgba(32,52,120,0.08)', transitionDelay: '100ms' }}>
             <div className="icon-lux icon-lux-sm icon-lux-round mx-auto mb-4" style={{ color: '#5BA130' }}>
               <Phone size={20} />
             </div>
@@ -95,7 +95,7 @@ export default function Contact() {
             </a>
           </div>
 
-          <div className="text-center p-8 rounded-2xl reveal opacity-0 translate-y-8 transition-all duration-700" style={{ background: '#F7FAFC', border: '1px solid rgba(32,52,120,0.08)', transitionDelay: '200ms' }}>
+          <div className="text-center p-6 sm:p-8 rounded-2xl reveal opacity-0 translate-y-8 transition-all duration-700" style={{ background: '#F7FAFC', border: '1px solid rgba(32,52,120,0.08)', transitionDelay: '200ms' }}>
             <div className="icon-lux icon-lux-sm icon-lux-round mx-auto mb-4" style={{ color: '#5BA130' }}>
               <Mail size={20} />
             </div>
@@ -117,7 +117,7 @@ export default function Contact() {
         </div>
 
         {/* CTA Banner */}
-        <div className="text-center p-12 rounded-3xl reveal opacity-0 translate-y-8 transition-all duration-700" style={{ background: 'linear-gradient(135deg, #203478 0%, #2a4390 100%)' }}>
+        <div className="text-center p-6 sm:p-12 rounded-3xl reveal opacity-0 translate-y-8 transition-all duration-700" style={{ background: 'linear-gradient(135deg, #203478 0%, #2a4390 100%)' }}>
           <h3 
             style={{
               fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',

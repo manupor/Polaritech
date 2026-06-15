@@ -73,6 +73,7 @@ export const translations = {
       infrarrojoDesc: 'Es uno de los principales responsables de la sensación térmica que experimentamos al estar cerca de una ventana expuesta al sol.',
       uv: 'Ultravioleta (UV)',
       uvDesc: 'Puede contribuir al desgaste y decoloración de muebles, pisos, cortinas, textiles y otros acabados interiores.',
+      radiationDesc: 'La energía solar está compuesta por diferentes tipos de radiación. Algunas iluminan, otras generan calor y otras pueden deteriorar interiores con el tiempo.',
     },
     // Solution (La Solución)
     solucion: {
@@ -87,6 +88,7 @@ export const translations = {
         glare: 'Menor deslumbramiento',
         options: 'Opciones transparentes o con privacidad',
       },
+      iconLabels: ['Protección UV', 'Control Térmico', 'Transparencia', 'Garantía'],
     },
     // Our Solutions
     ourSolutions: {
@@ -197,6 +199,7 @@ export const translations = {
       copyright: 'Todos los derechos reservados.',
       privacy: 'Política de privacidad',
       terms: 'Términos de uso',
+      productsList: ['Polarizado Básico', 'Polarizado Seguridad', 'Nano Cerámica', 'Anti-UV Transparente', 'Silver Espejo', 'Black Out / White Out'],
     },
     // How It Works
     howItWorks: {
@@ -228,7 +231,9 @@ export const translations = {
         { num: '02', title: 'Siempre a la vanguardia en fabricantes y desarrollo de film', desc: 'Trabajamos con los mejores fabricantes y desarrolladores de film a nivel mundial, incorporando innovación constante para ofrecer soluciones más eficientes, duraderas y con el mejor desempeño del mercado.' },
         { num: '03', title: 'Instalación profesional y acabados premium', desc: 'Nuestro equipo certificado garantiza una instalación precisa, limpia y duradera, cuidando cada detalle en cada proyecto. Acabados impecables y atención premium de principio a fin.' },
       ],
-      cta: 'Solicitar asesoría personalizada',
+      ctaTitle: 'Más que polarizado,',
+      ctaAccent: 'ingeniería del confort.',
+      ctaButton: 'Cotizar mi proyecto',
     },
     // Sticky CTA
     stickyCTA: {
@@ -319,6 +324,7 @@ export const translations = {
       infrarrojoDesc: 'It is one of the main responsible for the thermal sensation we experience when near a window exposed to the sun.',
       uv: 'Ultraviolet (UV)',
       uvDesc: 'Can contribute to the wear and discoloration of furniture, floors, curtains, textiles, and other interior finishes.',
+      radiationDesc: 'Solar energy is composed of different types of radiation. Some illuminate, others generate heat, and others can deteriorate interiors over time.',
     },
     // Solution
     solucion: {
@@ -333,6 +339,7 @@ export const translations = {
         glare: 'Reduced glare',
         options: 'Transparent or privacy options',
       },
+      iconLabels: ['UV Protection', 'Thermal Control', 'Transparency', 'Warranty'],
     },
     // Our Solutions
     ourSolutions: {
@@ -443,6 +450,7 @@ export const translations = {
       copyright: 'All rights reserved.',
       privacy: 'Privacy Policy',
       terms: 'Terms of Use',
+      productsList: ['Basic Window Film', 'Safety Film', 'Nano Ceramic', 'Anti-UV Transparent', 'Silver Mirror', 'Black Out / White Out'],
     },
     // How It Works
     howItWorks: {
@@ -474,7 +482,9 @@ export const translations = {
         { num: '02', title: 'Always at the forefront of manufacturers and film development', desc: 'We work with the best manufacturers and film developers worldwide, incorporating constant innovation to offer more efficient, durable solutions with the best performance on the market.' },
         { num: '03', title: 'Professional installation and premium finishes', desc: 'Our certified team guarantees precise, clean, and durable installation, taking care of every detail in each project. Impeccable finishes and premium attention from start to finish.' },
       ],
-      cta: 'Request personalized advice',
+      ctaTitle: 'More than window film,',
+      ctaAccent: 'comfort engineering.',
+      ctaButton: 'Quote my project',
     },
     // Sticky CTA
     stickyCTA: {

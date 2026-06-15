@@ -5,6 +5,7 @@ import { useLanguage } from '../context/LanguageContext.jsx'
 export default function Footer() {
   const { t } = useLanguage()
 
+  const productList = t('footer.productsList')
   const footerLinks = {
     [t('footer.company')]: [
       { label: t('footer.about'), href: '#nosotros' },
@@ -12,14 +13,7 @@ export default function Footer() {
       { label: t('footer.howItWorks'), href: '#como-funciona' },
       { label: t('footer.applications'), href: '#aplicaciones' },
     ],
-    [t('footer.products')]: [
-      { label: 'Polarizado Básico', href: '#productos' },
-      { label: 'Polarizado Seguridad', href: '#productos' },
-      { label: 'Nano Cerámica', href: '#productos' },
-      { label: 'Anti-UV Transparente', href: '#productos' },
-      { label: 'Silver Espejo', href: '#productos' },
-      { label: 'Black Out / White Out', href: '#productos' },
-    ],
+    [t('footer.products')]: productList.map(name => ({ label: name, href: '#productos' })),
     [t('footer.support')]: [
       { label: t('footer.faq'), href: '#faq' },
       { label: t('footer.quote'), href: '#cotizar' },

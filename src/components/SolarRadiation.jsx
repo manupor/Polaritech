@@ -82,8 +82,7 @@ export default function SolarRadiation() {
           </div>
 
           <div
-            className="reveal opacity-0 translate-y-8 transition-all duration-700 relative rounded-2xl overflow-hidden shadow-xl shadow-[rgba(32,52,120,0.12)]"
-            style={{ minHeight: '380px' }}
+            className="reveal opacity-0 translate-y-8 transition-all duration-700 relative rounded-2xl overflow-hidden shadow-xl shadow-[rgba(32,52,120,0.12)] min-h-[240px] sm:min-h-[380px]"
           >
             <img
               src="/450.jpg"
@@ -108,8 +107,7 @@ export default function SolarRadiation() {
             {t('problema.subtitle')}
           </h3>
           <p className="mt-4" style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', color: '#5a6a82', fontSize: '1rem', lineHeight: 1.7 }}>
-            La energía solar está compuesta por diferentes tipos de radiación. Algunas iluminan,
-            otras generan calor y otras pueden deteriorar interiores con el tiempo.
+            {t('problema.radiationDesc')}
           </p>
         </div>
 

@@ -73,18 +73,18 @@ export default function Applications() {
         {/* Gallery Slider */}
         <div className="reveal opacity-0 translate-y-8 transition-all duration-700">
           {/* Main image */}
-          <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden mb-6 group">
+          <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden mb-4 sm:mb-6 group">
             <img
               src={s.img}
               alt={s.title}
               className="w-full h-full object-cover transition-all duration-500"
               key={current}
             />
-            {/* Overlay gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            {/* Desktop overlay gradient only */}
+            <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
-            {/* Text overlay */}
-            <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+            {/* Desktop text overlay */}
+            <div className="hidden sm:block absolute bottom-0 left-0 right-0 p-6 sm:p-8">
               <div className="flex items-center gap-2.5 mb-2" style={{ color: 'white' }}>
                 {s.icon}
                 <h3 className="font-bold text-xl sm:text-2xl" style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', color: '#FFFFFF' }}>
@@ -111,16 +111,28 @@ export default function Applications() {
             </button>
           </div>
 
+          {/* Mobile text card below image */}
+          <div className="sm:hidden bg-white rounded-xl p-4 mb-6 border border-gray-100 shadow-sm">
+            <div className="flex items-center gap-2.5 mb-2">
+              <span style={{ color: '#5BA130' }}>{s.icon}</span>
+              <h3 className="font-bold text-lg" style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', color: '#203478' }}>
+                {s.title}
+              </h3>
+            </div>
+            <p className="text-sm leading-relaxed" style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', color: '#5a6a82' }}>
+              {s.desc}
+            </p>
+          </div>
+
           {/* Thumbnails / Dots */}
           <div className="flex items-center justify-center gap-3">
             {spaces.map((space, i) => (
               <button
                 key={space.title}
                 onClick={() => goTo(i)}
-                className={`relative overflow-hidden rounded-lg transition-all duration-300 ${
+                className={`relative overflow-hidden rounded-lg transition-all duration-300 w-16 h-11 sm:w-20 sm:h-14 ${
                   current === i ? 'ring-2 ring-[#5BA130] ring-offset-2' : 'opacity-60 hover:opacity-100'
                 }`}
-                style={{ width: '80px', height: '56px' }}
               >
                 <img
                   src={space.img}

@@ -146,30 +146,17 @@ export default function Solution() {
               {/* Technology icons at bottom of image in 2x2 grid */}
               <div className="hidden lg:flex absolute bottom-4 left-6 right-6 justify-center">
                 <div className="grid grid-cols-2 gap-4 bg-white/95 backdrop-blur-sm rounded-2xl p-5 shadow-lg" style={{ border: '1px solid rgba(255,255,255,0.3)' }}>
-                  <div className="flex flex-col items-center text-center p-3 rounded-xl transition-all duration-300 hover:bg-green-50">
-                    <div className="w-12 h-12 rounded-full flex items-center justify-center mb-2" style={{ background: 'rgba(91,161,48,0.1)', color: '#5BA130' }}>
-                      <Shield size={20} />
-                    </div>
-                    <span style={{ color: '#203478', fontSize: '0.85rem', fontWeight: 500, fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>Protección UV</span>
-                  </div>
-                  <div className="flex flex-col items-center text-center p-3 rounded-xl transition-all duration-300 hover:bg-green-50">
-                    <div className="w-12 h-12 rounded-full flex items-center justify-center mb-2" style={{ background: 'rgba(91,161,48,0.1)', color: '#5BA130' }}>
-                      <Sun size={20} />
-                    </div>
-                    <span style={{ color: '#203478', fontSize: '0.85rem', fontWeight: 500, fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>Control Térmico</span>
-                  </div>
-                  <div className="flex flex-col items-center text-center p-3 rounded-xl transition-all duration-300 hover:bg-green-50">
-                    <div className="w-12 h-12 rounded-full flex items-center justify-center mb-2" style={{ background: 'rgba(91,161,48,0.1)', color: '#5BA130' }}>
-                      <Eye size={20} />
-                    </div>
-                    <span style={{ color: '#203478', fontSize: '0.85rem', fontWeight: 500, fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>Transparencia</span>
-                  </div>
-                  <div className="flex flex-col items-center text-center p-3 rounded-xl transition-all duration-300 hover:bg-green-50">
-                    <div className="w-12 h-12 rounded-full flex items-center justify-center mb-2" style={{ background: 'rgba(91,161,48,0.1)', color: '#5BA130' }}>
-                      <CheckCircle2 size={20} />
-                    </div>
-                    <span style={{ color: '#203478', fontSize: '0.85rem', fontWeight: 500, fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>Garantía</span>
-                  </div>
+                  {t('solucion.iconLabels').map((label, i) => {
+                    const icons = [<Shield size={20} />, <Sun size={20} />, <Eye size={20} />, <CheckCircle2 size={20} />]
+                    return (
+                      <div key={label} className="flex flex-col items-center text-center p-3 rounded-xl transition-all duration-300 hover:bg-green-50">
+                        <div className="w-12 h-12 rounded-full flex items-center justify-center mb-2" style={{ background: 'rgba(91,161,48,0.1)', color: '#5BA130' }}>
+                          {icons[i]}
+                        </div>
+                        <span style={{ color: '#203478', fontSize: '0.85rem', fontWeight: 500, fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>{label}</span>
+                      </div>
+                    )
+                  })}
                 </div>
               </div>
             </div>

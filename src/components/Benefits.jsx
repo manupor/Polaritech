@@ -114,11 +114,11 @@ export default function Benefits() {
               lineHeight: 1.2,
             }}
           >
-            Más que polarizado,<br />
-            <span style={{ color: '#5BA130' }}>ingeniería del confort.</span>
+            {t('benefits.ctaTitle')}<br />
+            <span style={{ color: '#5BA130' }}>{t('benefits.ctaAccent')}</span>
           </h3>
           <a href="#cotizar" className="btn-primary shrink-0">
-            Cotizar mi proyecto
+            {t('benefits.ctaButton')}
             <ArrowRight size={15} />
           </a>
         </div>
