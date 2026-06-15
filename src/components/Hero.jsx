@@ -82,10 +82,10 @@ export default function Hero() {
               hogares, oficinas y proyectos arquitectónicos.
             </p>
 
-            {/* Accent line */}
+            {/* Accent line - diagonal */}
             <div
               className="mb-8"
-              style={{ width: '60px', height: '3px', background: '#5BA130' }}
+              style={{ width: '70px', height: '3px', background: '#5BA130', transform: 'skewX(-20deg)', transformOrigin: 'left center' }}
             />
 
             {/* CTAs - ConstructZilla skew button style */}
