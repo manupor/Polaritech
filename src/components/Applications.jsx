@@ -15,7 +15,7 @@ const spaces = [
     icon: <Home size={22} />,
     title: 'Hogares',
     desc: 'Confort térmico y protección para toda la familia.',
-    img: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=600&q=80',
+    img: '/home.jpg',
   },
   {
     icon: <Building2 size={22} />,
