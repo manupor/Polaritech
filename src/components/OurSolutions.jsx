@@ -1,56 +1,7 @@
 import React, { useState } from 'react'
 import { ArrowRight, Shield, Sun, Eye, Layers, Sparkles, Square, CircleDot } from 'lucide-react'
 import { useParallax, useScrollAnimation, useParallaxScale } from '../hooks/useParallax'
-
-const solutions = [
-  {
-    icon: <Sparkles size={22} />,
-    name: 'NANOCERÁMICA',
-    tag: 'Alto desempeño',
-    tagColor: 'violet',
-    short: 'Excelente control solar sin depender del oscuridad',
-    desc: 'Nuestra línea Nanocerámica está diseñada para ofrecer un alto desempeño en control solar sin depender de la oscuridad del vidrio para reducir el calor. A diferencia de otras soluciones, su tecnología permite mantener un excelente rendimiento térmico tanto en versiones más transparentes como en tonos más oscuros. Esto se debe a que la reducción de calor proviene de la tecnología incorporada en la lámina y no únicamente del nivel de tinte.',
-    features: ['Excelente reducción de sensación térmica', 'Protección UV hasta 99.5%', 'Menor deslumbramiento', 'Conserva la iluminación natural', 'Opciones transparentes o con distintos niveles de privacidad', 'Garantía de hasta 12 años'],
-    available: 'Disponible en: 70% • 45% • 20% • 10%',
-  },
-  {
-    icon: <Shield size={22} />,
-    name: 'SEGURIDAD',
-    tag: 'Protección',
-    tagColor: 'blue',
-    short: 'Ayuda a mantener unidos los fragmentos de vidrio',
-    desc: 'Diseñada para ayudar a mantener unidos los fragmentos de vidrio en caso de rotura accidental o impacto. Es importante destacar que una lámina de seguridad no evita que el vidrio se quiebre, ya que esto depende de la fuerza del impacto y de las características del cristal. Sin embargo, ayuda a reducir la dispersión de fragmentos, contribuyendo a una mayor protección para las personas y el entorno.',
-    features: ['Ayuda a contener fragmentos de vidrio', 'Mayor seguridad ante accidentes', 'Mantiene la apariencia original del cristal', 'Disponible en versiones transparentes y de control solar'],
-    applications: ['Hogares', 'Oficinas', 'Locales comerciales', 'Puertas y divisiones de vidrio', 'Áreas de alto tránsito'],
-  },
-  {
-    icon: <Square size={22} />,
-    name: 'SANDBLASTING',
-    tag: 'Privacidad',
-    tagColor: 'rose',
-    short: 'Privacidad permanente sin bloquear la luz natural',
-    desc: 'Solución diseñada para brindar privacidad permanente sin bloquear la entrada de luz natural. Su acabado tipo esmerilado permite el paso de iluminación mientras limita la visibilidad en ambas direcciones.',
-    features: ['Privacidad permanente', 'Mantiene la entrada de luz natural', 'Acabado elegante y uniforme', 'No requiere reemplazar el vidrio existente'],
-  },
-  {
-    icon: <Layers size={22} />,
-    name: 'ECONÓMICA',
-    tag: 'Relación costo-beneficio',
-    tagColor: 'cyan',
-    short: 'Alternativa con excelente relación costo-beneficio',
-    desc: 'Alternativa de control solar con una excelente relación costo-beneficio.',
-    features: ['Reducción moderada de sensación térmica', 'Privacidad durante el día', 'Menor deslumbramiento', 'Protección UV', 'Excelente relación costo-beneficio', 'Garantía de hasta 5 años'],
-  },
-  {
-    icon: <CircleDot size={22} />,
-    name: 'WHITE OUT / BLACK OUT',
-    tag: 'Control visual',
-    tagColor: 'neutral',
-    short: 'Soluciones orientadas al control visual y privacidad total',
-    desc: 'Soluciones orientadas al control visual y la privacidad total.',
-    features: ['Alto nivel de privacidad', 'Apariencia uniforme', 'Soluciones personalizadas según cada proyecto', 'Instalación sobre vidrio existente'],
-  },
-]
+import { useLanguage } from '../context/LanguageContext.jsx'
 
 const tagStyles = {
   violet: 'bg-violet-400/10 text-violet-400 border-violet-400/20',
@@ -61,7 +12,59 @@ const tagStyles = {
 }
 
 export default function OurSolutions() {
+  const { t } = useLanguage()
   const [active, setActive] = useState(0)
+
+  const solutions = [
+    {
+      icon: <Sparkles size={22} />,
+      name: t('ourSolutions.products.nanoceramica.name'),
+      tag: t('ourSolutions.products.nanoceramica.tag'),
+      tagColor: 'violet',
+      short: t('ourSolutions.products.nanoceramica.short'),
+      desc: t('ourSolutions.products.nanoceramica.desc'),
+      features: t('ourSolutions.products.nanoceramica.features'),
+      available: t('ourSolutions.products.nanoceramica.available'),
+    },
+    {
+      icon: <Shield size={22} />,
+      name: t('ourSolutions.products.seguridad.name'),
+      tag: t('ourSolutions.products.seguridad.tag'),
+      tagColor: 'blue',
+      short: t('ourSolutions.products.seguridad.short'),
+      desc: t('ourSolutions.products.seguridad.desc'),
+      features: t('ourSolutions.products.seguridad.features'),
+      applications: t('ourSolutions.products.seguridad.applications'),
+    },
+    {
+      icon: <Square size={22} />,
+      name: t('ourSolutions.products.sandblasting.name'),
+      tag: t('ourSolutions.products.sandblasting.tag'),
+      tagColor: 'rose',
+      short: t('ourSolutions.products.sandblasting.short'),
+      desc: t('ourSolutions.products.sandblasting.desc'),
+      features: t('ourSolutions.products.sandblasting.features'),
+    },
+    {
+      icon: <Layers size={22} />,
+      name: t('ourSolutions.products.economica.name'),
+      tag: t('ourSolutions.products.economica.tag'),
+      tagColor: 'cyan',
+      short: t('ourSolutions.products.economica.short'),
+      desc: t('ourSolutions.products.economica.desc'),
+      features: t('ourSolutions.products.economica.features'),
+    },
+    {
+      icon: <CircleDot size={22} />,
+      name: t('ourSolutions.products.blackout.name'),
+      tag: t('ourSolutions.products.blackout.tag'),
+      tagColor: 'neutral',
+      short: t('ourSolutions.products.blackout.short'),
+      desc: t('ourSolutions.products.blackout.desc'),
+      features: t('ourSolutions.products.blackout.features'),
+    },
+  ]
+
   const s = solutions[active]
   const headerRef = useScrollAnimation(0.15)
   const selectorRef = useScrollAnimation(0.2)
@@ -84,7 +87,7 @@ export default function OurSolutions() {
               letterSpacing: '-0.02em',
             }}
           >
-            NUESTRAS <span style={{ color: '#5BA130' }}>SOLUCIONES</span>
+            {t('ourSolutions.title')} <span style={{ color: '#5BA130' }}>{t('ourSolutions.titleAccent')}</span>
           </h2>
 
           <div
@@ -102,11 +105,11 @@ export default function OurSolutions() {
               marginBottom: '16px',
             }}
           >
-            Tecnología especializada para cada espacio
+            {t('ourSolutions.subtitle')}
           </h3>
 
           <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', color: '#5a6a82', fontSize: '1.05rem', lineHeight: 1.7, maxWidth: '600px', margin: '0 auto' }}>
-            Cada espacio tiene condiciones distintas de exposición solar, privacidad, iluminación y uso. Por eso contamos con diferentes líneas de producto diseñadas para responder a necesidades específicas, permitiéndonos recomendar la alternativa más adecuada para cada proyecto.
+            {t('ourSolutions.description')}
           </p>
         </div>
 
@@ -172,7 +175,7 @@ export default function OurSolutions() {
 
               <div className="mb-8">
                 <h4 style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', fontSize: '1rem', fontWeight: 500, color: '#203478', marginBottom: '12px' }}>
-                  Beneficios principales:
+                  {t('ourSolutions.mainBenefits')}
                 </h4>
                 <div className="space-y-2">
                   {s.features.map((f) => (
@@ -187,7 +190,7 @@ export default function OurSolutions() {
               {s.applications && (
                 <div className="mb-8">
                   <h4 style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', fontSize: '1rem', fontWeight: 500, color: '#203478', marginBottom: '12px' }}>
-                    Aplicaciones recomendadas:
+                    {t('ourSolutions.recommendedApps')}
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {s.applications.map((app) => (
@@ -201,11 +204,11 @@ export default function OurSolutions() {
 
               <div className="flex flex-col sm:flex-row gap-3 pt-6 border-t border-gray-200">
                 <a href="#cotizar" className="btn-primary w-full sm:w-auto justify-center">
-                  Solicitar cotización
+                  {t('ourSolutions.requestQuote')}
                   <ArrowRight size={15} />
                 </a>
                 <a href="#contacto" className="btn-secondary-light w-full sm:w-auto justify-center" style={{ borderColor: 'rgba(91,161,48,0.3)', color: '#5BA130' }}>
-                  Más información
+                  {t('ourSolutions.moreInfo')}
                 </a>
               </div>
             </div>
