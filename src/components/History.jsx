@@ -106,13 +106,13 @@ export default function History() {
               </ul>
             </div>
 
-            {/* Van image */}
+            {/* Mockup image */}
             <div className="rounded-xl overflow-hidden shadow-lg">
               <img
-                src="/450.jpg"
-                alt="Polaritech - Servicio a domicilio"
+                src="/polaritech-mockup.png"
+                alt="Polaritech - Soluciones de control solar"
                 className="w-full object-cover"
-                style={{ maxHeight: '320px' }}
+                style={{ maxHeight: '400px' }}
               />
             </div>
           </div>
