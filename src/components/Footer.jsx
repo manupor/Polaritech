@@ -1,5 +1,5 @@
 import React from 'react'
-import { Instagram, Facebook, Twitter, Linkedin, ArrowUpRight, MapPin, Phone, Mail } from 'lucide-react'
+import { Instagram, ArrowUpRight, MapPin, Phone, Mail } from 'lucide-react'
 
 const footerLinks = {
   Empresa: [
@@ -25,9 +25,6 @@ const footerLinks = {
 
 const socials = [
   { icon: <Instagram size={18} />, href: '#', label: 'Instagram' },
-  { icon: <Facebook size={18} />, href: '#', label: 'Facebook' },
-  { icon: <Twitter size={18} />, href: '#', label: 'Twitter' },
-  { icon: <Linkedin size={18} />, href: '#', label: 'LinkedIn' },
 ]
 
 export default function Footer() {
