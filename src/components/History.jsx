@@ -24,8 +24,7 @@ export default function History() {
               transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1)',
             }}
           >
-            <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-10" style={{ border: '1px solid rgba(32,52,120,0.06)' }}>
-              <h2
+            <h2
                 style={{
                   color: '#203478',
                   fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
@@ -75,7 +74,6 @@ export default function History() {
                   <div style={{ fontSize: '0.85rem', color: '#6b7a99', fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>Años experiencia</div>
                 </div>
               </div>
-            </div>
           </div>
 
           <div className="reveal opacity-0 translate-y-8 transition-all duration-700 relative hidden lg:block">
