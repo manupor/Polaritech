@@ -10,7 +10,7 @@ export default function History() {
     <section 
       id="historia" 
       className="relative py-16 sm:py-24 overflow-hidden" 
-      style={{ background: '#F7FAFC' }}
+      style={{ background: '#FFFFFF' }}
     >
       <div className="max-w-7xl mx-auto px-6">
         {/* Title */}
