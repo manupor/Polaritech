@@ -13,7 +13,7 @@ const spaces = [
     icon: <Building2 size={22} />,
     title: 'Oficinas',
     desc: 'Mayor productividad con confort visual y térmico.',
-    img: '/office.jpg',
+    img: '/oficinas.jpg',
   },
   {
     icon: <Building size={22} />,
