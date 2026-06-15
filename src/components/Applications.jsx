@@ -1,14 +1,6 @@
-import React from 'react'
-import { Home, Building2, Building, PanelsTopLeft, Thermometer, Shield, Sun, Cpu, CheckCircle2 } from 'lucide-react'
-import { useParallax, useScrollAnimation, useParallaxScale } from '../hooks/useParallax'
-
-const featureCards = [
-  { icon: <Thermometer size={24} strokeWidth={1.6} />, label: 'Reducción térmica' },
-  { icon: <Shield size={24} strokeWidth={1.6} />, label: 'Protección UV 99.5%' },
-  { icon: <Sun size={24} strokeWidth={1.6} />, label: 'Transparencia sin tono' },
-  { icon: <Cpu size={24} strokeWidth={1.6} />, label: 'Tecnología Nano Cerámica' },
-  { icon: <CheckCircle2 size={24} strokeWidth={1.6} />, label: 'Instalación profesional' },
-]
+import React, { useState } from 'react'
+import { Home, Building2, Building, PanelsTopLeft, ChevronLeft, ChevronRight } from 'lucide-react'
+import { useScrollAnimation } from '../hooks/useParallax'
 
 const spaces = [
   {
@@ -27,7 +19,7 @@ const spaces = [
     icon: <Building size={22} />,
     title: 'Condominios',
     desc: 'Soluciones que respetan reglas de construcción.',
-    img: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=600&q=80',
+    img: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80',
   },
   {
     icon: <PanelsTopLeft size={22} />,
@@ -44,98 +36,105 @@ const spaces = [
 ]
 
 export default function Applications() {
+  const [current, setCurrent] = useState(0)
   const headerRef = useScrollAnimation(0.15)
-  const cardsRef = useScrollAnimation(0.2)
-  const scaleRef = useParallaxScale(0.9, 1.1, 0.002)
+
+  const next = () => setCurrent((prev) => (prev + 1) % spaces.length)
+  const prev = () => setCurrent((prev) => (prev - 1 + spaces.length) % spaces.length)
+  const goTo = (index) => setCurrent(index)
+
+  const s = spaces[current]
+
   return (
     <section id="soluciones" className="relative pb-16 sm:pb-24 pt-24 sm:pt-32 overflow-hidden" style={{ background: '#FFFFFF' }}>
-
-      {/* Feature Cards - Overlapping section */}
-      <div className="relative z-20" style={{ marginTop: '-100px', marginBottom: '60px' }}>
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-            {featureCards.map((f, i) => (
-              <div
-                key={f.label}
-                className="bg-white shadow-lg hover:shadow-xl transition-all duration-300 p-6 flex flex-col items-center text-center group"
-                style={{ 
-                  border: '1px solid rgba(32,52,120,0.08)',
-                  transform: 'translateY(0)',
-                }}
-              >
-                <div 
-                  className="w-14 h-14 flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110"
-                  style={{ background: 'rgba(91,161,48,0.1)', color: '#5BA130' }}
-                >
-                  {f.icon}
-                </div>
-                <span
-                  style={{
-                    fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
-                    fontSize: '13px',
-                    fontWeight: 500,
-                    color: '#203478',
-                    lineHeight: 1.4,
-                    textAlign: 'center',
-                  }}
-                >
-                  {f.label}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-10 reveal opacity-0 translate-y-8 transition-all duration-700">
           <h2
-            className="font-black"
             style={{
               fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
-              fontSize: 'clamp(1.1rem, 2vw, 1.4rem)',
-              fontWeight: 700,
+              fontSize: 'clamp(2rem, 3.5vw, 3rem)',
+              fontWeight: 500,
               color: '#203478',
-              letterSpacing: '0.01em',
+              letterSpacing: '-0.02em',
             }}
           >
             APLICACIONES
           </h2>
-          <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', fontSize: '0.85rem', color: '#6b7a99' }}>
+          <div className="my-4 mx-auto" style={{ width: '56px', height: '3px', borderRadius: '2px', background: '#5BA130' }} />
+          <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', fontSize: '1rem', color: '#6b7a99', maxWidth: '500px', margin: '0 auto' }}>
             Lugares donde optimizamos tu confort y privacidad.
           </p>
-          <span className="title-accent" />
         </div>
 
-        {/* 5-col grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-          {spaces.map((s, i) => (
-            <div
-              key={s.title}
-              className="reveal opacity-0 translate-y-8 transition-all duration-700 flex flex-col"
-              style={{ transitionDelay: `${i * 90}ms` }}
-            >
-              <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-5">
-                <img
-                  src={s.img}
-                  alt={s.title}
-                  loading="lazy"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+        {/* Gallery Slider */}
+        <div className="reveal opacity-0 translate-y-8 transition-all duration-700">
+          {/* Main image */}
+          <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden mb-6 group">
+            <img
+              src={s.img}
+              alt={s.title}
+              className="w-full h-full object-cover transition-all duration-500"
+              key={current}
+            />
+            {/* Overlay gradient */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
-              <div className="flex items-center gap-2.5 mb-2" style={{ color: '#203478' }}>
+            {/* Text overlay */}
+            <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+              <div className="flex items-center gap-2.5 mb-2" style={{ color: 'white' }}>
                 {s.icon}
-                <h3 className="font-bold text-lg" style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', color: '#203478' }}>
+                <h3 className="font-bold text-xl sm:text-2xl" style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', color: '#FFFFFF' }}>
                   {s.title}
                 </h3>
               </div>
-              <p className="text-sm leading-relaxed font-light" style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', color: '#6b7a99' }}>
+              <p className="text-sm sm:text-base leading-relaxed" style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', color: 'rgba(255,255,255,0.9)', maxWidth: '500px' }}>
                 {s.desc}
               </p>
             </div>
-          ))}
+
+            {/* Navigation arrows */}
+            <button
+              onClick={prev}
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/40 transition-all duration-300 opacity-0 group-hover:opacity-100"
+            >
+              <ChevronLeft size={20} />
+            </button>
+            <button
+              onClick={next}
+              className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/40 transition-all duration-300 opacity-0 group-hover:opacity-100"
+            >
+              <ChevronRight size={20} />
+            </button>
+          </div>
+
+          {/* Thumbnails / Dots */}
+          <div className="flex items-center justify-center gap-3">
+            {spaces.map((space, i) => (
+              <button
+                key={space.title}
+                onClick={() => goTo(i)}
+                className={`relative overflow-hidden rounded-lg transition-all duration-300 ${
+                  current === i ? 'ring-2 ring-[#5BA130] ring-offset-2' : 'opacity-60 hover:opacity-100'
+                }`}
+                style={{ width: '80px', height: '56px' }}
+              >
+                <img
+                  src={space.img}
+                  alt={space.title}
+                  className="w-full h-full object-cover"
+                />
+              </button>
+            ))}
+          </div>
+
+          {/* Counter */}
+          <div className="text-center mt-4">
+            <span className="text-sm font-medium" style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', color: '#6b7a99' }}>
+              {current + 1} / {spaces.length}
+            </span>
+          </div>
         </div>
       </div>
     </section>
