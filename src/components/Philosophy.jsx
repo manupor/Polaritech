@@ -1,8 +1,10 @@
 import React from 'react'
 import { Lightbulb, TrendingUp, Search } from 'lucide-react'
 import { useParallax, useScrollAnimation, useParallaxRotate } from '../hooks/useParallax'
+import { useLanguage } from '../context/LanguageContext.jsx'
 
 export default function Philosophy() {
+  const { t } = useLanguage()
   const contentRef = useScrollAnimation(0.15)
   const cardsRef = useScrollAnimation(0.2)
   const floatingRef = useParallaxRotate(0.05)
@@ -28,19 +30,17 @@ export default function Philosophy() {
               letterSpacing: '-0.02em',
             }}
           >
-            NUESTRA <span style={{ color: '#5BA130' }}>FILOSOFÍA</span>
+            {t('philosophy.title')} <span style={{ color: '#5BA130' }}>{t('philosophy.titleAccent')}</span>
           </h2>
 
           <div className="my-6 mx-auto" style={{ width: '56px', height: '3px', borderRadius: '2px', background: '#5BA130' }} />
 
           <div style={{ color: '#5a6a82', fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', fontSize: '1.05rem', lineHeight: 1.7, maxWidth: '700px', margin: '0 auto' }}>
             <p className="mb-8">
-              Más que seguir tendencias, nuestro enfoque es identificar aquellas alternativas que realmente
-              generen resultados y aporten valor a cada proyecto.
+              {t('philosophy.p1')}
             </p>
             <p className="mb-12">
-              La industria del control solar evoluciona constantemente. Por ello mantenemos una búsqueda
-              permanente de tecnologías y soluciones que aporten mayor confort, protección y durabilidad.
+              {t('philosophy.p2')}
             </p>
           </div>
 
@@ -50,10 +50,10 @@ export default function Philosophy() {
                 <Lightbulb size={26} />
               </div>
               <h3 style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', fontSize: '1.2rem', fontWeight: 500, color: '#203478', marginBottom: '12px' }}>
-                Resultados Reales
+                {t('philosophy.card1')}
               </h3>
               <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', fontSize: '0.9rem', color: '#6b7a99', lineHeight: 1.6 }}>
-                Identificamos alternativas que realmente generen resultados y aporten valor
+                {t('philosophy.card1Desc')}
               </p>
             </div>
             <div className="flex flex-col items-center text-center p-8 rounded-2xl bg-white shadow-lg hover:shadow-xl transition-all duration-300" style={{ border: '1px solid rgba(32,52,120,0.06)' }}>
@@ -61,10 +61,10 @@ export default function Philosophy() {
                 <TrendingUp size={26} />
               </div>
               <h3 style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', fontSize: '1.2rem', fontWeight: 500, color: '#203478', marginBottom: '12px' }}>
-                Evolución Constante
+                {t('philosophy.card2')}
               </h3>
               <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', fontSize: '0.9rem', color: '#6b7a99', lineHeight: 1.6 }}>
-                La industria del control solar evoluciona y nosotros evolucionamos con ella
+                {t('philosophy.card2Desc')}
               </p>
             </div>
             <div className="flex flex-col items-center text-center p-8 rounded-2xl bg-white shadow-lg hover:shadow-xl transition-all duration-300" style={{ border: '1px solid rgba(32,52,120,0.06)' }}>
@@ -72,10 +72,10 @@ export default function Philosophy() {
                 <Search size={26} />
               </div>
               <h3 style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', fontSize: '1.2rem', fontWeight: 500, color: '#203478', marginBottom: '12px' }}>
-                Búsqueda Permanente
+                {t('philosophy.card3')}
               </h3>
               <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', fontSize: '0.9rem', color: '#6b7a99', lineHeight: 1.6 }}>
-                Tecnologías que aporten mayor confort, protección y durabilidad
+                {t('philosophy.card3Desc')}
               </p>
             </div>
           </div>

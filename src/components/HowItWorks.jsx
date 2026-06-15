@@ -1,54 +1,57 @@
 import React from 'react'
 import { MessageCircle, Home, MapPin, Building2, CalendarCheck, CheckCircle2, ArrowRight } from 'lucide-react'
-
-const steps = [
-  {
-    num: '01',
-    title: 'Cotización inicial',
-    lead: 'Nos envías:',
-    bullets: ['Medidas aproximadas (alto x ancho)', 'Zona o provincia', 'Fotografías del área'],
-  },
-  {
-    num: '02',
-    title: 'Evaluación técnica',
-    desc: 'Analizamos orientación solar, privacidad y necesidades del espacio.',
-  },
-  {
-    num: '03',
-    title: 'Recomendación',
-    desc: 'Le sugerimos el ideal según la estética y necesidad que requiera.',
-  },
-  {
-    num: '04',
-    title: 'Instalación profesional',
-    desc: 'Instalación con acabados limpios y precisión técnica.',
-  },
-  {
-    num: '05',
-    title: 'Resultado',
-    desc: 'Confort térmico inmediato y protección a largo plazo.',
-  },
-]
-
-const visitas = [
-  {
-    icon: <Home size={20} strokeWidth={1.7} />,
-    title: 'Dentro del GAM',
-    desc: 'A partir de 5 ventanas o 5 m².',
-  },
-  {
-    icon: <MapPin size={20} strokeWidth={1.7} />,
-    title: 'Fuera del GAM',
-    desc: 'Visita técnica con costo según ubicación.',
-  },
-  {
-    icon: <Building2 size={20} strokeWidth={1.7} />,
-    title: 'Proyectos fuera del GAM',
-    desc: 'Proyecto mayor a 5 m².',
-  },
-]
+import { useLanguage } from '../context/LanguageContext.jsx'
 
 export default function HowItWorks() {
+  const { t } = useLanguage()
+
+  const steps = [
+    {
+      num: '01',
+      title: t('howItWorks.steps.0.title'),
+      lead: t('howItWorks.steps.0.lead'),
+      bullets: t('howItWorks.steps.0.bullets') || [],
+    },
+    {
+      num: '02',
+      title: t('howItWorks.steps.1.title'),
+      desc: t('howItWorks.steps.1.desc'),
+    },
+    {
+      num: '03',
+      title: t('howItWorks.steps.2.title'),
+      desc: t('howItWorks.steps.2.desc'),
+    },
+    {
+      num: '04',
+      title: t('howItWorks.steps.3.title'),
+      desc: t('howItWorks.steps.3.desc'),
+    },
+    {
+      num: '05',
+      title: t('howItWorks.steps.4.title'),
+      desc: t('howItWorks.steps.4.desc'),
+    },
+  ]
+
+  const visitas = [
+    {
+      icon: <Home size={20} strokeWidth={1.7} />,
+      title: t('howItWorks.visitas.0.title'),
+      desc: t('howItWorks.visitas.0.desc'),
+    },
+    {
+      icon: <MapPin size={20} strokeWidth={1.7} />,
+      title: t('howItWorks.visitas.1.title'),
+      desc: t('howItWorks.visitas.1.desc'),
+    },
+    {
+      icon: <Building2 size={20} strokeWidth={1.7} />,
+      title: t('howItWorks.visitas.2.title'),
+      desc: t('howItWorks.visitas.2.desc'),
+    },
+  ]
+
   return (
     <section id="como-funciona" className="relative py-16 sm:py-24 overflow-hidden" style={{ background: '#FFFFFF' }}>
 
@@ -64,10 +67,10 @@ export default function HowItWorks() {
               letterSpacing: '-0.01em',
             }}
           >
-            ¿Cómo <span style={{ color: '#5BA130' }}>trabajamos</span>?
+            {t('howItWorks.title')} <span style={{ color: '#5BA130' }}>{t('howItWorks.titleAccent')}</span>?
           </h2>
           <p className="mt-3" style={{ fontFamily: 'Rubik, sans-serif', fontSize: '1rem', color: '#6b7a99' }}>
-            Un proceso profesional y transparente.
+            {t('howItWorks.description')}
           </p>
           <span className="title-accent" />
         </div>
@@ -161,7 +164,7 @@ export default function HowItWorks() {
         {/* Visitas técnicas y validación */}
         <div className="reveal opacity-0 translate-y-8 transition-all duration-700 mt-8 glass-card rounded-2xl p-8">
           <h3 className="text-center mb-8" style={{ fontFamily: 'Rubik, sans-serif', fontSize: '0.95rem', fontWeight: 800, letterSpacing: '0.08em', color: '#203478', textTransform: 'uppercase' }}>
-            Visitas técnicas y validación
+            {t('howItWorks.noteTitle')}
           </h3>
           <div className="grid sm:grid-cols-3 gap-6">
             {visitas.map((v) => (
@@ -195,10 +198,10 @@ export default function HowItWorks() {
             style={{ borderColor: 'rgba(18,140,126,0.45)', color: '#128c7e' }}
           >
             <MessageCircle size={16} />
-            WhatsApp
+            {t('contact.whatsapp')}
           </a>
           <a href="#cotizar" className="btn-primary justify-center">
-            Cotizar mi proyecto
+            {t('stickyCTA.quote')}
             <ArrowRight size={15} />
           </a>
         </div>

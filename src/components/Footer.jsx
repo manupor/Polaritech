@@ -1,33 +1,36 @@
 import React from 'react'
 import { Instagram, ArrowUpRight, MapPin, Phone, Mail } from 'lucide-react'
-
-const footerLinks = {
-  Empresa: [
-    { label: 'Sobre nosotros', href: '#nosotros' },
-    { label: 'Nuestros servicios', href: '#productos' },
-    { label: 'Cómo funciona', href: '#como-funciona' },
-    { label: 'Aplicaciones', href: '#aplicaciones' },
-  ],
-  Productos: [
-    { label: 'Polarizado Básico', href: '#productos' },
-    { label: 'Polarizado Seguridad', href: '#productos' },
-    { label: 'Nano Cerámica', href: '#productos' },
-    { label: 'Anti-UV Transparente', href: '#productos' },
-    { label: 'Silver Espejo', href: '#productos' },
-    { label: 'Black Out / White Out', href: '#productos' },
-  ],
-  Soporte: [
-    { label: 'Preguntas frecuentes', href: '#faq' },
-    { label: 'Solicitar cotización', href: '#cotizar' },
-    { label: 'Contacto', href: '#cotizar' },
-  ],
-}
-
-const socials = [
-  { icon: <Instagram size={18} />, href: '#', label: 'Instagram' },
-]
+import { useLanguage } from '../context/LanguageContext.jsx'
 
 export default function Footer() {
+  const { t } = useLanguage()
+
+  const footerLinks = {
+    [t('footer.company')]: [
+      { label: t('footer.about'), href: '#nosotros' },
+      { label: t('footer.services'), href: '#productos' },
+      { label: t('footer.howItWorks'), href: '#como-funciona' },
+      { label: t('footer.applications'), href: '#aplicaciones' },
+    ],
+    [t('footer.products')]: [
+      { label: 'Polarizado Básico', href: '#productos' },
+      { label: 'Polarizado Seguridad', href: '#productos' },
+      { label: 'Nano Cerámica', href: '#productos' },
+      { label: 'Anti-UV Transparente', href: '#productos' },
+      { label: 'Silver Espejo', href: '#productos' },
+      { label: 'Black Out / White Out', href: '#productos' },
+    ],
+    [t('footer.support')]: [
+      { label: t('footer.faq'), href: '#faq' },
+      { label: t('footer.quote'), href: '#cotizar' },
+      { label: t('footer.contact'), href: '#cotizar' },
+    ],
+  }
+
+  const socials = [
+    { icon: <Instagram size={18} />, href: '#', label: 'Instagram' },
+  ]
+
   return (
     <footer className="relative overflow-hidden" style={{ background: '#1a1a2e' }}>
       {/* Top accent line */}
@@ -45,21 +48,20 @@ export default function Footer() {
               />
             </a>
             <p className="text-sm leading-relaxed mb-4 max-w-xs" style={{ color: 'rgba(255,255,255,0.7)', fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>
-              Distribuidor autorizado en Costa Rica desde 2016. Polarizado arquitectónico
-              premium para hogares, oficinas y edificios en todo el país.
+              {t('footer.description')}
             </p>
             <div className="space-y-2 mb-6">
               <div className="flex items-center gap-2 text-xs" style={{ color: 'rgba(255,255,255,0.7)' }}>
                 <MapPin size={14} style={{ color: '#5BA130' }} className="shrink-0" />
-                <span style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>Costa Rica — Servicio a domicilio nacional</span>
+                <span style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>{t('footer.location')}</span>
               </div>
               <div className="flex items-center gap-2 text-xs" style={{ color: 'rgba(255,255,255,0.7)' }}>
                 <Phone size={14} style={{ color: '#5BA130' }} className="shrink-0" />
-                <a href="tel:+50688888888" className="hover:text-white transition-colors" style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>+506 8888-8888</a>
+                <a href="tel:+50688888888" className="hover:text-white transition-colors" style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>{t('footer.phone')}</a>
               </div>
               <div className="flex items-center gap-2 text-xs" style={{ color: 'rgba(255,255,255,0.7)' }}>
                 <Mail size={14} style={{ color: '#5BA130' }} className="shrink-0" />
-                <a href="mailto:info@polaritech.net" className="hover:text-white transition-colors" style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>info@polaritech.net</a>
+                <a href="mailto:info@polaritech.net" className="hover:text-white transition-colors" style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>{t('footer.email')}</a>
               </div>
             </div>
 
@@ -82,7 +84,7 @@ export default function Footer() {
               className="inline-flex items-center gap-2 text-sm font-semibold transition-colors duration-200 group"
               style={{ color: '#5BA130', fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif' }}
             >
-              Solicitar cotización
+              {t('footer.requestQuote')}
               <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
             </a>
           </div>
@@ -109,14 +111,14 @@ export default function Footer() {
 
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4" style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
           <p className="text-xs" style={{ color: 'rgba(255,255,255,0.5)', fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>
-            © {new Date().getFullYear()} Polaritech. Todos los derechos reservados.
+            © {new Date().getFullYear()} Polaritech. {t('footer.copyright')}
           </p>
           <div className="flex items-center gap-5">
             <a href="#" className="text-xs hover:text-white transition-colors duration-150" style={{ color: 'rgba(255,255,255,0.5)', fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>
-              Política de privacidad
+              {t('footer.privacy')}
             </a>
             <a href="#" className="text-xs hover:text-white transition-colors duration-150" style={{ color: 'rgba(255,255,255,0.5)', fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>
-              Términos de uso
+              {t('footer.terms')}
             </a>
           </div>
         </div>

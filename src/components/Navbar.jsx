@@ -1,18 +1,20 @@
 import React, { useState } from 'react'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Globe } from 'lucide-react'
+import { useLanguage } from '../context/LanguageContext.jsx'
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const { language, toggleLanguage, t } = useLanguage()
 
   const navLinks = [
-    { label: 'Inicio', href: '#inicio' },
-    { label: 'Historia', href: '#historia' },
-    { label: 'Filosofía', href: '#filosofia' },
-    { label: 'El Problema', href: '#problema' },
-    { label: 'La Solución', href: '#solucion' },
-    { label: 'Soluciones', href: '#nuestras-soluciones' },
-    { label: 'Aplicaciones', href: '#soluciones' },
-    { label: 'Contacto', href: '#contacto' },
+    { label: t('nav.inicio'), href: '#inicio' },
+    { label: t('nav.historia'), href: '#historia' },
+    { label: t('nav.filosofia'), href: '#filosofia' },
+    { label: t('nav.problema'), href: '#problema' },
+    { label: t('nav.solucion'), href: '#solucion' },
+    { label: t('nav.soluciones'), href: '#nuestras-soluciones' },
+    { label: t('nav.aplicaciones'), href: '#soluciones' },
+    { label: t('nav.contacto'), href: '#contacto' },
   ]
 
   return (
@@ -51,6 +53,17 @@ export default function Navbar() {
         </ul>
 
         <div className="hidden lg:flex items-center gap-3">
+          {/* Language Toggle */}
+          <button
+            onClick={toggleLanguage}
+            className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-gray-100"
+            style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', color: '#555' }}
+            aria-label="Toggle language"
+          >
+            <Globe size={16} />
+            <span>{language === 'es' ? 'ES' : 'EN'}</span>
+          </button>
+
           <a 
             href="#cotizar" 
             className="inline-flex items-center justify-center text-white font-semibold transition-all duration-300 hover:opacity-90"
@@ -64,7 +77,7 @@ export default function Navbar() {
               letterSpacing: '0.5px'
             }}
           >
-            Cotizar ahora
+            {t('nav.cotizar')}
           </a>
         </div>
 
@@ -94,7 +107,17 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
-          <div className="pt-4">
+          <div className="pt-4 space-y-2">
+            {/* Language Toggle Mobile */}
+            <button
+              onClick={() => { toggleLanguage(); setMobileOpen(false) }}
+              className="flex items-center gap-2 px-4 py-3 text-sm text-[#555] hover:text-[#5BA130] transition-colors duration-150 w-full"
+              style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}
+            >
+              <Globe size={16} />
+              {language === 'es' ? 'Cambiar a English' : 'Switch to Español'}
+            </button>
+
             <a 
               href="#cotizar" 
               className="block w-full text-center text-white font-semibold py-3"
@@ -107,7 +130,7 @@ export default function Navbar() {
               }}
               onClick={() => setMobileOpen(false)}
             >
-              Cotizar ahora
+              {t('nav.cotizar')}
             </a>
           </div>
         </div>

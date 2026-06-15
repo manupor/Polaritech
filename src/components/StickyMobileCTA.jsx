@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { MessageCircle, Phone } from 'lucide-react'
+import { useLanguage } from '../context/LanguageContext.jsx'
 
 export default function StickyMobileCTA() {
+  const { t } = useLanguage()
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
@@ -25,14 +27,14 @@ export default function StickyMobileCTA() {
           style={{ background: 'linear-gradient(135deg, #25d366, #128c7e)' }}
         >
           <MessageCircle size={16} />
-          WhatsApp
+          {t('stickyCTA.whatsapp')}
         </a>
         <a
           href="#cotizar"
           className="flex-1 flex items-center justify-center gap-2 py-3 rounded-2xl font-semibold text-sm btn-primary"
         >
           <Phone size={16} />
-          Cotizar
+          {t('stickyCTA.quote')}
         </a>
       </div>
     </div>

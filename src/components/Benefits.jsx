@@ -1,25 +1,28 @@
 import React from 'react'
 import { ArrowRight } from 'lucide-react'
-
-const pillars = [
-  {
-    num: '01',
-    title: 'Experiencia',
-    desc: 'Más de 10 años en la industria nos han permitido entender las necesidades reales de cada cliente y cada proyecto. Asesoramos con soluciones precisas y efectivas que realmente marcan la diferencia.',
-  },
-  {
-    num: '02',
-    title: 'Siempre a la vanguardia en fabricantes y desarrollo de film',
-    desc: 'Trabajamos con los mejores fabricantes y desarrolladores de film a nivel mundial, incorporando innovación constante para ofrecer soluciones más eficientes, duraderas y con el mejor desempeño del mercado.',
-  },
-  {
-    num: '03',
-    title: 'Instalación profesional y acabados premium',
-    desc: 'Nuestro equipo certificado garantiza una instalación precisa, limpia y duradera, cuidando cada detalle en cada proyecto. Acabados impecables y atención premium de principio a fin.',
-  },
-]
+import { useLanguage } from '../context/LanguageContext.jsx'
 
 export default function Benefits() {
+  const { t } = useLanguage()
+
+  const pillars = [
+    {
+      num: '01',
+      title: t('benefits.pillars.0.title'),
+      desc: t('benefits.pillars.0.desc'),
+    },
+    {
+      num: '02',
+      title: t('benefits.pillars.1.title'),
+      desc: t('benefits.pillars.1.desc'),
+    },
+    {
+      num: '03',
+      title: t('benefits.pillars.2.title'),
+      desc: t('benefits.pillars.2.desc'),
+    },
+  ]
+
   return (
     <section id="beneficios" className="relative overflow-hidden" style={{ background: '#FFFFFF' }}>
       <div className="max-w-7xl mx-auto px-6 py-20 sm:py-28">
@@ -36,14 +39,11 @@ export default function Benefits() {
               letterSpacing: '-0.02em',
             }}
           >
-            ¿Por qué <span style={{ color: '#5BA130' }}>Polaritech</span>?
+            {t('benefits.title')} <span style={{ color: '#5BA130' }}>{t('benefits.titleAccent')}</span>?
           </h2>
           <div className="my-6 mx-auto" style={{ width: '56px', height: '3px', borderRadius: '2px', background: '#5BA130' }} />
           <p style={{ color: '#5a6a82', fontSize: '1.05rem', lineHeight: 1.7 }}>
-            No solo instalamos polarizado. Diseñamos bienestar, eficiencia y protección
-            para cada espacio. Soluciones que combinan{' '}
-            <strong style={{ color: '#203478', fontWeight: 700 }}>ciencia, experiencia</strong> y
-            los <strong style={{ color: '#203478', fontWeight: 700 }}>mejores materiales</strong>.
+            {t('benefits.description')}
           </p>
         </div>
 

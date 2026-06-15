@@ -1,43 +1,45 @@
 import React, { useState } from 'react'
 import { Home, Building2, Building, PanelsTopLeft, ChevronLeft, ChevronRight } from 'lucide-react'
 import { useScrollAnimation } from '../hooks/useParallax'
-
-const spaces = [
-  {
-    icon: <Home size={22} />,
-    title: 'Hogares',
-    desc: 'Confort térmico y protección para toda la familia.',
-    img: '/home.jpg',
-  },
-  {
-    icon: <Building2 size={22} />,
-    title: 'Oficinas',
-    desc: 'Mayor productividad con confort visual y térmico.',
-    img: '/oficinas.jpg',
-  },
-  {
-    icon: <Building size={22} />,
-    title: 'Condominios',
-    desc: 'Soluciones que respetan reglas de construcción.',
-    img: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80',
-  },
-  {
-    icon: <PanelsTopLeft size={22} />,
-    title: 'Comercios',
-    desc: 'Protección de productos y comodidad para clientes.',
-    img: '/comercios.jpg',
-  },
-  {
-    icon: <Home size={22} />,
-    title: 'Grandes ventanales',
-    desc: 'Control solar de alto rendimiento para amplios espacios.',
-    img: '/gran%20ventanal.jpg.webp',
-  },
-]
+import { useLanguage } from '../context/LanguageContext.jsx'
 
 export default function Applications() {
+  const { t } = useLanguage()
   const [current, setCurrent] = useState(0)
   const headerRef = useScrollAnimation(0.15)
+
+  const spaces = [
+    {
+      icon: <Home size={22} />,
+      title: t('applications.homes'),
+      desc: t('applications.homesDesc'),
+      img: '/home.jpg',
+    },
+    {
+      icon: <Building2 size={22} />,
+      title: t('applications.offices'),
+      desc: t('applications.officesDesc'),
+      img: '/oficinas.jpg',
+    },
+    {
+      icon: <Building size={22} />,
+      title: t('applications.condos'),
+      desc: t('applications.condosDesc'),
+      img: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80',
+    },
+    {
+      icon: <PanelsTopLeft size={22} />,
+      title: t('applications.commerce'),
+      desc: t('applications.commerceDesc'),
+      img: '/comercios.jpg',
+    },
+    {
+      icon: <Home size={22} />,
+      title: t('applications.largeWindows'),
+      desc: t('applications.largeWindowsDesc'),
+      img: '/gran%20ventanal.jpg.webp',
+    },
+  ]
 
   const next = () => setCurrent((prev) => (prev + 1) % spaces.length)
   const prev = () => setCurrent((prev) => (prev - 1 + spaces.length) % spaces.length)
@@ -60,11 +62,11 @@ export default function Applications() {
               letterSpacing: '-0.02em',
             }}
           >
-            APLICACIONES
+            {t('applications.title')}
           </h2>
           <div className="my-4 mx-auto" style={{ width: '56px', height: '3px', borderRadius: '2px', background: '#5BA130' }} />
           <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', fontSize: '1rem', color: '#6b7a99', maxWidth: '500px', margin: '0 auto' }}>
-            Lugares donde optimizamos tu confort y privacidad.
+            {t('applications.description')}
           </p>
         </div>
 

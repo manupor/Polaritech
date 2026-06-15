@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { ArrowRight, Phone, Mail, User, Building, MessageSquare } from 'lucide-react'
+import { useLanguage } from '../context/LanguageContext.jsx'
 
 export default function Hero() {
+  const { t } = useLanguage()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -13,7 +15,7 @@ export default function Hero() {
   const handleSubmit = (e) => {
     e.preventDefault()
     // Form submission logic would go here
-    alert('Gracias por su solicitud. Nos pondremos en contacto pronto.')
+    alert(t('hero.successMessage'))
   }
 
   return (
@@ -61,9 +63,9 @@ export default function Hero() {
                 letterSpacing: '-0.02em',
               }}
             >
-              Tecnología que reduce calor y{' '}
-              <span style={{ color: '#5BA130' }}>protege</span>{' '}
-              sus espacios.
+              {t('hero.headline')}{' '}
+              <span style={{ color: '#5BA130' }}>{t('hero.protect')}</span>{' '}
+              {t('hero.headlineEnd')}
             </h1>
 
             {/* Sub-headline */}
@@ -78,8 +80,7 @@ export default function Hero() {
                 maxWidth: '500px',
               }}
             >
-              Más que polarizar ventanas, ayudamos a mejorar el confort, la privacidad y la protección de
-              hogares, oficinas y proyectos arquitectónicos.
+              {t('hero.subheadline')}
             </p>
 
             {/* Accent line - diagonal */}
@@ -103,7 +104,7 @@ export default function Hero() {
                   letterSpacing: '0.05em'
                 }}
               >
-                Solicitar asesoría
+                {t('hero.cta1')}
                 <ArrowRight size={16} />
               </a>
               <a 
@@ -121,7 +122,7 @@ export default function Hero() {
                   background: 'transparent'
                 }}
               >
-                Ver soluciones
+                {t('hero.cta2')}
               </a>
             </div>
 
@@ -146,7 +147,7 @@ export default function Hero() {
                   fontWeight: 500,
                 }}
               >
-                Solicitar Cotización
+                {t('hero.formTitle')}
               </h3>
               
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -155,7 +156,7 @@ export default function Hero() {
                     <User size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
                     <input
                       type="text"
-                      placeholder="Nombre"
+                      placeholder={t('hero.name')}
                       className="w-full pl-10 pr-4 py-3 text-sm border focus:outline-none focus:border-[#5BA130]"
                       style={{ borderColor: 'rgba(32,52,120,0.15)' }}
                       value={formData.name}
@@ -166,7 +167,7 @@ export default function Hero() {
                     <Mail size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
                     <input
                       type="email"
-                      placeholder="Email"
+                      placeholder={t('hero.email')}
                       className="w-full pl-10 pr-4 py-3 text-sm border focus:outline-none focus:border-[#5BA130]"
                       style={{ borderColor: 'rgba(32,52,120,0.15)' }}
                       value={formData.email}
@@ -180,7 +181,7 @@ export default function Hero() {
                     <Phone size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
                     <input
                       type="tel"
-                      placeholder="Teléfono"
+                      placeholder={t('hero.phone')}
                       className="w-full pl-10 pr-4 py-3 text-sm border focus:outline-none focus:border-[#5BA130]"
                       style={{ borderColor: 'rgba(32,52,120,0.15)' }}
                       value={formData.phone}
@@ -191,7 +192,7 @@ export default function Hero() {
                     <Building size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
                     <input
                       type="text"
-                      placeholder="Empresa (opcional)"
+                      placeholder={t('hero.company')}
                       className="w-full pl-10 pr-4 py-3 text-sm border focus:outline-none focus:border-[#5BA130]"
                       style={{ borderColor: 'rgba(32,52,120,0.15)' }}
                       value={formData.company}
@@ -203,7 +204,7 @@ export default function Hero() {
                 <div className="relative">
                   <MessageSquare size={16} className="absolute left-3 top-4 text-gray-400" />
                   <textarea
-                    placeholder="Mensaje"
+                    placeholder={t('hero.message')}
                     rows="3"
                     className="w-full pl-10 pr-4 py-3 text-sm border focus:outline-none focus:border-[#5BA130] resize-none"
                     style={{ borderColor: 'rgba(32,52,120,0.15)' }}
@@ -224,7 +225,7 @@ export default function Hero() {
                     letterSpacing: '0.05em'
                   }}
                 >
-                  Enviar solicitud
+                  {t('hero.submit')}
                   <ArrowRight size={16} />
                 </button>
               </form>

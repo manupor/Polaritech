@@ -1,32 +1,35 @@
 import React from 'react'
 import { useParallax, useScrollAnimation, useParallaxRotate } from '../hooks/useParallax'
-
-const rows = [
-  {
-    title: 'Luz Visible',
-    accent: '#7c3aed',
-    titleColor: '#203478',
-    desc: 'Permite la entrada de iluminación natural y contribuye a la sensación de amplitud en los espacios.',
-  },
-  {
-    title: 'Infrarrojo (IR)',
-    accent: '#f97316',
-    titleColor: '#e85d2a',
-    desc: 'Es uno de los principales responsables de la sensación térmica que experimentamos al estar cerca de una ventana expuesta al sol.',
-  },
-  {
-    title: 'Ultravioleta (UV)',
-    accent: '#88C140',
-    titleColor: '#5BA130',
-    desc: 'Puede contribuir al desgaste y decoloración de muebles, pisos, cortinas, textiles y otros acabados interiores.',
-  },
-]
+import { useLanguage } from '../context/LanguageContext.jsx'
 
 export default function SolarRadiation() {
+  const { t } = useLanguage()
   const contentRef = useScrollAnimation(0.15)
   const imageRef = useParallax(0.3, 'up')
   const tableRef = useScrollAnimation(0.2)
   const rotateRef = useParallaxRotate(0.02)
+
+  const rows = [
+    {
+      title: t('problema.luzVisible'),
+      accent: '#7c3aed',
+      titleColor: '#203478',
+      desc: t('problema.luzDesc'),
+    },
+    {
+      title: t('problema.infrarrojo'),
+      accent: '#f97316',
+      titleColor: '#e85d2a',
+      desc: t('problema.infrarrojoDesc'),
+    },
+    {
+      title: t('problema.uv'),
+      accent: '#88C140',
+      titleColor: '#5BA130',
+      desc: t('problema.uvDesc'),
+    },
+  ]
+
   return (
     <section id="problema" className="relative py-16 sm:py-24 overflow-hidden" style={{ background: '#FFFFFF' }}>
       <div className="max-w-7xl mx-auto px-6">
@@ -52,7 +55,7 @@ export default function SolarRadiation() {
                 letterSpacing: '-0.02em',
               }}
             >
-              EL <span style={{ color: '#5BA130' }}>PROBLEMA</span>
+              {t('problema.title')} <span style={{ color: '#5BA130' }}>{t('problema.titleAccent')}</span>
             </h2>
 
             <div
@@ -70,11 +73,11 @@ export default function SolarRadiation() {
                 marginBottom: '16px',
               }}
             >
-              El calor no siempre es visible
+              {t('problema.subtitle')}
             </h3>
 
             <p style={{ color: '#5a6a82', fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', fontSize: '1.05rem', lineHeight: 1.7, maxWidth: '46ch' }}>
-              La energía solar está compuesta por diferentes tipos de radiación que afectan tus espacios de distintas maneras.
+              {t('problema.description')}
             </p>
           </div>
 
@@ -84,7 +87,7 @@ export default function SolarRadiation() {
           >
             <img
               src="/450.jpg"
-              alt="Luz solar entrando por ventanales"
+              alt={t('problema.subtitle')}
               className="absolute inset-0 w-full h-full object-cover"
             />
           </div>
@@ -102,7 +105,7 @@ export default function SolarRadiation() {
               letterSpacing: '-0.01em',
             }}
           >
-            Así interactúa <span style={{ color: '#5BA130' }}>el sol</span> con tus espacios
+            {t('problema.subtitle')}
           </h3>
           <p className="mt-4" style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', color: '#5a6a82', fontSize: '1rem', lineHeight: 1.7 }}>
             La energía solar está compuesta por diferentes tipos de radiación. Algunas iluminan,

@@ -1,8 +1,10 @@
 import React from 'react'
 import { Check } from 'lucide-react'
 import { useScrollAnimation } from '../hooks/useParallax'
+import { useLanguage } from '../context/LanguageContext.jsx'
 
 export default function History() {
+  const { t } = useLanguage()
   const contentRef = useScrollAnimation(0.15)
   const rightRef = useScrollAnimation(0.2)
 
@@ -25,7 +27,7 @@ export default function History() {
               letterSpacing: '-0.02em',
             }}
           >
-            NUESTRA <span style={{ color: '#5BA130' }}>HISTORIA</span>
+            {t('history.title')} <span style={{ color: '#5BA130' }}>{t('history.titleAccent')}</span>
           </h2>
         </div>
 
@@ -43,17 +45,13 @@ export default function History() {
           >
             <div style={{ color: '#5a6a82', fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', fontSize: '1.05rem', lineHeight: 1.7 }}>
               <p className="mb-6">
-                Polaritech nace en <strong style={{ color: '#203478' }}>2016</strong> con el propósito de ofrecer soluciones profesionales de control solar para
-                hogares, oficinas y proyectos arquitectónicos.
+                {t('history.p1')} <strong style={{ color: '#203478' }}>{t('history.year')}</strong> {t('history.p1b')}
               </p>
               <p className="mb-6">
-                Desde entonces hemos desarrollado proyectos residenciales, comerciales y corporativos,
-                construyendo una trayectoria basada en la confianza de nuestros clientes, la calidad de nuestros
-                materiales y la excelencia en cada instalación.
+                {t('history.p2')}
               </p>
               <p>
-                El compromiso de ofrecer productos de alta calidad y un servicio excepcional nos ha 
-                permitido consolidarnos como referentes en el sector del polarizado arquitectónico en Costa Rica.
+                {t('history.p3')}
               </p>
             </div>
           </div>
@@ -76,7 +74,7 @@ export default function History() {
                     <Check size={12} style={{ color: 'white' }} />
                   </div>
                   <span style={{ color: '#5a6a82', fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', fontSize: '1rem', lineHeight: 1.6 }}>
-                    <strong style={{ color: '#203478' }}>Innovación constante</strong> en soluciones de control solar
+                    <strong style={{ color: '#203478' }}>{t('history.bullet1')}</strong> {t('history.bullet1b')}
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
@@ -84,7 +82,7 @@ export default function History() {
                     <Check size={12} style={{ color: 'white' }} />
                   </div>
                   <span style={{ color: '#5a6a82', fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', fontSize: '1rem', lineHeight: 1.6 }}>
-                    <strong style={{ color: '#203478' }}>Instalación profesional</strong> certificada
+                    <strong style={{ color: '#203478' }}>{t('history.bullet2')}</strong> {t('history.bullet2b')}
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
@@ -92,7 +90,7 @@ export default function History() {
                     <Check size={12} style={{ color: 'white' }} />
                   </div>
                   <span style={{ color: '#5a6a82', fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', fontSize: '1rem', lineHeight: 1.6 }}>
-                    <strong style={{ color: '#203478' }}>Materiales de calidad</strong> con garantía de hasta 12 años
+                    <strong style={{ color: '#203478' }}>{t('history.bullet3')}</strong> {t('history.bullet3b')}
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
@@ -100,7 +98,7 @@ export default function History() {
                     <Check size={12} style={{ color: 'white' }} />
                   </div>
                   <span style={{ color: '#5a6a82', fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', fontSize: '1rem', lineHeight: 1.6 }}>
-                    <strong style={{ color: '#203478' }}>Cobertura nacional</strong> con servicio a domicilio
+                    <strong style={{ color: '#203478' }}>{t('history.bullet4')}</strong> {t('history.bullet4b')}
                   </span>
                 </li>
               </ul>
@@ -109,7 +107,7 @@ export default function History() {
             {/* Mockup image - transparent, no container */}
             <img
               src="/mockup-2.png"
-              alt="Polaritech - Soluciones de control solar"
+              alt={t('history.imageAlt')}
               className="w-full h-auto object-contain"
               style={{ maxHeight: '400px' }}
             />

@@ -1,8 +1,10 @@
 import React from 'react'
 import { MessageCircle, Phone, Mail, MapPin, ArrowRight } from 'lucide-react'
 import { useParallax, useScrollAnimation, useParallaxScale } from '../hooks/useParallax'
+import { useLanguage } from '../context/LanguageContext.jsx'
 
 export default function Contact() {
+  const { t } = useLanguage()
   const headerRef = useScrollAnimation(0.15)
   const methodsRef = useScrollAnimation(0.2)
   const ctaRef = useScrollAnimation(0.25)
@@ -23,7 +25,7 @@ export default function Contact() {
               letterSpacing: '-0.02em',
             }}
           >
-            CONTACTO
+            {t('contact.title')}
           </h2>
 
           <div
@@ -41,12 +43,11 @@ export default function Contact() {
               marginBottom: '16px',
             }}
           >
-            Conversemos sobre su proyecto
+            {t('contact.subtitle')}
           </h3>
 
           <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', color: '#5a6a82', fontSize: '1.05rem', lineHeight: 1.7, maxWidth: '600px', margin: '0 auto' }}>
-            Cada espacio tiene necesidades distintas de confort, privacidad y protección.
-            Nuestro equipo puede asesorarle para encontrar la solución más adecuada para su proyecto.
+            {t('contact.description')}
           </p>
         </div>
 
@@ -60,7 +61,7 @@ export default function Contact() {
               WhatsApp
             </h4>
             <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', fontSize: '0.9rem', color: '#6b7a99', marginBottom: '16px' }}>
-              Respuesta inmediata para cotizaciones
+              {t('contact.whatsappDesc')}
             </p>
             <a 
               href="https://wa.me/50688888888?text=Hola,%20quiero%20cotizar%20polarizado%20para%20mi%20proyecto"
@@ -69,7 +70,7 @@ export default function Contact() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
               style={{ background: '#5BA130', color: '#FFFFFF' }}
             >
-              Escribir ahora
+              {t('stickyCTA.whatsapp')}
               <ArrowRight size={14} />
             </a>
           </div>
@@ -79,10 +80,10 @@ export default function Contact() {
               <Phone size={20} />
             </div>
             <h4 style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', fontSize: '1.1rem', fontWeight: 500, color: '#203478', marginBottom: '8px' }}>
-              Llamada
+              {t('contact.phone')}
             </h4>
             <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', fontSize: '0.9rem', color: '#6b7a99', marginBottom: '16px' }}>
-              Asesoría personalizada telefónica
+              {t('contact.phoneDesc')}
             </p>
             <a 
               href="tel:+50688888888"
@@ -99,10 +100,10 @@ export default function Contact() {
               <Mail size={20} />
             </div>
             <h4 style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', fontSize: '1.1rem', fontWeight: 500, color: '#203478', marginBottom: '8px' }}>
-              Email
+              {t('contact.email')}
             </h4>
             <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', fontSize: '0.9rem', color: '#6b7a99', marginBottom: '16px' }}>
-              Consultas detalladas y proyectos
+              {t('contact.emailDesc')}
             </p>
             <a 
               href="mailto:info@polaritech.cr"
@@ -127,10 +128,10 @@ export default function Contact() {
               marginBottom: '16px'
             }}
           >
-            ¿Listo para transformar sus espacios?
+            {t('contact.subtitle')}
           </h3>
           <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', color: '#E2E8F0', fontSize: '1.1rem', lineHeight: 1.6, marginBottom: '32px', maxWidth: '500px', margin: '0 auto 32px' }}>
-            Solicite una cotización sin compromiso y descubra la solución ideal para su proyecto.
+            {t('contact.description')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
@@ -138,7 +139,7 @@ export default function Contact() {
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold transition-all duration-200"
               style={{ background: '#5BA130', color: '#FFFFFF' }}
             >
-              Solicitar cotización
+              {t('nav.cotizar')}
               <ArrowRight size={16} />
             </a>
             <a 
@@ -149,7 +150,7 @@ export default function Contact() {
               style={{ background: 'transparent', color: '#FFFFFF', border: '2px solid rgba(255,255,255,0.3)' }}
             >
               <MessageCircle size={16} />
-              WhatsApp
+              {t('contact.whatsapp')}
             </a>
           </div>
         </div>

@@ -1,19 +1,22 @@
 import React from 'react'
 import { ArrowRight, Shield, Sun, Eye, CheckCircle2 } from 'lucide-react'
 import { useParallax, useScrollAnimation, useParallaxScale } from '../hooks/useParallax'
-
-const benefits = [
-  'Retención IRR de 65% a 98%',
-  'Protección UV',
-  'Menor deslumbramiento',
-  'Opciones transparentes o con privacidad',
-]
+import { useLanguage } from '../context/LanguageContext.jsx'
 
 export default function Solution() {
+  const { t } = useLanguage()
   const contentRef = useScrollAnimation(0.15)
   const imageRef = useParallax(0.3, 'up')
   const benefitsRef = useScrollAnimation(0.2)
   const scaleRef = useParallaxScale(0.9, 1.1, 0.002)
+
+  const benefits = [
+    t('solucion.benefits.retention'),
+    t('solucion.benefits.uv'),
+    t('solucion.benefits.glare'),
+    t('solucion.benefits.options'),
+  ]
+
   return (
     <section id="solucion" className="relative py-16 sm:py-24 overflow-hidden" style={{ background: '#F7FAFC' }}>
       <div className="max-w-7xl mx-auto px-6">
@@ -38,7 +41,7 @@ export default function Solution() {
               letterSpacing: '-0.02em',
             }}
           >
-            LA <span style={{ color: '#5BA130' }}>SOLUCIÓN</span>
+            {t('solucion.title')} <span style={{ color: '#5BA130' }}>{t('solucion.titleAccent')}</span>
           </h2>
 
           <div
@@ -56,7 +59,7 @@ export default function Solution() {
               marginBottom: '16px',
             }}
           >
-            Tecnología diseñada para mejorar el desempeño de sus ventanas.
+            {t('solucion.subtitle')}
           </h3>
         </div>
 
@@ -65,15 +68,15 @@ export default function Solution() {
           <div className="reveal opacity-0 translate-y-8 transition-all duration-700">
             <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-10" style={{ border: '1px solid rgba(32,52,120,0.06)' }}>
               <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', color: '#5a6a82', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '24px' }}>
-                Cuando instalamos una película de control solar ayudamos a gestionar la energía que atraviesa el vidrio.
+                {t('solucion.description')}
               </p>
               
               <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', color: '#5a6a82', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '24px' }}>
-                Dependiendo de la tecnología seleccionada, nuestras soluciones ofrecen una retención de radiación infrarroja (IRR) desde un 65% hasta un 98%.
+                {t('solucion.description')}
               </p>
               
               <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', color: '#5a6a82', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '32px' }}>
-                Esta reducción contribuye significativamente a disminuir la sensación térmica y mejorar el confort de los espacios.
+                {t('solucion.description')}
               </p>
 
               <div className="mb-8 p-6 rounded-xl" style={{ background: '#F7FAFC', border: '1px solid rgba(91,161,48,0.15)' }}>
@@ -86,7 +89,7 @@ export default function Solution() {
                     marginBottom: '16px'
                   }}
                 >
-                  Beneficios:
+                  {t('ourSolutions.featuresTitle')}:
                 </h4>
                 <div className="space-y-3">
                   {benefits.map((benefit, i) => (
@@ -120,7 +123,7 @@ export default function Solution() {
                   boxShadow: '0 10px 30px rgba(91,161,48,0.3)'
                 }}
               >
-                Solicitar asesoría
+                {t('solucion.cta')}
                 <ArrowRight size={18} />
               </a>
             </div>
