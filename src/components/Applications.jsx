@@ -39,7 +39,7 @@ const spaces = [
     icon: <Home size={22} />,
     title: 'Grandes ventanales',
     desc: 'Control solar de alto rendimiento para amplios espacios.',
-    img: '/gran%20ventanal.jpg',
+    img: '/gran%20ventanal.jpg.webp',
   },
 ]
 
