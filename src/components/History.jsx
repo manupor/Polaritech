@@ -108,7 +108,7 @@ export default function History() {
 
             {/* Mockup image - transparent, no container */}
             <img
-              src="/mockup%202.png"
+              src="/mockup-2.png"
               alt="Polaritech - Soluciones de control solar"
               className="w-full h-auto object-contain"
               style={{ maxHeight: '400px' }}
