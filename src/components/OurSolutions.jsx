@@ -111,35 +111,33 @@ export default function OurSolutions() {
         </div>
 
         {/* Solution selector and details */}
-        <div className="grid lg:grid-cols-3 gap-8 items-start">
-          <div className="lg:col-span-1 space-y-2">
+        <div className="grid lg:grid-cols-3 gap-4 lg:gap-8 items-start">
+          {/* Mobile: Horizontal scrollable tabs */}
+          <div className="lg:col-span-1 flex lg:flex-col gap-2 overflow-x-auto pb-2 lg:pb-0 -mx-2 px-2 lg:mx-0 lg:px-0">
             {solutions.map((sol, i) => (
               <button
                 key={sol.name}
                 onClick={() => setActive(i)}
-                className={`w-full text-left px-5 py-4 rounded-xl transition-all duration-200 border flex items-center gap-4 group ${
+                className={`flex-shrink-0 text-left px-4 py-3 rounded-xl transition-all duration-200 border flex items-center gap-3 group whitespace-nowrap ${
                   active === i
                     ? 'bg-green-500/10 border-green-500/30 text-gray-900'
-                    : 'border-transparent text-slate-600 hover:text-slate-800 hover:bg-white/5'
+                    : 'border-transparent text-slate-600 hover:text-slate-800 hover:bg-white/5 bg-white'
                 }`}
               >
-                <div className={`shrink-0 w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-200 ${
+                <div className={`shrink-0 w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-200 ${
                   active === i
                     ? 'bg-gradient-to-br from-green-400/20 to-emerald-500/20 text-green-600 border border-green-400/30'
-                    : 'bg-white/5 text-slate-500 border border-white/5 group-hover:text-slate-600'
+                    : 'bg-gray-100 text-slate-500 border border-gray-200 group-hover:text-slate-600'
                 }`}>
                   {sol.icon}
                 </div>
-                <span className="text-sm font-medium leading-tight">{sol.name}</span>
-                {active === i && (
-                  <ArrowRight size={14} className="ml-auto text-green-600 shrink-0" />
-                )}
+                <span className="text-xs lg:text-sm font-medium leading-tight">{sol.name}</span>
               </button>
             ))}
           </div>
 
           <div className="lg:col-span-2 reveal opacity-0 translate-y-8 transition-all duration-500">
-            <div className="bg-white rounded-3xl p-8 lg:p-10 h-full border border-gray-200 relative overflow-hidden shadow-sm">
+            <div className="bg-white rounded-3xl p-5 sm:p-6 lg:p-10 h-full border border-gray-200 relative overflow-hidden shadow-sm">
               <div
                 className="absolute top-0 right-0 w-64 h-64 rounded-full blur-3xl opacity-5 pointer-events-none transition-all duration-500"
                 style={{ background: 'radial-gradient(circle, #5BA130, transparent)' }}
@@ -201,12 +199,12 @@ export default function OurSolutions() {
                 </div>
               )}
 
-              <div className="flex flex-wrap gap-3 pt-6 border-t border-gray-200">
-                <a href="#cotizar" className="btn-primary">
+              <div className="flex flex-col sm:flex-row gap-3 pt-6 border-t border-gray-200">
+                <a href="#cotizar" className="btn-primary w-full sm:w-auto justify-center">
                   Solicitar cotización
                   <ArrowRight size={15} />
                 </a>
-                <a href="#contacto" className="btn-secondary-light" style={{ borderColor: 'rgba(91,161,48,0.3)', color: '#5BA130' }}>
+                <a href="#contacto" className="btn-secondary-light w-full sm:w-auto justify-center" style={{ borderColor: 'rgba(91,161,48,0.3)', color: '#5BA130' }}>
                   Más información
                 </a>
               </div>
