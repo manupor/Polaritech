@@ -21,7 +21,7 @@ const spaces = [
     icon: <Building2 size={22} />,
     title: 'Oficinas',
     desc: 'Mayor productividad con confort visual y térmico.',
-    img: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=600&q=80',
+    img: '/office.jpg',
   },
   {
     icon: <Building size={22} />,
