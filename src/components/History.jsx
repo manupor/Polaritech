@@ -106,15 +106,13 @@ export default function History() {
               </ul>
             </div>
 
-            {/* Mockup image */}
-            <div className="rounded-xl overflow-hidden shadow-lg">
-              <img
-                src="/polaritech-mockup.png"
-                alt="Polaritech - Soluciones de control solar"
-                className="w-full object-cover"
-                style={{ maxHeight: '400px' }}
-              />
-            </div>
+            {/* Mockup image - transparent, no container */}
+            <img
+              src="/polaritech-mockup.png"
+              alt="Polaritech - Soluciones de control solar"
+              className="w-full h-auto object-contain"
+              style={{ maxHeight: '400px' }}
+            />
           </div>
         </div>
       </div>
