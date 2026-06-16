@@ -199,7 +199,7 @@ export const translations = {
       copyright: 'Todos los derechos reservados.',
       privacy: 'Política de privacidad',
       terms: 'Términos de uso',
-      productsList: ['Polarizado Básico', 'Polarizado Seguridad', 'Nano Cerámica', 'Anti-UV Transparente', 'Silver Espejo', 'Black Out / White Out'],
+      productsList: ['NANOCERÁMICA', 'SEGURIDAD', 'SANDBLASTING', 'ECONÓMICA', 'WHITE OUT / BLACK OUT'],
     },
     // How It Works
     howItWorks: {
@@ -450,7 +450,7 @@ export const translations = {
       copyright: 'All rights reserved.',
       privacy: 'Privacy Policy',
       terms: 'Terms of Use',
-      productsList: ['Basic Window Film', 'Safety Film', 'Nano Ceramic', 'Anti-UV Transparent', 'Silver Mirror', 'Black Out / White Out'],
+      productsList: ['NANOCERAMIC', 'SAFETY', 'SANDBLASTING', 'ECONOMIC', 'WHITE OUT / BLACK OUT'],
     },
     // How It Works
     howItWorks: {

@@ -64,7 +64,7 @@ export default function Contact() {
               {t('contact.whatsappDesc')}
             </p>
             <a 
-              href="https://wa.me/50688888888?text=Hola,%20quiero%20cotizar%20polarizado%20para%20mi%20proyecto"
+              href="https://wa.me/50661311126?text=Hola,%20quiero%20cotizar%20polarizado%20para%20mi%20proyecto"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
@@ -86,11 +86,11 @@ export default function Contact() {
               {t('contact.phoneDesc')}
             </p>
             <a 
-              href="tel:+50688888888"
+              href="tel:+50661311126"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
               style={{ background: '#203478', color: '#FFFFFF' }}
             >
-              +506 8888 8888
+              +506 6131 1126
               <ArrowRight size={14} />
             </a>
           </div>
@@ -143,7 +143,7 @@ export default function Contact() {
               <ArrowRight size={16} />
             </a>
             <a 
-              href="https://wa.me/50688888888?text=Hola,%20quiero%20cotizar%20polarizado%20para%20mi%20proyecto"
+              href="https://wa.me/50661311126?text=Hola,%20quiero%20cotizar%20polarizado%20para%20mi%20proyecto"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold transition-all duration-200"
