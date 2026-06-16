@@ -85,7 +85,7 @@ export default function SolarRadiation() {
             className="reveal opacity-0 translate-y-8 transition-all duration-700 relative rounded-2xl overflow-hidden shadow-xl shadow-[rgba(32,52,120,0.12)] min-h-[240px] sm:min-h-[380px]"
           >
             <img
-              src="/450.jpg"
+              src="/el problema2.png"
               alt={t('problema.subtitle')}
               className="absolute inset-0 w-full h-full object-cover"
             />

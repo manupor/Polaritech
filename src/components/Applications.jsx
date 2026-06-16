@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import { Home, Building2, Building, PanelsTopLeft, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Home, Building2, Building, PanelsTopLeft, ChevronLeft, ChevronRight, X } from 'lucide-react'
 import { useScrollAnimation } from '../hooks/useParallax'
 import { useLanguage } from '../context/LanguageContext.jsx'
 
 export default function Applications() {
   const { t } = useLanguage()
   const [current, setCurrent] = useState(0)
+  const [expandedImage, setExpandedImage] = useState(null)
   const headerRef = useScrollAnimation(0.15)
 
   const spaces = [
@@ -13,31 +14,41 @@ export default function Applications() {
       icon: <Home size={22} />,
       title: t('applications.homes'),
       desc: t('applications.homesDesc'),
-      img: '/home.jpg',
+      img: '/aplicaciones/hogares/desktop hogares.png',
+      mobileImg: '/aplicaciones/hogares/mobile hogares.jpg',
+      expandedImg: '/aplicaciones/hogares/mobile hogares.jpg',
     },
     {
       icon: <Building2 size={22} />,
       title: t('applications.offices'),
       desc: t('applications.officesDesc'),
-      img: '/oficinas.jpg',
+      img: '/aplicaciones/empresas/desktop empresas.png',
+      mobileImg: '/aplicaciones/empresas/mobile empresas.jpg',
+      expandedImg: '/aplicaciones/empresas/mobile empresas.jpg',
     },
     {
       icon: <Building size={22} />,
       title: t('applications.condos'),
       desc: t('applications.condosDesc'),
-      img: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80',
+      img: '/aplicaciones/empresas/desktop empresas.png',
+      mobileImg: '/aplicaciones/empresas/mobile empresas.jpg',
+      expandedImg: '/aplicaciones/empresas/mobile empresas.jpg',
     },
     {
       icon: <PanelsTopLeft size={22} />,
       title: t('applications.commerce'),
       desc: t('applications.commerceDesc'),
-      img: '/comercios.jpg',
+      img: '/aplicaciones/comercios/desktop comercio.png',
+      mobileImg: '/aplicaciones/comercios/mobile comercio.jpg',
+      expandedImg: '/aplicaciones/comercios/mobile comercio.jpg',
     },
     {
       icon: <Home size={22} />,
       title: t('applications.largeWindows'),
       desc: t('applications.largeWindowsDesc'),
       img: '/gran%20ventanal.jpg.webp',
+      mobileImg: '/gran%20ventanal.jpg.webp',
+      expandedImg: '/gran%20ventanal.jpg.webp',
     },
   ]
 
@@ -74,12 +85,16 @@ export default function Applications() {
         <div className="reveal opacity-0 translate-y-8 transition-all duration-700">
           {/* Main image */}
           <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden mb-4 sm:mb-6 group">
-            <img
-              src={s.img}
-              alt={s.title}
-              className="w-full h-full object-cover transition-all duration-500"
-              key={current}
-            />
+            <picture>
+              <source media="(max-width: 639px)" srcSet={s.mobileImg} />
+              <img
+                src={s.img}
+                alt={s.title}
+                className="w-full h-full object-cover transition-all duration-500 cursor-pointer"
+                key={current}
+                onClick={() => setExpandedImage(s.expandedImg)}
+              />
+            </picture>
             {/* Desktop overlay gradient only */}
             <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
@@ -151,6 +166,31 @@ export default function Applications() {
           </div>
         </div>
       </div>
+
+      {/* Expanded image modal */}
+      {expandedImage && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
+          onClick={() => setExpandedImage(null)}
+        >
+          <div className="relative max-w-4xl w-full max-h-[90vh]">
+            <button
+              onClick={(e) => {
+                e.stopPropagation()
+                setExpandedImage(null)
+              }}
+              className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors"
+            >
+              <X size={32} />
+            </button>
+            <img
+              src={expandedImage}
+              alt="Expanded view"
+              className="w-full h-full object-contain rounded-lg"
+            />
+          </div>
+        </div>
+      )}
     </section>
   )
 }
