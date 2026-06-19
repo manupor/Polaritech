@@ -65,7 +65,7 @@ export default function Quote() {
                 <Phone size={20} strokeWidth={1.6} />
               </div>
               <div className="text-xs mb-1 font-medium uppercase tracking-wider" style={{ color: '#6b7a99' }}>Teléfono</div>
-              <div className="font-semibold" style={{ color: '#203478' }}>+1 (000) 000-0000</div>
+              <div className="font-semibold" style={{ color: '#203478' }}>+506 4034 3879</div>
               <div className="text-sm mt-0.5" style={{ color: '#6b7a99' }}>Lun – Vie: 8am – 6pm</div>
             </div>
 
@@ -74,7 +74,7 @@ export default function Quote() {
                 <Mail size={20} strokeWidth={1.6} />
               </div>
               <div className="text-xs mb-1 font-medium uppercase tracking-wider" style={{ color: '#6b7a99' }}>Email</div>
-              <div className="font-semibold" style={{ color: '#203478' }}>info@polaritech.net</div>
+              <div className="font-semibold" style={{ color: '#203478' }}>solucionesintegrales@polaritech.net</div>
               <div className="text-sm mt-0.5" style={{ color: '#6b7a99' }}>Respuesta en 24h</div>
             </div>
 

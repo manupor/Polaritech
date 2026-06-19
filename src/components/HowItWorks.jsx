@@ -135,7 +135,7 @@ export default function HowItWorks() {
         {/* WhatsApp card */}
         <div className="reveal opacity-0 translate-y-8 transition-all duration-700 mt-12 flex justify-center">
           <a
-            href="https://wa.me/50688888888?text=Hola,%20quiero%20mi%20cotizaci%C3%B3n%20inicial%20de%20polarizado"
+            href="https://wa.me/50661311126?text=Hola,%20quiero%20mi%20cotizaci%C3%B3n%20inicial%20de%20polarizado"
             target="_blank"
             rel="noopener noreferrer"
             className="glass-card-hover rounded-2xl p-5 flex items-center gap-4 max-w-md"
@@ -191,7 +191,7 @@ export default function HowItWorks() {
         {/* CTAs */}
         <div className="reveal opacity-0 translate-y-8 transition-all duration-700 mt-10 flex flex-col sm:flex-row justify-center gap-4">
           <a
-            href="https://wa.me/50688888888?text=Hola,%20quiero%20cotizar%20polarizado"
+            href="https://wa.me/50661311126?text=Hola,%20quiero%20cotizar%20polarizado"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-secondary-light justify-center"

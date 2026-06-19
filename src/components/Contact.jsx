@@ -86,11 +86,11 @@ export default function Contact() {
               {t('contact.phoneDesc')}
             </p>
             <a 
-              href="tel:+50661311126"
+              href="tel:+50640343879"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
               style={{ background: '#203478', color: '#FFFFFF' }}
             >
-              +506 6131 1126
+              +506 4034 3879
               <ArrowRight size={14} />
             </a>
           </div>
@@ -106,51 +106,12 @@ export default function Contact() {
               {t('contact.emailDesc')}
             </p>
             <a 
-              href="mailto:info@polaritech.cr"
+              href="mailto:solucionesintegrales@polaritech.net"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
               style={{ background: '#203478', color: '#FFFFFF' }}
             >
-              info@polaritech.cr
+              solucionesintegrales@polaritech.net
               <ArrowRight size={14} />
-            </a>
-          </div>
-        </div>
-
-        {/* CTA Banner */}
-        <div className="text-center p-6 sm:p-12 rounded-3xl reveal opacity-0 translate-y-8 transition-all duration-700" style={{ background: 'linear-gradient(135deg, #203478 0%, #2a4390 100%)' }}>
-          <h3 
-            style={{
-              fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
-              fontSize: 'clamp(1.8rem, 3.2vw, 2.6rem)',
-              fontWeight: 500,
-              color: '#FFFFFF',
-              lineHeight: 1.1,
-              marginBottom: '16px'
-            }}
-          >
-            {t('contact.subtitle')}
-          </h3>
-          <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', color: '#E2E8F0', fontSize: '1.1rem', lineHeight: 1.6, marginBottom: '32px', maxWidth: '500px', margin: '0 auto 32px' }}>
-            {t('contact.description')}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="#cotizar" 
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold transition-all duration-200"
-              style={{ background: '#5BA130', color: '#FFFFFF' }}
-            >
-              {t('nav.cotizar')}
-              <ArrowRight size={16} />
-            </a>
-            <a 
-              href="https://wa.me/50661311126?text=Hola,%20quiero%20cotizar%20polarizado%20para%20mi%20proyecto"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold transition-all duration-200"
-              style={{ background: 'transparent', color: '#FFFFFF', border: '2px solid rgba(255,255,255,0.3)' }}
-            >
-              <MessageCircle size={16} />
-              {t('contact.whatsapp')}
             </a>
           </div>
         </div>

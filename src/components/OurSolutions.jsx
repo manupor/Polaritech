@@ -15,6 +15,18 @@ export default function OurSolutions() {
   const { t } = useLanguage()
   const [active, setActive] = useState(0)
 
+  // Handle URL parameter for tab selection
+  React.useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search)
+    const tabParam = urlParams.get('tab')
+    if (tabParam !== null && !isNaN(tabParam)) {
+      const tabIndex = parseInt(tabParam)
+      if (tabIndex >= 0 && tabIndex < 5) {
+        setActive(tabIndex)
+      }
+    }
+  }, [])
+
   const solutions = [
     {
       icon: <Sparkles size={22} />,
@@ -23,8 +35,7 @@ export default function OurSolutions() {
       tagColor: 'violet',
       short: t('ourSolutions.products.nanoceramica.short'),
       desc: t('ourSolutions.products.nanoceramica.desc'),
-      features: t('ourSolutions.products.nanoceramica.features'),
-      available: t('ourSolutions.products.nanoceramica.available'),
+      applications: t('ourSolutions.products.nanoceramica.applications'),
     },
     {
       icon: <Shield size={22} />,
@@ -33,7 +44,6 @@ export default function OurSolutions() {
       tagColor: 'blue',
       short: t('ourSolutions.products.seguridad.short'),
       desc: t('ourSolutions.products.seguridad.desc'),
-      features: t('ourSolutions.products.seguridad.features'),
       applications: t('ourSolutions.products.seguridad.applications'),
     },
     {
@@ -43,7 +53,7 @@ export default function OurSolutions() {
       tagColor: 'rose',
       short: t('ourSolutions.products.sandblasting.short'),
       desc: t('ourSolutions.products.sandblasting.desc'),
-      features: t('ourSolutions.products.sandblasting.features'),
+      applications: t('ourSolutions.products.sandblasting.applications'),
     },
     {
       icon: <Layers size={22} />,
@@ -52,7 +62,7 @@ export default function OurSolutions() {
       tagColor: 'cyan',
       short: t('ourSolutions.products.economica.short'),
       desc: t('ourSolutions.products.economica.desc'),
-      features: t('ourSolutions.products.economica.features'),
+      applications: t('ourSolutions.products.economica.applications'),
     },
     {
       icon: <CircleDot size={22} />,
@@ -61,7 +71,7 @@ export default function OurSolutions() {
       tagColor: 'neutral',
       short: t('ourSolutions.products.blackout.short'),
       desc: t('ourSolutions.products.blackout.desc'),
-      features: t('ourSolutions.products.blackout.features'),
+      applications: t('ourSolutions.products.blackout.applications'),
     },
   ]
 
@@ -165,40 +175,16 @@ export default function OurSolutions() {
                 {s.desc}
               </p>
 
-              {s.available && (
-                <div className="mb-6 p-4 rounded-lg" style={{ background: '#F7FAFC', border: '1px solid rgba(91,161,48,0.2)' }}>
-                  <p style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', fontSize: '0.9rem', fontWeight: 500, color: '#5BA130' }}>
-                    {s.available}
-                  </p>
-                </div>
-              )}
-
-              <div className="mb-8">
-                <h4 style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', fontSize: '1rem', fontWeight: 500, color: '#203478', marginBottom: '12px' }}>
-                  {t('ourSolutions.mainBenefits')}
-                </h4>
-                <div className="space-y-2">
-                  {s.features.map((f) => (
-                    <div key={f} className="flex items-center gap-2.5">
-                      <div className="w-1.5 h-1.5 rounded-full bg-green-600 shrink-0" />
-                      <span className="text-sm text-gray-700" style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>{f}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
               {s.applications && (
                 <div className="mb-8">
-                  <h4 style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', fontSize: '1rem', fontWeight: 500, color: '#203478', marginBottom: '12px' }}>
-                    {t('ourSolutions.recommendedApps')}
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {s.applications.map((app) => (
-                      <span key={app} className="px-3 py-1 rounded-full text-xs font-medium" style={{ background: '#F7FAFC', color: '#5a6a82', border: '1px solid rgba(32,52,120,0.1)' }}>
-                        {app}
+                  <p className="text-gray-700 text-base leading-relaxed" style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>
+                    <strong style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', color: '#203478' }}>{t('ourSolutions.recommendedApps')}</strong>{' '}
+                    {s.applications.map((app, i) => (
+                      <span key={app}>
+                        {app}{i < s.applications.length - 1 ? ', ' : '.'}
                       </span>
                     ))}
-                  </div>
+                  </p>
                 </div>
               )}
 

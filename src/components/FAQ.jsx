@@ -20,7 +20,7 @@ const faqs = [
   },
   {
     q: '¿Cuánto tiempo dura un polarizado de calidad?',
-    a: 'Un polarizado profesional de alta calidad dura entre 10 y 15 años dependiendo del producto y las condiciones de exposición solar. La Nano Cerámica tiene la mayor vida útil. Todos nuestros productos cuentan con garantía de fabricante y garantía de instalación por Polaritech.',
+    a: 'Un polarizado profesional de alta calidad dura entre 10 y 15 años dependiendo del producto y las condiciones de exposición solar. La Nano Cerámica tiene la mayor vida útil. Trabajamos con materiales de alto desempeño y un proceso de instalación cuidadoso para asegurar resultados duraderos.'
   },
   {
     q: '¿El polarizado afecta la visibilidad desde adentro?',

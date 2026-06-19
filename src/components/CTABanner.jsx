@@ -73,7 +73,7 @@ export default function CTABanner() {
               <ArrowRight size={18} />
             </a>
             <a
-              href="https://wa.me/50688888888?text=Hola,%20me%20interesa%20cotizar%20polarizado%20para%20mi%20espacio"
+              href="https://wa.me/50661311126?text=Hola,%20me%20interesa%20cotizar%20polarizado%20para%20mi%20espacio"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary-light text-base px-8 py-4"
@@ -85,7 +85,7 @@ export default function CTABanner() {
           </div>
 
           <p className="text-sm" style={{ color: '#6b7a99' }}>
-            Conversemos sobre tu proyecto · Sin compromiso · Respuesta en 24h
+            Sin compromiso · Respuesta en 24h
           </p>
         </div>
       </div>

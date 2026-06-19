@@ -13,7 +13,7 @@ export default function WhatsAppButton() {
         </div>
       )}
       <a
-        href="https://wa.me/50688888888?text=Hola%2C%20me%20interesa%20cotizar%20polarizado%20para%20mi%20espacio."
+        href="https://wa.me/50661311126?text=Hola%2C%20me%20interesa%20cotizar%20polarizado%20para%20mi%20espacio."
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Contactar por WhatsApp"

@@ -30,9 +30,9 @@ export default function Applications() {
       icon: <Building size={22} />,
       title: t('applications.condos'),
       desc: t('applications.condosDesc'),
-      img: '/aplicaciones/empresas/desktop empresas.png',
-      mobileImg: '/aplicaciones/empresas/mobile empresas.jpg',
-      expandedImg: '/aplicaciones/empresas/mobile empresas.jpg',
+      img: '/condominios.png',
+      mobileImg: '/condominios.png',
+      expandedImg: '/condominios.png',
     },
     {
       icon: <PanelsTopLeft size={22} />,
@@ -41,14 +41,6 @@ export default function Applications() {
       img: '/aplicaciones/comercios/desktop comercio.png',
       mobileImg: '/aplicaciones/comercios/mobile comercio.jpg',
       expandedImg: '/aplicaciones/comercios/mobile comercio.jpg',
-    },
-    {
-      icon: <Home size={22} />,
-      title: t('applications.largeWindows'),
-      desc: t('applications.largeWindowsDesc'),
-      img: '/gran%20ventanal.jpg.webp',
-      mobileImg: '/gran%20ventanal.jpg.webp',
-      expandedImg: '/gran%20ventanal.jpg.webp',
     },
   ]
 

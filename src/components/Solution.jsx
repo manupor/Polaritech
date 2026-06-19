@@ -64,53 +64,55 @@ export default function Solution() {
         </div>
 
         {/* Main content — ConstructZilla style card layout */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="reveal opacity-0 translate-y-8 transition-all duration-700">
-            <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-10" style={{ border: '1px solid rgba(32,52,120,0.06)' }}>
-              <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', color: '#5a6a82', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '24px' }}>
-                {t('solucion.description')}
-              </p>
-              
-              <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', color: '#5a6a82', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '24px' }}>
-                {t('solucion.description')}
-              </p>
-              
-              <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', color: '#5a6a82', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '32px' }}>
-                {t('solucion.description')}
-              </p>
+        <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+          <div className="reveal opacity-0 translate-y-8 transition-all duration-700 h-full">
+            <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-10 h-full flex flex-col" style={{ border: '1px solid rgba(32,52,120,0.06)' }}>
+              <div className="flex-1">
+                <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', color: '#5a6a82', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '24px' }}>
+                  {t('solucion.description')}
+                </p>
+                
+                <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', color: '#5a6a82', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '24px' }}>
+                  {t('solucion.description')}
+                </p>
+                
+                <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', color: '#5a6a82', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '32px' }}>
+                  {t('solucion.description')}
+                </p>
 
-              <div className="mb-8 p-6 rounded-xl" style={{ background: '#F7FAFC', border: '1px solid rgba(91,161,48,0.15)' }}>
-                <h4 
-                  style={{
-                    fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
-                    fontSize: '1.1rem',
-                    fontWeight: 500,
-                    color: '#203478',
-                    marginBottom: '16px'
-                  }}
-                >
-                  {t('ourSolutions.featuresTitle')}:
-                </h4>
-                <div className="space-y-3">
-                  {benefits.map((benefit, i) => (
-                    <div key={i} className="flex items-center gap-3">
-                      <div style={{ 
-                        width: '22px', 
-                        height: '22px', 
-                        borderRadius: '50%', 
-                        background: '#5BA130',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        flexShrink: 0
-                      }}>
-                        <CheckCircle2 size={13} style={{ color: '#FFFFFF' }} />
+                <div className="mb-8 p-6 rounded-xl" style={{ background: '#F7FAFC', border: '1px solid rgba(91,161,48,0.15)' }}>
+                  <h4 
+                    style={{
+                      fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
+                      fontSize: '1.1rem',
+                      fontWeight: 500,
+                      color: '#203478',
+                      marginBottom: '16px'
+                    }}
+                  >
+                    {t('ourSolutions.featuresTitle')}:
+                  </h4>
+                  <div className="space-y-3">
+                    {benefits.map((benefit, i) => (
+                      <div key={i} className="flex items-center gap-3">
+                        <div style={{ 
+                          width: '22px', 
+                          height: '22px', 
+                          borderRadius: '50%', 
+                          background: '#5BA130',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          flexShrink: 0
+                        }}>
+                          <CheckCircle2 size={13} style={{ color: '#FFFFFF' }} />
+                        </div>
+                        <span style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', color: '#5a6a82', fontSize: '1rem', lineHeight: 1.6 }}>
+                          {benefit}
+                        </span>
                       </div>
-                      <span style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', color: '#5a6a82', fontSize: '1rem', lineHeight: 1.6 }}>
-                        {benefit}
-                      </span>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               </div>
 
@@ -129,10 +131,10 @@ export default function Solution() {
             </div>
           </div>
 
-          <div className="reveal opacity-0 translate-y-8 transition-all duration-700 relative">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl" style={{ minHeight: '400px' }}>
+          <div className="reveal opacity-0 translate-y-8 transition-all duration-700 relative h-full">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl h-full" style={{ minHeight: '400px' }}>
               <img
-                src="/450.jpg"
+                src="/soluci%C3%B3n%202.jpg"
                 alt="Solución Polaritech"
                 className="w-full h-full object-cover"
               />

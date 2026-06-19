@@ -6,18 +6,26 @@ export default function Footer() {
   const { t } = useLanguage()
 
   const productList = t('footer.productsList')
+  const productLinks = [
+    { label: productList[0], href: '#nuestras-soluciones?tab=0' }, // NANOCERÁMICA
+    { label: productList[1], href: '#nuestras-soluciones?tab=1' }, // SEGURIDAD
+    { label: productList[2], href: '#nuestras-soluciones?tab=2' }, // SANDBLASTING
+    { label: productList[3], href: '#nuestras-soluciones?tab=3' }, // ECONÓMICA
+    { label: productList[4], href: '#nuestras-soluciones?tab=4' }, // WHITE OUT / BLACK OUT
+  ]
+  
   const footerLinks = {
     [t('footer.company')]: [
       { label: t('footer.about'), href: '#nosotros' },
-      { label: t('footer.services'), href: '#productos' },
+      { label: t('footer.services'), href: '#nuestras-soluciones' },
       { label: t('footer.howItWorks'), href: '#como-funciona' },
-      { label: t('footer.applications'), href: '#aplicaciones' },
+      { label: t('footer.applications'), href: '#soluciones' },
     ],
-    [t('footer.products')]: productList.map(name => ({ label: name, href: '#productos' })),
+    [t('footer.products')]: productLinks,
     [t('footer.support')]: [
       { label: t('footer.faq'), href: '#faq' },
       { label: t('footer.quote'), href: '#cotizar' },
-      { label: t('footer.contact'), href: '#cotizar' },
+      { label: t('footer.contact'), href: '#contacto' },
     ],
   }
 
@@ -51,11 +59,11 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2 text-xs" style={{ color: 'rgba(255,255,255,0.7)' }}>
                 <Phone size={14} style={{ color: '#5BA130' }} className="shrink-0" />
-                <a href="tel:+50688888888" className="hover:text-white transition-colors" style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>{t('footer.phone')}</a>
+                <a href="tel:+50640343879" className="hover:text-white transition-colors" style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>{t('footer.phone')}</a>
               </div>
               <div className="flex items-center gap-2 text-xs" style={{ color: 'rgba(255,255,255,0.7)' }}>
                 <Mail size={14} style={{ color: '#5BA130' }} className="shrink-0" />
-                <a href="mailto:info@polaritech.net" className="hover:text-white transition-colors" style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>{t('footer.email')}</a>
+                <a href="mailto:solucionesintegrales@polaritech.net" className="hover:text-white transition-colors" style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>{t('footer.email')}</a>
               </div>
             </div>
 

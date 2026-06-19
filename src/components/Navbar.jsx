@@ -12,7 +12,7 @@ export default function Navbar() {
     { label: t('nav.filosofia'), href: '#filosofia' },
     { label: t('nav.problema'), href: '#problema' },
     { label: t('nav.solucion'), href: '#solucion' },
-    { label: t('nav.soluciones'), href: '#productos' },
+    { label: t('nav.soluciones'), href: '#nuestras-soluciones' },
     { label: t('nav.aplicaciones'), href: '#soluciones' },
     { label: t('nav.contacto'), href: '#contacto' },
   ]

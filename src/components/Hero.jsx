@@ -37,11 +37,11 @@ export default function Hero() {
         }}
       />
 
-      {/* Dark overlay for text readability - gradient from dark blue to light blue */}
+      {/* Subtle dark overlay for text readability */}
       <div
         className="absolute inset-0"
         style={{
-          background: 'linear-gradient(135deg, rgba(32,52,120,0.95) 0%, rgba(32,52,120,0.85) 40%, rgba(62,181,204,0.75) 100%)',
+          background: 'linear-gradient(135deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.15) 100%)',
         }}
       />
 
@@ -61,10 +61,11 @@ export default function Hero() {
                 fontWeight: 500,
                 lineHeight: 1.15,
                 letterSpacing: '-0.02em',
+                textShadow: '0 3px 18px rgba(0,0,0,0.7), 0 2px 8px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.4)',
               }}
             >
               {t('hero.headline')}{' '}
-              <span style={{ color: '#5BA130' }}>{t('hero.protect')}</span>{' '}
+              <span style={{ color: '#5BA130', textShadow: '0 3px 18px rgba(0,0,0,0.7), 0 2px 8px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.4)' }}>{t('hero.protect')}</span>{' '}
               {t('hero.headlineEnd')}
             </h1>
 
@@ -72,12 +73,13 @@ export default function Hero() {
             <p
               className="mb-8"
               style={{
-                color: 'rgba(255,255,255,0.85)',
+                color: 'rgba(255,255,255,0.95)',
                 fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif',
                 fontWeight: 400,
                 fontSize: '1.1rem',
                 lineHeight: 1.7,
                 maxWidth: '500px',
+                textShadow: '0 2px 10px rgba(0,0,0,0.6), 0 1px 5px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.3)',
               }}
             >
               {t('hero.subheadline')}

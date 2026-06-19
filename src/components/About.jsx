@@ -34,7 +34,7 @@ export default function About() {
             </p>
             <p className="text-slate-500 leading-relaxed mb-10 font-light">
               Asesoría personalizada para cada proyecto: residencial, comercial, oficinas,
-              clínicas y edificios. Instalación profesional en todo el país con garantía de fabricante.
+              clínicas y edificios. Instalación profesional en todo el país con materiales de alto desempeño.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
