@@ -1,21 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Menu, X, Globe } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext.jsx'
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
   const { language, toggleLanguage, t } = useLanguage()
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
-    }
-
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    handleScroll()
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
 
   const navLinks = [
     { label: t('nav.inicio'), href: '#inicio' },
@@ -30,18 +19,16 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white shadow-sm' : 'bg-transparent'
-      }`}
-      style={{ borderBottom: scrolled ? '1px solid rgba(0,0,0,0.08)' : '1px solid transparent' }}
+      className="fixed top-0 left-0 right-0 z-50 bg-white"
+      style={{ borderBottom: '1px solid rgba(0,0,0,0.08)' }}
     >
       <nav className="max-w-7xl mx-auto flex items-center justify-between" style={{ height: '90px' }}>
         {/* Logo */}
         <a href="#inicio" className="flex items-center px-6">
           <img
-            src={scrolled ? '/logo-color.png' : '/logo-white.png'}
+            src="/logo-color.png"
             alt="Polaritech"
-            className="h-12 w-auto object-contain transition-opacity duration-300"
+            className="h-12 w-auto object-contain"
           />
         </a>
 
@@ -55,10 +42,10 @@ export default function Navbar() {
                   fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', 
                   fontSize: '15px', 
                   fontWeight: 500,
-                  color: scrolled ? '#555' : '#FFFFFF'
+                  color: '#555'
                 }}
               >
-                <span className={`group-hover:text-[#5BA130] transition-colors ${scrolled ? '' : 'drop-shadow-md'}`}>{link.label}</span>
+                <span className="group-hover:text-[#5BA130] transition-colors">{link.label}</span>
                 <span className="absolute bottom-6 left-4 right-4 h-0.5 bg-[#5BA130] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
               </a>
             </li>
@@ -69,10 +56,8 @@ export default function Navbar() {
           {/* Language Toggle */}
           <button
             onClick={toggleLanguage}
-            className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-              scrolled ? 'hover:bg-gray-100' : 'hover:bg-white/10'
-            }`}
-            style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', color: scrolled ? '#555' : '#FFFFFF' }}
+            className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-gray-100"
+            style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', color: '#555' }}
             aria-label="Toggle language"
           >
             <Globe size={16} />
@@ -97,7 +82,7 @@ export default function Navbar() {
         </div>
 
         <button
-          className={`lg:hidden p-2 transition-colors ${scrolled ? 'text-[#203478] hover:text-[#5BA130]' : 'text-white hover:text-[#5BA130]'}`}
+          className="lg:hidden p-2 text-[#203478] hover:text-[#5BA130] transition-colors"
           onClick={() => setMobileOpen(!mobileOpen)}
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
