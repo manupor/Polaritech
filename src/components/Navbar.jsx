@@ -8,12 +8,12 @@ export default function Navbar() {
 
   const navLinks = [
     { label: t('nav.inicio'), href: '#inicio' },
-    { label: t('nav.historia'), href: '#historia' },
-    { label: t('nav.filosofia'), href: '#filosofia' },
     { label: t('nav.problema'), href: '#problema' },
     { label: t('nav.solucion'), href: '#solucion' },
     { label: t('nav.soluciones'), href: '#nuestras-soluciones' },
     { label: t('nav.aplicaciones'), href: '#soluciones' },
+    { label: t('nav.historia'), href: '#historia' },
+    { label: t('nav.filosofia'), href: '#filosofia' },
     { label: t('nav.contacto'), href: '#contacto' },
   ]
 
