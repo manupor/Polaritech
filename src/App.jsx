@@ -38,10 +38,6 @@ function App() {
       <main>
         {/* HERO */}
         <Hero />
-        {/* NUESTRA HISTORIA */}
-        <History />
-        {/* NUESTRA FILOSOFÍA */}
-        <Philosophy />
         {/* EL PROBLEMA */}
         <SolarRadiation />
         {/* LA SOLUCIÓN */}
@@ -50,6 +46,10 @@ function App() {
         <OurSolutions />
         {/* APLICACIONES */}
         <Applications />
+        {/* NUESTRA HISTORIA */}
+        <History />
+        {/* NUESTRA FILOSOFÍA */}
+        <Philosophy />
         {/* CONTACTO */}
         <Contact />
       </main>

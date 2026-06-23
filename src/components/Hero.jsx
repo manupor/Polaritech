@@ -30,7 +30,7 @@ export default function Hero() {
       <div
         className="absolute inset-0"
         style={{
-          backgroundImage: "url('/Polaritech%20hero.jpg')",
+          backgroundImage: "url('/hero%201.png')",
           backgroundSize: 'cover',
           backgroundPosition: 'center center',
           backgroundRepeat: 'no-repeat',
