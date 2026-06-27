@@ -122,6 +122,18 @@ export default function Footer() {
             <a href="#" className="text-xs hover:text-white transition-colors duration-150" style={{ color: 'rgba(255,255,255,0.5)', fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>
               {t('footer.terms')}
             </a>
+            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.5)', fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>
+              Hecha por{' '}
+              <a
+                href="https://codecraftt.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors duration-150"
+                style={{ color: '#5BA130' }}
+              >
+                Codecraftt
+              </a>
+            </span>
           </div>
         </div>
       </div>
