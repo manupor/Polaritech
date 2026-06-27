@@ -12,6 +12,7 @@ export default function Navbar() {
     { label: t('nav.solucion'), href: '#solucion' },
     { label: t('nav.soluciones'), href: '#nuestras-soluciones' },
     { label: t('nav.aplicaciones'), href: '#soluciones' },
+    { label: 'Galería', href: '#galeria' },
     { label: t('nav.historia'), href: '#historia' },
     { label: t('nav.filosofia'), href: '#filosofia' },
     { label: t('nav.contacto'), href: '#contacto' },

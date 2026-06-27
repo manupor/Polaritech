@@ -8,6 +8,7 @@ import Solution from './components/Solution'
 import OurSolutions from './components/OurSolutions'
 import Applications from './components/Applications'
 import Contact from './components/Contact'
+import InstagramGallery from './components/InstagramGallery'
 import Footer from './components/Footer'
 import WhatsAppButton from './components/WhatsAppButton'
 import StickyMobileCTA from './components/StickyMobileCTA'
@@ -46,6 +47,8 @@ function App() {
         <OurSolutions />
         {/* APLICACIONES */}
         <Applications />
+        {/* GALERÍA INSTAGRAM */}
+        <InstagramGallery />
         {/* NUESTRA HISTORIA */}
         <History />
         {/* NUESTRA FILOSOFÍA */}
