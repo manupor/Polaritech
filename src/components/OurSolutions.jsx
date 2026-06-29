@@ -84,7 +84,7 @@ export default function OurSolutions() {
 
   return (
     <section id="nuestras-soluciones" className="relative py-16 sm:py-24 overflow-hidden" style={{ background: '#F7FAFC' }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center mb-16 reveal opacity-0 translate-y-8 transition-all duration-700">
@@ -125,7 +125,7 @@ export default function OurSolutions() {
         </div>
 
         {/* Solution selector and details */}
-        <div className="grid lg:grid-cols-3 gap-4 lg:gap-8 items-start">
+        <div className="block lg:grid lg:grid-cols-3 lg:gap-8 items-start">
           {/* Desktop: Vertical selector tabs */}
           <div className="hidden lg:col-span-1 lg:flex lg:flex-col gap-2">
             {solutions.map((sol, i) => (
@@ -151,7 +151,7 @@ export default function OurSolutions() {
           </div>
 
           {/* Mobile: Accordion list */}
-          <div className="lg:hidden space-y-3">
+          <div className="lg:hidden w-full max-w-2xl mx-auto space-y-3">
             {solutions.map((sol, i) => {
               const isOpen = active === i
               return (
@@ -166,8 +166,14 @@ export default function OurSolutions() {
                       setActive(opening ? i : -1)
                       if (opening && cardRefs.current[i]) {
                         setTimeout(() => {
-                          cardRefs.current[i].scrollIntoView({ behavior: 'smooth', block: 'start' })
-                        }, 50)
+                          const card = cardRefs.current[i]
+                          const rect = card.getBoundingClientRect()
+                          const headerOffset = 80
+                          if (rect.top < headerOffset || rect.bottom > window.innerHeight) {
+                            const y = rect.top + window.pageYOffset - headerOffset
+                            window.scrollTo({ top: y, behavior: 'smooth' })
+                          }
+                        }, 100)
                       }
                     }}
                     className="w-full flex items-center justify-between p-4 text-left gap-3"
