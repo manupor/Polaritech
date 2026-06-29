@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { ArrowRight, Shield, Sun, Eye, Layers, Sparkles, Square, CircleDot } from 'lucide-react'
+import { ArrowRight, ChevronDown, Shield, Sun, Eye, Layers, Sparkles, Square, CircleDot } from 'lucide-react'
 import { useParallax, useScrollAnimation, useParallaxScale } from '../hooks/useParallax'
 import { useLanguage } from '../context/LanguageContext.jsx'
 
@@ -125,13 +125,13 @@ export default function OurSolutions() {
 
         {/* Solution selector and details */}
         <div className="grid lg:grid-cols-3 gap-4 lg:gap-8 items-start">
-          {/* Mobile: Horizontal scrollable tabs */}
-          <div className="lg:col-span-1 flex lg:flex-col gap-2 overflow-x-auto pb-2 lg:pb-0 -mx-2 px-2 lg:mx-0 lg:px-0">
+          {/* Desktop: Vertical selector tabs */}
+          <div className="hidden lg:col-span-1 lg:flex lg:flex-col gap-2">
             {solutions.map((sol, i) => (
               <button
                 key={sol.name}
                 onClick={() => setActive(i)}
-                className={`flex-shrink-0 text-left px-4 py-3 rounded-xl transition-all duration-200 border flex items-center gap-3 group whitespace-nowrap ${
+                className={`text-left px-4 py-3 rounded-xl transition-all duration-200 border flex items-center gap-3 group ${
                   active === i
                     ? 'bg-green-500/10 border-green-500/30 text-gray-900'
                     : 'border-transparent text-slate-600 hover:text-slate-800 hover:bg-white/5 bg-white'
@@ -144,12 +144,72 @@ export default function OurSolutions() {
                 }`}>
                   {sol.icon}
                 </div>
-                <span className="text-xs lg:text-sm font-medium leading-tight">{sol.name}</span>
+                <span className="text-sm font-medium leading-tight">{sol.name}</span>
               </button>
             ))}
           </div>
 
-          <div className="lg:col-span-2 reveal opacity-0 translate-y-8 transition-all duration-500">
+          {/* Mobile: Accordion list */}
+          <div className="lg:hidden space-y-3">
+            {solutions.map((sol, i) => {
+              const isOpen = active === i
+              return (
+                <div key={sol.name} className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+                  <button
+                    onClick={() => setActive(isOpen ? -1 : i)}
+                    className="w-full flex items-center justify-between p-4 text-left gap-3"
+                  >
+                    <div className="flex items-center gap-3 min-w-0">
+                      <div className={`shrink-0 w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-200 ${
+                        isOpen
+                          ? 'bg-gradient-to-br from-green-400/20 to-emerald-500/20 text-green-600 border border-green-400/30'
+                          : 'bg-gray-100 text-slate-500 border border-gray-200'
+                      }`}>
+                        {sol.icon}
+                      </div>
+                      <div className="min-w-0">
+                        <h3 className="font-bold text-gray-900 text-sm leading-tight" style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif' }}>{sol.name}</h3>
+                        <p className="text-xs text-gray-500 mt-0.5 truncate">{sol.short}</p>
+                      </div>
+                    </div>
+                    <ChevronDown size={20} className={`shrink-0 text-gray-400 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+                  </button>
+
+                  {isOpen && (
+                    <div className="px-4 pb-4 border-t border-gray-100">
+                      <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold border mt-4 mb-3 ${tagStyles[sol.tagColor]}`}>
+                        {sol.tag}
+                      </span>
+                      <p className="text-gray-700 text-sm leading-relaxed mb-4" style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>
+                        {sol.desc}
+                      </p>
+                      {sol.applications && (
+                        <p className="text-gray-700 text-sm leading-relaxed mb-4" style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif' }}>
+                          <strong style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', color: '#203478' }}>{t('ourSolutions.recommendedApps')}</strong>{' '}
+                          {sol.applications.map((app, idx) => (
+                            <span key={app}>
+                              {app}{idx < sol.applications.length - 1 ? ', ' : '.'}
+                            </span>
+                          ))}
+                        </p>
+                      )}
+                      <div className="flex flex-col gap-2 pt-4 border-t border-gray-200">
+                        <a href="#cotizar" className="btn-primary w-full justify-center text-sm">
+                          {t('ourSolutions.requestQuote')}
+                          <ArrowRight size={14} />
+                        </a>
+                        <a href="#contacto" className="btn-secondary-light w-full justify-center text-sm" style={{ borderColor: 'rgba(91,161,48,0.3)', color: '#5BA130' }}>
+                          {t('ourSolutions.moreInfo')}
+                        </a>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )
+            })}
+          </div>
+
+          <div className="hidden lg:col-span-2 lg:block reveal opacity-0 translate-y-8 transition-all duration-500">
             <div className="bg-white rounded-3xl p-5 sm:p-6 lg:p-10 h-full border border-gray-200 relative overflow-hidden shadow-sm">
               <div
                 className="absolute top-0 right-0 w-64 h-64 rounded-full blur-3xl opacity-5 pointer-events-none transition-all duration-500"
