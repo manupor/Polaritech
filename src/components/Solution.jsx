@@ -97,7 +97,7 @@ export default function Solution() {
               </div>
 
               <a 
-                href="#cotizar" 
+                href="#nuestras-soluciones" 
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-white font-medium transition-all duration-300 hover:shadow-xl hover:scale-105"
                 style={{ 
                   background: '#5BA130', 
