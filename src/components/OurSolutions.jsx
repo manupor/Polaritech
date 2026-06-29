@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { ArrowRight, ChevronDown, Shield, Sun, Eye, Layers, Sparkles, Square, CircleDot } from 'lucide-react'
 import { useParallax, useScrollAnimation, useParallaxScale } from '../hooks/useParallax'
 import { useLanguage } from '../context/LanguageContext.jsx'
@@ -76,6 +76,7 @@ export default function OurSolutions() {
   ]
 
   const s = solutions[active]
+  const cardRefs = useRef([])
   const headerRef = useScrollAnimation(0.15)
   const selectorRef = useScrollAnimation(0.2)
   const detailsRef = useScrollAnimation(0.25)
@@ -83,7 +84,7 @@ export default function OurSolutions() {
 
   return (
     <section id="nuestras-soluciones" className="relative py-16 sm:py-24 overflow-hidden" style={{ background: '#F7FAFC' }}>
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center mb-16 reveal opacity-0 translate-y-8 transition-all duration-700">
@@ -154,9 +155,21 @@ export default function OurSolutions() {
             {solutions.map((sol, i) => {
               const isOpen = active === i
               return (
-                <div key={sol.name} className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+                <div
+                  key={sol.name}
+                  ref={(el) => { cardRefs.current[i] = el }}
+                  className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm"
+                >
                   <button
-                    onClick={() => setActive(isOpen ? -1 : i)}
+                    onClick={() => {
+                      const opening = !isOpen
+                      setActive(opening ? i : -1)
+                      if (opening && cardRefs.current[i]) {
+                        setTimeout(() => {
+                          cardRefs.current[i].scrollIntoView({ behavior: 'smooth', block: 'start' })
+                        }, 50)
+                      }
+                    }}
                     className="w-full flex items-center justify-between p-4 text-left gap-3"
                   >
                     <div className="flex items-center gap-3 min-w-0">
