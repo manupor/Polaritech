@@ -80,7 +80,7 @@ export const translations = {
       title: 'LA',
       titleAccent: 'SOLUCIÓN',
       subtitle: 'Control solar avanzado',
-      description: 'Nuestras láminas de polarizado arquitectónico están diseñadas para controlar la radiación solar sin sacrificar la iluminación natural ni la visibilidad hacia el exterior.',
+      description: 'Ofrecemos soluciones de polarizado arquitectónico diseñadas para mejorar el confort, proteger sus espacios y optimizar el desempeño del vidrio. Contamos con diferentes tecnologías para responder a las necesidades de cada proyecto, desde control solar y protección UV hasta privacidad y seguridad. Cada una de nuestras líneas ha sido desarrollada para ofrecer el mejor desempeño según su aplicación, combinando tecnología, rendimiento, estética y durabilidad, con soluciones adaptadas a las necesidades de cada espacio.',
       cta: 'Explorar soluciones',
       benefits: {
         retention: 'Retención IRR de 65% a 98%',
@@ -329,7 +329,7 @@ export const translations = {
       title: 'THE',
       titleAccent: 'SOLUTION',
       subtitle: 'Advanced solar control',
-      description: 'Our architectural window films are designed to control solar radiation without sacrificing natural lighting or visibility to the outside.',
+      description: 'We offer architectural window film solutions designed to improve comfort, protect your spaces, and optimize glass performance. We have different technologies to respond to the needs of each project, from solar control and UV protection to privacy and security. Each of our lines has been developed to deliver the best performance according to its application, combining technology, performance, aesthetics, and durability, with solutions tailored to the needs of every space.',
       cta: 'Explore solutions',
       benefits: {
         retention: 'IRR retention from 65% to 98%',
