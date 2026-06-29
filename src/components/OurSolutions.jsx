@@ -222,6 +222,7 @@ export default function OurSolutions() {
             })}
           </div>
 
+          {active >= 0 && s && (
           <div className="hidden lg:col-span-2 lg:block reveal opacity-0 translate-y-8 transition-all duration-500">
             <div className="bg-white rounded-3xl p-5 sm:p-6 lg:p-10 h-full border border-gray-200 relative overflow-hidden shadow-sm">
               <div
@@ -272,6 +273,7 @@ export default function OurSolutions() {
               </div>
             </div>
           </div>
+          )}
         </div>
       </div>
     </section>
