@@ -68,14 +68,6 @@ export default function Solution() {
           <div className="reveal opacity-0 translate-y-8 transition-all duration-700 h-full">
             <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-10 h-full flex flex-col" style={{ border: '1px solid rgba(32,52,120,0.06)' }}>
               <div className="flex-1">
-                <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', color: '#5a6a82', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '24px' }}>
-                  {t('solucion.description')}
-                </p>
-                
-                <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', color: '#5a6a82', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '24px' }}>
-                  {t('solucion.description')}
-                </p>
-                
                 <p style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', color: '#5a6a82', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '32px' }}>
                   {t('solucion.description')}
                 </p>
