@@ -46,36 +46,14 @@ export default function Preloader({ onLoaded }) {
       }`}
       style={{ background: '#EEF4F8' }}
     >
-      <div className="flex flex-col items-center gap-8 px-6">
-        <div className="relative">
-          <div
-            className="absolute inset-0 rounded-full animate-pulse-glow"
-            style={{ background: 'radial-gradient(circle, rgba(62,181,204,0.25) 0%, transparent 70%)' }}
-          />
-          <img
-            src="/logo-color.png"
-            alt="Polaritech"
-            className="relative h-24 sm:h-28 w-auto object-contain animate-pulse-logo"
-            style={{ filter: 'drop-shadow(0 0 24px rgba(32,52,120,0.12))' }}
-          />
-        </div>
+      <div className="flex flex-col items-center gap-6 px-6">
+        <img
+          src="/logo-color.png"
+          alt="Polaritech"
+          className="h-20 sm:h-24 w-auto object-contain animate-pulse-logo"
+        />
 
-        <div className="text-center space-y-2">
-          <h1
-            className="text-2xl sm:text-3xl font-bold tracking-wide"
-            style={{ fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif', color: '#203478' }}
-          >
-            Polaritech
-          </h1>
-          <p
-            className="text-sm sm:text-base"
-            style={{ fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', color: '#6b7a99' }}
-          >
-            Cargando experiencia…
-          </p>
-        </div>
-
-        <div className="w-48 sm:w-56 h-1.5 rounded-full bg-[rgba(32,52,120,0.1)] overflow-hidden">
+        <div className="w-40 sm:w-48 h-1 rounded-full bg-[rgba(32,52,120,0.1)] overflow-hidden">
           <div
             className="h-full bg-[#5BA130] transition-all duration-100 ease-linear rounded-full"
             style={{ width: `${progress}%` }}
