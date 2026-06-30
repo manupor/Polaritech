@@ -46,6 +46,8 @@ export default function Footer() {
                 src="/logo-white.png"
                 alt="Polaritech"
                 className="h-10 w-auto object-contain"
+                loading="lazy"
+                decoding="async"
                 onError={(e) => { e.target.src = '/logo-color.png'; e.target.style.filter = 'brightness(0) invert(1)'; }}
               />
             </a>

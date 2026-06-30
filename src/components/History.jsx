@@ -58,6 +58,8 @@ export default function History() {
               src="/mockup-2.png"
               alt={t('history.imageAlt')}
               className="w-full h-auto object-contain max-h-[280px] sm:max-h-[400px]"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>

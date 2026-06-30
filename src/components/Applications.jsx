@@ -84,6 +84,8 @@ export default function Applications() {
                 alt={s.title}
                 className="w-full h-full object-cover transition-all duration-500 cursor-pointer"
                 key={current}
+                loading="lazy"
+                decoding="async"
                 onClick={() => setExpandedImage(s.expandedImg)}
               />
             </picture>
@@ -145,6 +147,8 @@ export default function Applications() {
                   src={space.img}
                   alt={space.title}
                   className="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
               </button>
             ))}
@@ -179,6 +183,7 @@ export default function Applications() {
               src={expandedImage}
               alt="Expanded view"
               className="w-full h-full object-contain rounded-lg"
+              decoding="async"
             />
           </div>
         </div>

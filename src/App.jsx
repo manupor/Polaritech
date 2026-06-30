@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from './components/Navbar'
+import Preloader from './components/Preloader'
 import Hero from './components/Hero'
 import History from './components/History'
 import Philosophy from './components/Philosophy'
@@ -14,6 +15,8 @@ import WhatsAppButton from './components/WhatsAppButton'
 import StickyMobileCTA from './components/StickyMobileCTA'
 
 function App() {
+  const [loaded, setLoaded] = useState(false)
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -35,7 +38,9 @@ function App() {
 
   return (
     <div className="min-h-screen bg-[#EEF4F8] text-[#203478] font-sans">
-      <Navbar />
+      <Preloader onLoaded={() => setLoaded(true)} />
+      <div className={`transition-opacity duration-700 ${loaded ? 'opacity-100' : 'opacity-0'}`}>
+        <Navbar />
       <main>
         {/* HERO */}
         <Hero />
@@ -59,6 +64,7 @@ function App() {
       <Footer />
       <WhatsAppButton />
       <StickyMobileCTA />
+      </div>
     </div>
   )
 }

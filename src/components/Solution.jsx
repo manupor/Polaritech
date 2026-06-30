@@ -117,6 +117,8 @@ export default function Solution() {
                 src="/soluci%C3%B3n%202.jpg"
                 alt="Solución Polaritech"
                 className="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
               />
               <div 
                 className="absolute inset-0"

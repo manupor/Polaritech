@@ -79,6 +79,8 @@ export default function About() {
                     src="/logo-white.png"
                     alt="Polaritech"
                     className="relative z-10 w-3/5 max-w-[240px] object-contain drop-shadow-[0_0_24px_rgba(62,181,204,0.35)]"
+                    loading="lazy"
+                    decoding="async"
                   />
                   {/* Corner accents */}
                   <div className="absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 border-cyan-500/20 rounded-tl-lg" />

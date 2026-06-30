@@ -42,6 +42,26 @@
   }
 }
 
+@keyframes pulse-logo {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes progress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
 @layer base {
   * {
     box-sizing: border-box;
@@ -403,6 +423,18 @@
 
   .animate-slide-in-right {
     animation: slide-in-right 0.8s ease-out forwards;
+  }
+
+  .animate-pulse-logo {
+    animation: pulse-logo 1.8s ease-in-out infinite;
+  }
+
+  .animate-progress {
+    animation: progress 4s ease-out forwards;
+  }
+
+  .duration-600 {
+    transition-duration: 600ms;
   }
 
   .animation-delay-150 { animation-delay: 150ms; }

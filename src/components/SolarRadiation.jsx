@@ -88,6 +88,8 @@ export default function SolarRadiation() {
               src="/el problema2.png"
               alt={t('problema.subtitle')}
               className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>

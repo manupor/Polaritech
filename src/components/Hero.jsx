@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { ArrowRight, Phone, Mail, User, Building, MessageSquare } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext.jsx'
 
@@ -11,6 +11,7 @@ export default function Hero() {
     company: '',
     message: ''
   })
+  const [imageLoaded, setImageLoaded] = useState(false)
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -26,16 +27,31 @@ export default function Hero() {
       className="relative min-h-screen flex items-center overflow-hidden"
       style={{ paddingTop: '90px' }}
     >
-      {/* Full-width background photo */}
+      {/* Full-width background photo - optimized webp */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 bg-[#EEF4F8]"
         style={{
-          backgroundImage: "url('/hero%201.png')",
           backgroundSize: 'cover',
           backgroundPosition: 'center center',
           backgroundRepeat: 'no-repeat',
         }}
-      />
+      >
+        <img
+          src="/hero-1.webp"
+          alt={t('hero.imageAlt')}
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+            imageLoaded ? 'opacity-100' : 'opacity-0'
+          }`}
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+          onLoad={() => setImageLoaded(true)}
+          onError={() => setImageLoaded(true)}
+        />
+        {!imageLoaded && (
+          <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-[#EEF4F8] to-[#d4e2eb]" />
+        )}
+      </div>
 
       {/* Subtle dark overlay for text readability */}
       <div
