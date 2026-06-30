@@ -6,6 +6,11 @@
     <link rel="apple-touch-icon" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Prevent white flash before React renders -->
+    <style>
+      html, body, #root { background-color: #EEF4F8; }
+    </style>
+
     <!-- Preload critical assets -->
     <link rel="preload" as="image" href="/hero-1.webp" type="image/webp" fetchpriority="high" />
     <link rel="preload" as="image" href="/logo-color.png" type="image/png" />

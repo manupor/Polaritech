@@ -62,6 +62,17 @@
   }
 }
 
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
 @layer base {
   * {
     box-sizing: border-box;
@@ -427,6 +438,10 @@
 
   .animate-pulse-logo {
     animation: pulse-logo 1.8s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2.4s ease-in-out infinite;
   }
 
   .animate-progress {
