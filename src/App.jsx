@@ -2,10 +2,9 @@ import React, { useEffect, useState } from 'react'
 import Navbar from './components/Navbar'
 import Preloader from './components/Preloader'
 import Hero from './components/Hero'
+import ProblemSolutionCards from './components/ProblemSolutionCards'
 import History from './components/History'
 import Philosophy from './components/Philosophy'
-import SolarRadiation from './components/SolarRadiation'
-import Solution from './components/Solution'
 import OurSolutions from './components/OurSolutions'
 import Applications from './components/Applications'
 import Contact from './components/Contact'
@@ -44,10 +43,8 @@ function App() {
       <main>
         {/* HERO */}
         <Hero />
-        {/* EL PROBLEMA */}
-        <SolarRadiation />
-        {/* LA SOLUCIÓN */}
-        <Solution />
+        {/* PROBLEMA + SOLUCIÓN — cards superpuestos al hero */}
+        <ProblemSolutionCards />
         {/* NUESTRAS SOLUCIONES */}
         <OurSolutions />
         {/* APLICACIONES */}

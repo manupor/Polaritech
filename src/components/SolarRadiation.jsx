@@ -34,12 +34,27 @@ export default function SolarRadiation() {
     <section id="problema" className="relative py-16 sm:py-24 overflow-hidden" style={{ background: '#FFFFFF' }}>
       <div className="max-w-7xl mx-auto px-6">
 
-        {/* ── Top band: text + photo ─────────────────────────────────── */}
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-20 lg:mb-28">
-          <div 
+        {/* ── Two-block card layout: image + text ─────────────────────── */}
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 mb-20 lg:mb-28">
+          {/* Block 1: Image card */}
+          <div
+            className="reveal opacity-0 translate-y-8 transition-all duration-700 relative rounded-2xl overflow-hidden shadow-xl shadow-[rgba(32,52,120,0.12)] min-h-[280px] sm:min-h-[400px]"
+          >
+            <img
+              src="/el problema2.png"
+              alt={t('problema.subtitle')}
+              className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+
+          {/* Block 2: Text card */}
+          <div
             ref={contentRef.ref}
-            className="reveal opacity-0 translate-y-8 transition-all duration-700"
+            className="reveal opacity-0 translate-y-8 transition-all duration-700 bg-white rounded-2xl shadow-xl p-8 lg:p-10 flex flex-col justify-center"
             style={{
+              border: '1px solid rgba(32,52,120,0.06)',
               transform: `translateY(${contentRef.isVisible ? '0px' : '40px'})`,
               opacity: contentRef.isVisible ? 1 : 0,
               transition: 'all 0.7s cubic-bezier(0.4, 0, 0.2, 1)',
@@ -49,7 +64,7 @@ export default function SolarRadiation() {
               style={{
                 color: '#203478',
                 fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
-                fontSize: 'clamp(2.8rem, 4.2vw, 3.6rem)',
+                fontSize: 'clamp(2.2rem, 3.6vw, 3rem)',
                 fontWeight: 500,
                 lineHeight: 1.1,
                 letterSpacing: '-0.02em',
@@ -59,7 +74,7 @@ export default function SolarRadiation() {
             </h2>
 
             <div
-              className="my-6"
+              className="my-5"
               style={{ width: '56px', height: '3px', borderRadius: '2px', background: '#5BA130' }}
             />
 
@@ -67,7 +82,7 @@ export default function SolarRadiation() {
               style={{
                 color: '#203478',
                 fontFamily: '"Myriad Pro Bold", Myriad Pro, sans-serif',
-                fontSize: 'clamp(1.6rem, 3vw, 2.2rem)',
+                fontSize: 'clamp(1.4rem, 2.4vw, 1.8rem)',
                 fontWeight: 500,
                 lineHeight: 1.2,
                 marginBottom: '16px',
@@ -76,21 +91,9 @@ export default function SolarRadiation() {
               {t('problema.subtitle')}
             </h3>
 
-            <p style={{ color: '#5a6a82', fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', fontSize: '1.05rem', lineHeight: 1.7, maxWidth: '46ch' }}>
+            <p style={{ color: '#5a6a82', fontFamily: '"Myriad Pro Regular", Myriad Pro, sans-serif', fontSize: '1.05rem', lineHeight: 1.7 }}>
               {t('problema.description')}
             </p>
-          </div>
-
-          <div
-            className="reveal opacity-0 translate-y-8 transition-all duration-700 relative rounded-2xl overflow-hidden shadow-xl shadow-[rgba(32,52,120,0.12)] min-h-[240px] sm:min-h-[380px]"
-          >
-            <img
-              src="/el problema2.png"
-              alt={t('problema.subtitle')}
-              className="absolute inset-0 w-full h-full object-cover"
-              loading="lazy"
-              decoding="async"
-            />
           </div>
         </div>
 

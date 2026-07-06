@@ -63,8 +63,8 @@ export default function Solution() {
           </h3>
         </div>
 
-        {/* Main content — ConstructZilla style card layout */}
-        <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+        {/* Main content — two block cards */}
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
           <div className="reveal opacity-0 translate-y-8 transition-all duration-700 h-full">
             <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-10 h-full flex flex-col" style={{ border: '1px solid rgba(32,52,120,0.06)' }}>
               <div className="flex-1">
@@ -111,8 +111,8 @@ export default function Solution() {
             </div>
           </div>
 
-          <div className="reveal opacity-0 translate-y-8 transition-all duration-700 relative h-full">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl h-full" style={{ minHeight: '400px' }}>
+          <div className="reveal opacity-0 translate-y-8 transition-all duration-700 h-full">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl h-full bg-white" style={{ minHeight: '400px', border: '1px solid rgba(32,52,120,0.06)' }}>
               <img
                 src="/soluci%C3%B3n%202.jpg"
                 alt="Solución Polaritech"
@@ -120,13 +120,6 @@ export default function Solution() {
                 loading="lazy"
                 decoding="async"
               />
-              <div 
-                className="absolute inset-0"
-                style={{
-                  background: 'linear-gradient(135deg, rgba(32,52,120,0.15) 0%, rgba(91,161,48,0.15) 100%)'
-                }}
-              />
-              
             </div>
           </div>
         </div>
